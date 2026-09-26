@@ -71,6 +71,7 @@ import androidx.preference.PreferenceManager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import com.journeyapps.barcodescanner.CaptureActivity;
 
 import org.apache.commons.io.FileUtils;
 
@@ -1098,12 +1099,11 @@ public class ExperimentListActivity extends AppCompatActivity {
 
     protected void scanQRCode() {
         IntentIntegrator qrScan = new IntentIntegrator(this);
-
+        qrScan.setCaptureActivity(CaptureActivity.class);
         qrScan.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
         qrScan.setPrompt(getResources().getString(R.string.newExperimentQRscan));
         qrScan.setBeepEnabled(false);
         qrScan.setOrientationLocked(true);
-
         qrScan.initiateScan();
     }
 

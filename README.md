@@ -14,12 +14,9 @@ This project has been created at the RWTH Aachen University and is released unde
 
 **The names "phyphox" and "RWTH Aachen University" as well as the RWTH Aachen logo are registered trademarks.**
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt="Get it on F-Droid"
-     height="80">](https://f-droid.org/packages/de.rwth_aachen.phyphox/)
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
-     alt="Get it on Google Play"
-     height="80">](https://play.google.com/store/apps/details?id=de.rwth_aachen.phyphox)
+Phyerma is not published on Google Play and does not use Google Play Services, Firebase, or Crashlytics.
+
+Upstream phyphox remains available on [F-Droid](https://f-droid.org/packages/de.rwth_aachen.phyphox/).
 
 ## Coding style
 

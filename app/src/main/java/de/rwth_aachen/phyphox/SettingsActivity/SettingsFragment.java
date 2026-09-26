@@ -7,20 +7,14 @@ import android.text.InputType;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.os.LocaleListCompat;
 import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SeekBarPreference;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-
-import de.rwth_aachen.phyphox.BuildConfig;
 import de.rwth_aachen.phyphox.R;
+import de.rwth_aachen.phyphox.device.LanguageHelper;
 import de.rwth_aachen.phyphox.helper.FileNameFormat;
 
 public class SettingsFragment extends PreferenceFragmentCompat {
@@ -78,11 +72,7 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     private void updateCurrentLanguage() {
         ListPreference lp = findPreference("language");
         if(lp != null){
-            Locale locale = AppCompatDelegate.getApplicationLocales().get(0);
-            if (locale == null)
-                lp.setValue("*");
-            else
-                lp.setValue(locale.toString().replace("_", "-"));
+            lp.setValue(LanguageHelper.currentPreference());
         }
     }
 
@@ -92,53 +82,18 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     private void prepareLanguageList() {
         ListPreference lp = findPreference("language");
 
-        String[] rawValues = BuildConfig.LOCALE_ARRAY;
-        List<String> valuesUsed = new ArrayList<>();
-
-        for (String rawValue : rawValues) {
-            if (rawValue.contains("+"))
-                continue;
-            valuesUsed.add(rawValue.replace("-r", "-"));
-        }
-        valuesUsed.add("*");
-
-        int n = valuesUsed.size();
-        String[] names = new String[n];
-        String[] values = valuesUsed.toArray(new String[n]);
-        Arrays.sort(values, (lhs, rhs) -> {
-            if (lhs.equals("*"))
-                return -1;
-            if (rhs.equals("*"))
-                return +1;
-            Locale l1 = LocaleListCompat.forLanguageTags(lhs).get(0);
-            Locale l2 = LocaleListCompat.forLanguageTags(rhs).get(0);
-            if (l1 == null || l2 == null)
-                return 0;
-            String s1 = l1.getDisplayName();
-            String s2 = l2.getDisplayName();
-            return s1.compareTo(s2);
-        });
-
-        for (int i = 0; i < n; i++) {
-            if (values[i].equals("*")) {
-                names[i] = getContext().getResources().getString(R.string.settingsDefault);
-                continue;
-            }
-            Locale locale = LocaleListCompat.forLanguageTags(values[i]).get(0);
-            if (locale == null)
-                names[i] = values[i];
-            else
-                names[i] = locale.getDisplayName();
-        }
+        String[] values = {LanguageHelper.SYSTEM, LanguageHelper.ZH, LanguageHelper.EN};
+        String[] names = {
+                getString(R.string.phyerma_lang_system),
+                getString(R.string.phyerma_lang_zh),
+                getString(R.string.phyerma_lang_en)
+        };
 
         lp.setEntries(names);
         lp.setEntryValues(values);
 
         lp.setOnPreferenceChangeListener((preference, newValue) -> {
-            if (newValue.toString().equals("*"))
-                AppCompatDelegate.setApplicationLocales(LocaleListCompat.getEmptyLocaleList());
-            else
-                AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(newValue.toString()));
+            LanguageHelper.apply(newValue.toString());
             updateCurrentLanguage();
             return true;
         });

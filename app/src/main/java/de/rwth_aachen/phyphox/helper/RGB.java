@@ -207,7 +207,8 @@ public class RGB implements Serializable {
     }
 
     public RGB overlayTextColor() {
-        if (luminance() > 0.7)
+        // Equal-contrast pivot between white and black is ~0.184 relative luminance.
+        if (luminance() > 0.184)
             return new RGB(0x000000);
         else
             return new RGB(0xffffff);

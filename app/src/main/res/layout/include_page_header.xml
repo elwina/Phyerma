@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pageHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/phyphox_black_60"
+    android:elevation="8dp">
+
+    <LinearLayout
+        android:id="@+id/headerBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@id/languageToggle"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_phyerma_logo"
+            android:theme="@style/PhyermaUntintedImage"
+            android:tint="@null"
+            app:tint="@null" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/phyphox_white_100"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/headerSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/phyerma_tagline"
+                android:textColor="@color/phyphox_white_70"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/languageToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/headerBrand"
+        android:layout_alignBottom="@id/headerBrand"
+        android:gravity="center"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_lang_chip"
+        android:contentDescription="@string/phyerma_lang_title"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
+        android:text="@string/phyerma_lang_chip_en"
+        android:textColor="@color/phyphox_white_90"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/credits"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/titleIconSize"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@id/headerBrand"
+        android:layout_alignBottom="@id/headerBrand"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/info"
+        android:visibility="gone"
+        app:srcCompat="@drawable/info"
+        app:tint="@color/phyphox_white_90" />
+</RelativeLayout>

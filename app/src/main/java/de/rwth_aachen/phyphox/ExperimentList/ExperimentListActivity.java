@@ -113,6 +113,8 @@ import de.rwth_aachen.phyphox.SettingsActivity.SettingsActivity;
 import de.rwth_aachen.phyphox.SettingsActivity.SettingsFragment;
 import de.rwth_aachen.phyphox.camera.depth.DepthInput;
 import de.rwth_aachen.phyphox.camera.helper.CameraHelper;
+import de.rwth_aachen.phyphox.device.BottomNavHelper;
+import de.rwth_aachen.phyphox.device.LanguageHelper;
 
 public class ExperimentListActivity extends AppCompatActivity {
 
@@ -196,11 +198,14 @@ public class ExperimentListActivity extends AppCompatActivity {
             showSupportHintIfRequired();
         }
 
-        WindowInsetHelper.setInsets(findViewById(R.id.experimentList), WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.PADDING);
+        WindowInsetHelper.setInsets(findViewById(R.id.experimentList), WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.IGNORE);
         WindowInsetHelper.setInsets(findViewById(R.id.expListHeader), WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.IGNORE);
-        WindowInsetHelper.setInsets(findViewById(R.id.newExperiment), WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.MARGIN, WindowInsetHelper.ApplyTo.MARGIN);
+        WindowInsetHelper.setInsets(findViewById(R.id.newExperiment), WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.MARGIN, WindowInsetHelper.ApplyTo.IGNORE);
+        WindowInsetHelper.setInsets(findViewById(R.id.mainBottomNav), WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.IGNORE, WindowInsetHelper.ApplyTo.PADDING, WindowInsetHelper.ApplyTo.PADDING);
 
         setUpOnClickListener();
+        BottomNavHelper.bind(this, R.id.nav_experiments);
+        LanguageHelper.bind(this);
 
         backCallback = new OnBackPressedCallback(false) {
             @Override

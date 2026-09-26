@@ -1,3 +1,9 @@
+# Phyerma
+
+Phyerma is an open-source fork of [phyphox-android](https://github.com/phyphox/phyphox-android) for Chinese-phone sensor accuracy. The first extra surfaces are a **device page** and a **sensor lab** (SI units, measured noise/rate, phyphox Sensor Database baseline).
+
+Application id: `com.phyerma.app`. The names “phyphox” and “RWTH Aachen University” remain trademarks of the upstream project. Sensor-database snapshots are crowd-sourced by phyphox users ([phyphox.org/sensordb](https://phyphox.org/sensordb/)); refresh with `python tools/import_phyphox_sensordb.py`.
+
 # phyphox: Android
 
 Phyphox is an app that uses the sensors in a smartphone for physics experiments. You can find additional details and examples on https://phyphox.org.

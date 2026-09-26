@@ -44,6 +44,7 @@ public class TranslationsBuildTest {
     //the canonical list uses (its header names exactly these).
     private static String normalize(String qualifier) {
         switch (qualifier) {
+            case "zh":
             case "zh-rCN":
                 return "zh-Hans";
             case "zh-rTW":

@@ -18,7 +18,8 @@
         <androidx.preference.Preference
             android:summary="@string/settingsTranslationMore"
             android:icon="@drawable/setting_translate"
-            android:title="@string/settingsTranslation">
+            android:title="@string/settingsTranslation"
+            app:isPreferenceVisible="false">
             <intent
                 android:action="android.intent.action.VIEW"
                 android:data="@string/translationToWebsiteURL" />

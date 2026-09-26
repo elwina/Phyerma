@@ -5,7 +5,10 @@
     <!-- For now, splash screen shows only in dark theme-->
     <style name="splashTheme" parent="@android:style/Theme.DeviceDefault.NoActionBar">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowSplashScreenBrandingImage">@drawable/rwth_white</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowSplashScreenBackground">@color/phyphox_brand</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_phyerma_logo</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/phyphox_brand</item>
     </style>
 
     <style name="Theme.Phyphox.Dialog.Alert.Light" parent="ThemeOverlay.Material3.Dialog.Alert">
@@ -52,6 +55,11 @@
 
     <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="PhyermaUntintedImage">
+        <item name="android:tint">@null</item>
+        <item name="tint">@null</item>
     </style>
 
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">설정</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="ok">확인</string>
     <string name="stop">중지</string>
     <string name="start">시작</string>
@@ -35,7 +35,6 @@
     <string name="applyZoomSameAxis">다른 그래프: 동일한 축</string>
     <string name="newExperiment">실험 추가</string>
     <string name="newExperimentSimple">간단한 실험 추가</string>
-    <string name="newExperimentPhyphoxInfo">데이터 분석을 포함한 더 고급 실험을 만들고 동료, 학생, 친구들과 공유하려면 phyphox.org를 방문하세요.</string>
     <string name="newExperimentInputTitle">제목</string>
     <string name="newExperimentInputBufferSize">버퍼 크기 (저장할 값의 개수)</string>
     <string name="newExperimentInputRate">센서 측정 주기 (Hz 단위, 0 = 가능한 한 빠르게)</string>
@@ -57,31 +56,16 @@
     <string name="generalErrorDialog">오류가 발생했습니다.</string>
     <string name="help">도움말 및 정보</string>
     <string name="experimentsPhyphoxOrg">실험 아이디어 및 안내</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">자주 묻는 질문</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">원격 제어 도움말</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
     <string name="deviceInfo">기기 정보</string>
     <string name="copyToClipboard">클립보드에 복사</string>
     <string name="deviceInfoCopied">기기 정보가 클립보드에 복사되었습니다.</string>
     <string name="warning">경고</string>
     <string name="donotshowagain">다시 보지 않기</string>
-    <string name="damageWarning">실험 중 휴대폰이 손상되지 않도록 주의해 주세요. 특히 딱딱한 바닥에 떨어뜨리지 않도록 주의하시고, 과도한 자기장에 노출시키지 마세요. phyphox 개발자는 휴대폰 손상에 대해 책임을지지 않습니다.</string>
     <string name="info">정보</string>
     <string name="credits">제작진 및 제공</string>
-    <string name="creditsRWTH">Phyphox®는 아헨 공과대학교(RWTH Aachen University) 제2물리연구소에서 개발되었습니다.</string>
-    <string name="creditsNames">개발 및 콘셉트: 
-\nDr. Sebastian Staacks 
-\n콘셉트: 
-\nProf. Christoph Stampfer 
-\n프로그래밍: 
-\nGaurav Tripathee 
-\nDominik Dorsel 
-\nJonas Gessner 
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox®는 GNU 일반 공중 사용 허가서(GPL)에 따라 배포되는 오픈 소스 소프트웨어입니다. 자세한 정보와 소스 코드 접근권은 http://phyphox.org 를 방문해 주세요. 단, \"phyphox\" 및 \"RWTH Aachen\"이라는 명칭은 등록 상표입니다.</string>
     <string name="creditsLibs">원격 접속용 웹 인터페이스는 GNU 일반 공중 사용 허가서 v2를 따르는 Java Lightweight HTTP Server(jlhttp)를 사용하며, MIT 라이선스에 따라 제공되는 JavaScript 라이브러리 \"Chart.js\"(http://chartjs.org)로 데이터를 시각화합니다. 푸리에 변환의 경우 GNU 일반 공중 사용 허가서(버전 2 이상)에 따라 제공되는 FFTW 라이브러리(http://fftw.org, Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology)를 사용합니다. GPS 고도 데이터는 EGM84 데이터(30분 해상도)와 GeographicLib(https://geographiclib.sourceforge.io/, MIT/X11 라이선스)의 이식된 기능을 사용하여 WGS84 타원체에서 EGM84 지오이드로 변환됩니다.</string>
     <string name="sensorLinearAcceleration">선형 가속도</string>
     <string name="sensorGravity">중력</string>
@@ -105,7 +89,6 @@
     <string name="sensorNotAvailableWarningText1">센서</string>
     <string name="sensorNotAvailableWarningText2">을(를) 사용할 수 없습니다. 이는 일반적으로 기기에 해당 유형의 센서가 탑재되어 있지 않음을 의미합니다.</string>
     <string name="sensorNotAvailableWarningMoreInfo">자세한 정보</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="tryagain">다시 시도</string>
     <string name="doContinue">계속</string>
     <string name="close">닫기</string>
@@ -132,10 +115,8 @@
     <string name="enableTimedRun">타이머 실행</string>
     <string name="export">데이터 내보내기</string>
     <string name="export_empty">이 실험 구성에는 내보낼 데이터가 정의되어 있지 않습니다. 오류라고 생각되시면 QR 코드나 구성 파일의 제공자에게 문의하세요.</string>
-    <string name="export_subject">phyphox 데이터</string>
     <string name="export_pick_share">내보내기 방식 선택</string>
     <string name="share">스크린샷 공유</string>
-    <string name="share_subject">phyphox 스크린샷</string>
     <string name="share_pick_share">공유 방식 선택</string>
     <string name="remoteServer">원격 접속 허용</string>
     <string name="remoteServerWarning">수집된 데이터에 대한 원격 접속을 활성화하려 합니다. 신뢰할 수 있는 네트워크에서만 진행하세요! 또한 많은 기업이나 대학 네트워크에서는 기기 간 직접 접속이 불가능할 수 있습니다.
@@ -169,22 +150,18 @@
     <string name="save_state_title">제목</string>
     <string name="save_state_save">보관함으로</string>
     <string name="save_state_share">공유</string>
-    <string name="save_state_subject">phyphox 실험 기록</string>
     <string name="save_state_default_title">측정</string>
     <string name="save_state_success">실험 기록이 보관함에 저장되었습니다.</string>
     <string name="open_zip_title">실험 세트 열기</string>
     <string name="open_zip_dialog_instructions">이 리소스에는 여러 실험이 포함되어 있습니다. 하나를 선택해 열고 보관함에 저장하거나, 아래 버튼을 사용해 모두 한 번에 보관함에 저장할 수 있습니다.</string>
     <string name="open_save_all">모두 저장</string>
     <string name="open_bluetooth_assets_title">블루투스 기기용 실험</string>
-    <string name="open_bluetooth_assets">Phyphox에서 사용 중인 기기에 맞는 다음 실험들을 제공합니다. 바로 열어 사용하거나, 모두 보관함에 추가하여 메인 메뉴에서 쉽게 접근할 수 있습니다.</string>
     <string name="timedRun">타이머 실행</string>
     <string name="pick_exportSets">내보낼 데이터 세트를 선택하세요.</string>
     <string name="pick_exportFormat">데이터 형식을 선택하세요.</string>
     <string name="noDrawableData">표시할 데이터가 없습니다.</string>
     <string name="categoryNewExperiment">간단한 사용자 지정 실험</string>
     <string name="categoryRawSensor">기본 센서(raw sensors)</string>
-    <string name="categoryPhyphoxOrg">Phyphox에 기여하기</string>
-    <string name="categoryPhyphoxOrgHint">목록 하단에 phyphox를 후원할 수 있는 새로운 옵션이 있습니다.</string>
     <string name="experimentinfo_hint">이 실험의 사용 방법을 알아보려면 실험 정보를 확인하세요.</string>
     <string name="start_hint">삼각형 버튼을 터치하여 실험을 시작하세요.</string>
     <string name="bluetooth">블루투스 저전력 (BLE)</string>
@@ -221,17 +198,13 @@
     <string name="bt_error_discovering">블루투스 기기의 서비스를 검색하는 중 오류가 발생했습니다.</string>
     <string name="bt_fail_reading">읽기 작업이 성공하지 못했습니다.</string>
     <string name="bt_fail_writing">쓰기 작업이 성공하지 못했습니다.</string>
-    <string name="bt_more_info_link_text">사용 중인 기기가 지원되지 않는 경우, \"자세한 정보\"를 선택하여 웹사이트에서 phyphox의 유연한 블루투스 저전력(BLE) 지원에 대해 자세히 알아보세요.</string>
     <string name="bt_more_info_link_button">자세한 정보</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">개인정보 보호 경고</string>
     <string name="networkVisitPrivacyURL">개인정보 처리방침</string>
-    <string name="networkPrivacyInfo">이 실험은 네트워크 연결을 사용하므로 실험 데이터가 네트워크 서비스로 전송될 수 있습니다. 아래 개인정보 처리방침 버튼을 누르면 이 실험의 제작자가 제공하는 개인정보 처리방침 웹사이트로 이동하여 자세한 내용을 확인할 수 있습니다. 네트워크 서비스가 로컬 기기가 아닌 경우, 실험을 시작할 때 phyphox가 다음 정보를 전송할 수 있음을 유의하세요:</string>
     <string name="networkPrivacyUniqueID">이 기기 및 네트워크 서비스에 고유하게 부여된 식별자(ID)로, 이 실험 구성을 통해 이 기기에서 전송된 모든 데이터를 매칭할 수 있습니다.</string>
     <string name="networkPrivacySensorData">다음 센서의 데이터:</string>
     <string name="networkPrivacySensorMicrophone">마이크 녹음 파일 또는 녹음에서 추출된 데이터.</string>
     <string name="networkPrivacySensorLocation">위치 데이터(GPS 데이터 등).</string>
-    <string name="networkPrivacyDeviceInfo">기기 모델 및/또는 phyphox 버전에 대한 상세 정보.</string>
     <string name="networkPrivacySensorInfo">다음 센서에 대한 기술적 상세 정보:</string>
     <string name="timedRunBeeps">음향 신호</string>
     <string name="beeperCountdown">카운트다운 소리</string>
@@ -372,7 +345,6 @@
     <string name="settings_mode_dark">켜짐 (기본값)</string>
     <string name="settings_mode_no_dark">꺼짐</string>
     <string name="settings_mode_dark_system">시스템 설정에 따름</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
     <string name="cameraFront">전면</string>
     <string name="cameraBack">후면</string>
     <string name="off">꺼짐</string>
@@ -426,9 +398,6 @@
     <string name="common_unit_short_micro_meter">μm</string>
     <string name="common_quantity_short_wavelength">λ</string>
     <string name="spectrum_orientation">방향</string>
-    <string name="localNetworkLoadMessage">이 주소에서 실험을 불러올 수 없습니다. 로컬 네트워크의 기기에서 제공되는 경우, phyphox에 로컬 네트워크 접근 권한이 필요합니다. 권한을 허용하고 다시 시도하시겠습니까\?</string>
-    <string name="localNetworkExperimentMessage">이 실험은 로컬 네트워크의 기기 연결을 사용합니다. 해당 기기에 도달하려면 phyphox에 로컬 네트워크 접근 권한이 필요합니다.</string>
     <string name="localNetworkDeniedHint">로컬 네트워크 권한이 없으면 로컬 네트워크의 기기 연결에 실패합니다.</string>
     <string name="remoteServerPortInUseTitle">원격 접속을 활성화할 수 없습니다</string>
-    <string name="remoteServerPortInUse">이 기기의 다른 앱에서 포트를 이미 사용 중이므로 원격 접속을 활성화할 수 없습니다. 해당 포트를 사용 중인 앱을 종료하거나 phyphox 설정에서 다른 포트를 지정하세요.</string>
 </resources>

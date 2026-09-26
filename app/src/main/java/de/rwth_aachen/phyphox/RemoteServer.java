@@ -626,7 +626,7 @@ public class RemoteServer {
 
     //The logo handler simply reads the logo from resources and sends it
     public int handleLogo(Request request, Response response) throws IOException {
-        InputStream inputStream = context.getAssets().open("remote/phyphox_orange.png");
+        InputStream inputStream = context.getAssets().open("phyerma-logo.png");
         return respond(response, "image/png", inputStream, -1);
     }
 

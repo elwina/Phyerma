@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ფაიფოქსი</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">პარამეტრები</string>
-    <string name="title_activity_experiment">ფაიფოქსი</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">მასშტაბი</string>
     <string name="graph_tools_pick">აირჩიე მონაცემი</string>
     <string name="graph_tools_more">დამატებითი ხელსაწყოები</string>
@@ -30,7 +30,6 @@
     <string name="applyZoomSameAxis">სხვა გრაფიკები: იგივე ღერძები</string>
     <string name="newExperiment">დაამატე ექსპერიმენტი</string>
     <string name="newExperimentSimple">დაამატე მარტივი ექსპერიმენტი</string>
-    <string name="newExperimentPhyphoxInfo">ეწვიე phyphox.org ვებგვერდს უფრო რთული ექსპერიმენტების შესაქმენლად, მანაცებეის ანალიზის ჩათვლით და გაუზიარე კოლეგებს, სტუდენტებს და მეგობრებს.</string>
     <string name="newExperimentInputTitle">დასახელება</string>
     <string name="newExperimentInputBufferSize">სარეზერვო მარაგი (დასამახსოვრებელი მონაცემების რაოდენობა)</string>
     <string name="newExperimentInputRate">სენსორის სიხშირე (ჰც-ში, 0 = ყველაზე ჩქარი)</string>
@@ -52,31 +51,16 @@
     <string name="generalErrorDialog">დაფიქსირდა შეცდომა.</string>
     <string name="help">დახმარება და ინფორმაცია</string>
     <string name="experimentsPhyphoxOrg">ექსპრეიმენტების იდეები და ინსტრუქციები</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">ხშირად დასმული შეკთხვები</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">დისტანციური კონტროლის დახმარება</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#ka</string>
     <string name="deviceInfo">მოწყობილობაზე ინფორმაცია</string>
     <string name="copyToClipboard">დაკოპირება</string>
     <string name="deviceInfoCopied">მოწყობილობის ინფორმაცია დაკოპირდა.</string>
     <string name="warning">გაფრთხილება</string>
     <string name="donotshowagain">აღარ მაჩვენო</string>
-    <string name="damageWarning">მოუფრთხილდი ტელეფონს ექპერიმენტების ჩატარებისას, რადგან არ დაიზიანდეს. მიაქციე ყურადღება რომ არ დავარდეს მყარ ზედაპირებზე და არ მიიტანო დიდ მაგნიტურ ველებთან. ფაიფოქსის ავტორები არ არიან პასუხისმგებლები შენი ტელეფონის დაზიანებაზე.</string>
     <string name="info">ინფორმაცია</string>
     <string name="credits">კრედიტები</string>
-    <string name="creditsRWTH">phyphox® შეიქმნა RWTH Aachen University-ის მეორე ფიზიკის ინსტიტუტში.</string>
-    <string name="creditsNames">განვითარება და კოცეფცია:
-\nDr. Sebastian Staacks
-\nკონცეფცია:
-\nProf. Christoph Stampfer
-\nპროგრამირება:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox® არის ღია წვდომის პროგრამა შემქნილი GNU General Public Licence-ს მიერ. გთხოვთ ეწვიოთ http://phyphox.org დამატებითი ინფორმაციისთვის და ასევე კოდზე წვდომის მისაღებად. თუმცა დასახელება \"phyphox\" და\"RWTH Aachen\" არიან დარეგისტრირებული საფირმო ნიშნები.</string>
     <string name="creditsLibs">ვებ-ინტერფეისი დისტანციური წვდომისთვის იყენებს JavaScript-ის ბიბლიოთეკა \"Chart.js\" (http://chartjs.org), ხელმისაწვდომია MIT-ის ლიცენზიით. ფურიე გარდაქმნებისთვის ჩვენ ვიყენებთ FFTW ბიბლიოთეკას (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, ხელმისაწვდომია GNU General Public Licence (version 2 or later) ლიცენზიით. GPS სიმაღლის მონაცემები კონვერტირდება WGS84 ellipsoid-დან EGM84 geoid-ში EGM84 data (30\' resolution)-ის გამოყენებით და დაპორტირებული ფუნქციები GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 licence)-დან.</string>
     <string name="sensorLinearAcceleration">წრფივი აჩქარება</string>
     <string name="sensorGravity">გარავიტაცია</string>
@@ -100,7 +84,6 @@
     <string name="sensorNotAvailableWarningText1">სენსორი</string>
     <string name="sensorNotAvailableWarningText2">არ არის ხელმისაწვდომი. ხშირად ეს ნიშნავს, რომ თქვენს მოწყობილობას არ აქვს ასეთი ტიპის სენსორი.</string>
     <string name="sensorNotAvailableWarningMoreInfo">დამატებითი ინფორმაცია</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">დიახ</string>
     <string name="tryagain">სცადეთ თავიდან</string>
     <string name="doContinue">განაგრძე</string>
@@ -131,10 +114,8 @@
     <string name="enableTimedRun">გააკეთე დროის ათვლა</string>
     <string name="export">მონაცემების ექსპორტი</string>
     <string name="export_empty">ესეთი ექპრეიმენტის კონფიგურაცია არ მოითხოვს მონაცმებეის ექპორტს. თუ ეს შეცდომაა, გთხოვთ დაუკავშირდეთ QR კოდის წყაროს ან კონფიგურაციის ფაილს.</string>
-    <string name="export_subject">მონაცემები ფაიფოქსიდან</string>
     <string name="export_pick_share">ამოირჩიე ექსპორტის მეთოდი</string>
     <string name="share">გააზიარე სკრინშოტი</string>
-    <string name="share_subject">სკრინშოტი ფაიფოქსიდან</string>
     <string name="share_pick_share">აირჩიე გაზიარების მეთოდი</string>
     <string name="remoteServer">ნება დართე დისტანციურ წვდომას</string>
     <string name="remoteServerWarning">შენ აპირებ რომ ჩართო დისტანციური წვდომა მონაცემებე. ეს მხოლოდ სანდო მოწყობილობებზე უნდა ქნა. ასევე გაითვალისწინე რომ პირდაპირი კავშირი შეიძლება შეუძლებელი იყოს კოპრორატიული და უნივერსიტეტის ინტერნეტის გამო.
@@ -168,22 +149,18 @@
     <string name="save_state_title">დასახელება</string>
     <string name="save_state_save">კოლექციაში</string>
     <string name="save_state_share">გაზიარება</string>
-    <string name="save_state_subject">ექპერიმენტის მდოგომარეობა ფაიფოქსისთვის</string>
     <string name="save_state_default_title">გაზომვა</string>
     <string name="save_state_success">მდგომარეობა შენახული იქნა კოლექციაში.</string>
     <string name="open_zip_title">იხსნება ექპერიმენტის ჩამონათვალი</string>
     <string name="open_zip_dialog_instructions">ეს წყარო შეიცავს რამდენიმე ექპერიმენტს. შენ შეგიძლია გახნსა ერთი და შურვილისამებრ შეინახო შენს კოლექციაში ან გამოიყენო ქვედა ღილაკი და ყველა მათგანი ერთდოულად შეინახო კოლექციაში.</string>
     <string name="open_save_all">შენახე ყველა</string>
     <string name="open_bluetooth_assets_title">ექსპერიმენტები ბლუთუზ მოწყობილობისათვის</string>
-    <string name="open_bluetooth_assets">შემდეგი ექსპერიმენტები შენი მოწყობილობისთვის შეიძლება ჩატარდეს ფაიფოქსიდან. შეგიძლია უბრალოდ გახსნა და გამოიყენო ან დაიმატო ისინი შენს კოლექციაში იმისათვის რომ მარტივად მოძებნო მთავარი მენიუდან.</string>
     <string name="timedRun">დროის დათვლა</string>
     <string name="pick_exportSets">ამოირჩიე მონაცემები საექსპორტოდ.</string>
     <string name="pick_exportFormat">ამოირჩიე მონაცემების ფორმატი.</string>
     <string name="noDrawableData">არარის დახატვადი მონაცემები.</string>
     <string name="categoryNewExperiment">მარტივი ექსპერიმენტები</string>
     <string name="categoryRawSensor">დაუმუშავებელი სენსორები</string>
-    <string name="categoryPhyphoxOrg">წვლილი შეიტანეთ ფაიფოქსში</string>
-    <string name="categoryPhyphoxOrgHint">ფაიფოქსის დასახმარებლად ახალი ფუნქციებია სიის ბოლოს.</string>
     <string name="experimentinfo_hint">შეამოწმეთ ექსპერიმენტის ინფორმაცია, იმისათვის რომ გაერკვეთ ექპერიმენტში.</string>
     <string name="start_hint">ექსპერიმენტის დასაწყებად დააჭირეთ სამკუთხედს.</string>
     <string name="bluetooth">ბლუთუზის დაბალი ენერგია</string>
@@ -220,17 +197,13 @@
     <string name="bt_error_discovering">ხარვეზია ბლუთუზ მოწყობილობასთან სერვისის დაკავშირებისას.</string>
     <string name="bt_fail_reading">წაკითხვის ოპერაცია წარუმატებელია.</string>
     <string name="bt_fail_writing">ჩაწერის ოპერაცია წარუმატებელია.</string>
-    <string name="bt_more_info_link_text">თუ თქვენი მოწყობილობა არ არის მხარდაჭერილი დააჭირეთ \"დამატებითი ინფორმაცია\" იმისათვის რომ მეტად გაეცნოთ მოქნილ ბლუთუზ დაბალი ენერგიის ინფორმაციას ფაიფოქსში ან ეწვიეთ ვებგვერდს.</string>
     <string name="bt_more_info_link_button">დამატებითი ინფორმაცია</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">უსაფრთხოების გაფრთხილება</string>
     <string name="networkVisitPrivacyURL">უსაფრთხოების პოლიტიკა</string>
-    <string name="networkPrivacyInfo">ეს ექსპერიმენტი იყენებს ინტერნეტ კავშირს, რაც ნიშნავს იმას რომ ექსპერიმენტის მონაცემები შეიძლება გადაცემულ იქნას ინტერნეტით. მეტი ინფორმაცია შეიძლება იხილოთ უსაფრთოების პოლიტიკაში ქვემოთ, რომელიც გადაგამისამართებთ ჩვენ ვებგვერდზე სადაც ნახავთ უსაფრთხოების პოლიტიკას მოწოდებულს ექსპერიმენტის შემქმნელებისგან. თუ ინტერნეტ კავშირი არ არის ადგილობრივი, ფაიფოქსმა შეიძლება გადასცეშ შემდეგი ინფორმაციები ექპერიმენტის დაწყებისას:</string>
     <string name="networkPrivacyUniqueID">მოწყობილობის id და კავშირის სერვისი, რომელიც გამოიყენება მონაცემების დასაფიქსირებლად, როდესაც იგზავნება ექსპერიმენტის კონფიგურაციით.</string>
     <string name="networkPrivacySensorData">მონაცემები სენსორებიდან:</string>
     <string name="networkPrivacySensorMicrophone">ჩანაწერები ან მიკროფონის მონაცემები ჩანაწერებიდან.</string>
     <string name="networkPrivacySensorLocation">მდებარეობის მონაცემები (GPS მონაცემები ან მსგავსი).</string>
-    <string name="networkPrivacyDeviceInfo">დეტალური ინფორმაცია შენი მოწყობილობის მოდელზე და/ან ფაიფოქსის ვერსია.</string>
     <string name="networkPrivacySensorInfo">ტექნიკური დეტალები სენსორებზე:</string>
     <string name="timedRunBeeps">აკუსტიკური სიგნალები</string>
     <string name="beeperCountdown">უკუდათვლის ხმები</string>
@@ -372,5 +345,4 @@
     <string name="settings_mode_dark">ჩართული (მთავარი)</string>
     <string name="settings_mode_no_dark">გამორთული</string>
     <string name="settings_mode_dark_system">როგორც სისტემა</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
 </resources>

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privatnost</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Postavke</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">Pomicanje i zumiranje</string>
     <string name="graph_tools_pick">Izaberite podatke</string>
     <string name="graph_tools_more">Više alata</string>
@@ -31,7 +30,6 @@
     <string name="applyZoomSameAxis">Drugi grafovi: Ista os</string>
     <string name="newExperiment">Dodajte pokuse</string>
     <string name="newExperimentSimple">Dodajte jednostavni pokus</string>
-    <string name="newExperimentPhyphoxInfo">Posjetite phyphox.org kako bi ste izradili napredne pokuse uključujući analizu podataka i podjelite ih s kolegama, studentima i prijateljima.</string>
     <string name="newExperimentInputTitle">Naslov</string>
     <string name="newExperimentInputBufferSize">Veličina bufera (broj vrijednosti koji će se spremiti)</string>
     <string name="newExperimentInputRate">Brzina Senzora ( u Hz, 0 = najbrža moguća)</string>
@@ -53,31 +51,16 @@
     <string name="generalErrorDialog">Dogodila se pogreška.</string>
     <string name="help">Pomoć i informacije</string>
     <string name="experimentsPhyphoxOrg">Ideje i upute pokusa</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Često postavljana pitanja</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Pomoć za daljinsko upravljanje</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#hr</string>
     <string name="deviceInfo">Informacije o uređaju</string>
     <string name="copyToClipboard">Kopirajte u međuspremnik</string>
     <string name="deviceInfoCopied">Informacije o uređaju su kopirane u međuspremnik.</string>
     <string name="warning">Upozorenje</string>
     <string name="donotshowagain">Ne prikazuj ponovno</string>
-    <string name="damageWarning">Molim Vas budite oprezni kako ne bi ste oštetili vaš telefon tijekom pokusa. Molim Vas posebno pazite da ga ne ispustite na tvrde površine i da ga ne izlažete prejakim magnetskim poljima. Autori phyphox-a nisu odgovorni za eventualna oštećenja Vašeg telefona.</string>
     <string name="info">Informacije</string>
     <string name="credits">Bodovi</string>
-    <string name="creditsRWTH">phyphox® je kreiran na drugom Institutu Fizike na RWTH Aachen Sveučilištu.</string>
-    <string name="creditsNames">Razvoj i koncept:
-\nDr. Sebastian Staacks
-\nKoncept:
-\nProf. Christoph Stampfer
-\nProgramiranje:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox® je program otvorenog koda objavljen pod GNU General Public Licence. Molim Vas posjetite http://phyphox.org za daljnje informacije i za pristup njegovom izvornom kodu. Ali, ime \"phyphox\" i \"RWTH Aachen\" su registritani zaštitni znakovi.</string>
     <string name="creditsLibs">Internet sučelje za daljinsko upravljanje koristi laki Java HTTP server (jhttp) pod GNU generičkom javnom licencom v2 i grafički prikazuje podatke pomoću Javascript biblioteke \"Chart.js\"(http://chartjs.org), dostupne pod MIT licencom. Za Furijerove transformacije, koristimo FFTW biblioteku (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, koja je dostupna pod GNU General Public Licence (verzija 2 ili novija). PodaciGPS elevacije su pretvoreni iz WGS84 elipsoida u EGM84 geoid koristeći EGM84 podatke (30\' rezolucija) i prenesenom funkcijom iz GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 licenca).</string>
     <string name="sensorLinearAcceleration">Linearno ubrzanje</string>
     <string name="sensorGravity">Sila teža</string>
@@ -101,7 +84,6 @@
     <string name="sensorNotAvailableWarningText1">Senzor</string>
     <string name="sensorNotAvailableWarningText2">nije dostupan. Ovo obično znači da Vaš uređaj, jednostavno, nema ovaj tip senzora.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Više informacija</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">U redu</string>
     <string name="tryagain">Pokušajte ponovno</string>
     <string name="doContinue">Nastavi</string>
@@ -132,10 +114,8 @@
     <string name="enableTimedRun">Omogući vremenski mjereno izvršavanje</string>
     <string name="export">Izvezi podatke</string>
     <string name="export_empty">Postavke ovog pokusa ne određuju podatke za izvoz. Ako je ovo pogreška, molim Vas kontaktirajte izvor QR koda ili konfugiracijske datoteke.</string>
-    <string name="export_subject">Podaci iz phyphonix-a</string>
     <string name="export_pick_share">Izaverite metodu izvoza</string>
     <string name="share">Podijelite snimku zaslona</string>
-    <string name="share_subject">Snimka zaslona od phyphonix-a</string>
     <string name="share_pick_share">Izaberite metodu dijeljenja</string>
     <string name="remoteServer">Dopustite daljinski pristup</string>
     <string name="remoteServerWarning">Omogućiti ćete upravljanje na daljinu prikupljenim podacima. Ovo bi trebali raditi samo na povjerljivoj mreži! Također pripazite, izravan pristup između uređaja možda nije moguć na mnogim poslovnim i učilišnim mrežama.
@@ -169,22 +149,18 @@
     <string name="save_state_title">Naslov</string>
     <string name="save_state_save">U kolekciju</string>
     <string name="save_state_share">Podijeli</string>
-    <string name="save_state_subject">Stanje pokusa za phyphox</string>
     <string name="save_state_default_title">Mjerenje</string>
     <string name="save_state_success">Stanje je spremljeno u Vašu kolekciju.</string>
     <string name="open_zip_title">Otvaranje grupe pokusa</string>
     <string name="open_zip_dialog_instructions">Ovaj izvor sadrži više pokusa. Možete odabrati jedan radi otvaranja, ili spremanja u Vašu kolekciju, ili spremiti ih sve, odjednom, u Vašu kolekciju koristeći dugme ispod.</string>
     <string name="open_save_all">Spremite sve</string>
     <string name="open_bluetooth_assets_title">Pokusi za Bluetooth uređaj</string>
-    <string name="open_bluetooth_assets">Phyphox omogućuje sljedeće pokuse za Vaš uređaj. Možete ih jednostavno otvoriti i koristiti ili ih dodati u Vašu kolekciju radi jednostavnog pristupa iz glavnog izbornika.</string>
     <string name="timedRun">Mjereno izvođenje</string>
     <string name="pick_exportSets">Izaberite grupe podataka za izvoz.</string>
     <string name="pick_exportFormat">Izaberite format podataka.</string>
     <string name="noDrawableData">Nema podatka za crtanje.</string>
     <string name="categoryNewExperiment">Jednostavni prilagođeni pokusi</string>
     <string name="categoryRawSensor">Sirovi Senzori</string>
-    <string name="categoryPhyphoxOrg">Pridonesite phyphox-u</string>
-    <string name="categoryPhyphoxOrgHint">Postoje nove mogućnosti podrške phyphox-u na dnu liste.</string>
     <string name="experimentinfo_hint">Provjerite informacije pokusa kako bi ste naučili kako ga koristiti.</string>
     <string name="start_hint">Dodirnite trokut kako bi ste pokrenuli pokus.</string>
     <string name="bluetooth">Bluetooth Niske Energije</string>
@@ -221,17 +197,13 @@
     <string name="bt_error_discovering">Pogreška prilikom otkrivanja usluga bluetooth uređaja.</string>
     <string name="bt_fail_reading">Operacija čitanja nije bila uspješna.</string>
     <string name="bt_fail_writing">Operacija pisanja nije bila uspješna.</string>
-    <string name="bt_more_info_link_text">Ako Vaš uređaj nije podržan, izaberite \"više informacija\" kako bi ste naučili više o prilagodljivoj Bluetooth Low Energy podršci u phyphonix-u na našoj stranici.</string>
     <string name="bt_more_info_link_button">Više informacija</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">Upozorenje o privatnosti</string>
     <string name="networkVisitPrivacyURL">Politika privatnosti</string>
-    <string name="networkPrivacyInfo">Ovaj pokus koristi mrežnu vezu, što znači da se podatci pokusa mogu prenijeti na mrežnu uslugu. Više detalja možete pronaći klikom na dugme smjernice za privatnost ispod, koje će vas odvesti na web lokaciju s politikom privatnosti koju je stvorio autor ovog pokusa. Ako mrežna usluga nije lokalni uređaj, trebali biste biti svjesni da phyphox može prenijeti sljedeće informacije ako pokrenete ovaj pokus:</string>
     <string name="networkPrivacyUniqueID">ID koji je jedinstven za ovaj uređaj i mrežnu uslugu, koji omogućuju podudaranje svih podataka poslanih s ovog uređaja kroz ovu konfiguraciju pokusa.</string>
     <string name="networkPrivacySensorData">Podaci iz sljedećeg senzora:</string>
     <string name="networkPrivacySensorMicrophone">Snimke ili podaci izvedeni iz snimki s mikrofona.</string>
     <string name="networkPrivacySensorLocation">Podaci o lokaciji (GPS podaci, ili slično).</string>
-    <string name="networkPrivacyDeviceInfo">Detaljne informacije o modelu Vašeg uređaja i/ili inačice phyphonix-a.</string>
     <string name="networkPrivacySensorInfo">Tehnički detalji o sljedećim senzorima:</string>
     <string name="timedRunBeeps">Zvučni signali</string>
     <string name="beeperCountdown">Zvukovi odbrojavanja</string>

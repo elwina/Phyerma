@@ -5,20 +5,16 @@
     <string name="faqPhyphoxOrg">پرسش‌های متداول</string>
     <string name="sensorLight">نور</string>
     <string name="sensorGyroscope">چرخش‌نما</string>
-    <string name="app_name">فیفاکس</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">تنظیمات</string>
-    <string name="title_activity_experiment">فیفاکس</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">افزودن آزمایش‌ها</string>
-    <string name="newExperimentPhyphoxInfo">از phyphox.org دیدن کرده تا آزمایش‌های پیشرفته‌تری را شامل تجزیه و تحلیل داده‌ها ایجاد کنید و آن‌ها را با همکاران، شاگردان و دوستان خود به اشتراک بگذارید.</string>
     <string name="help">راهنما و اطلاعات</string>
     <string name="experimentsPhyphoxOrg">ایده‌ها و دستورکارهای آزمایش</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">راهنمای کنترل از راه دور</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="warning">هشدار</string>
     <string name="donotshowagain">دوباره نمایش نده</string>
     <string name="info">اطلاعات</string>
-    <string name="creditsRWTH">فیفاکس در انستیتوی دوم فیزیک در دانشگاه فنی آخن (RWTH Aachen University) ایجاد شده است.</string>
     <string name="sensorLinearAcceleration">شتاب خطی</string>
     <string name="sensorAccelerometer">شتاب‌سنج</string>
     <string name="sensorMagneticField">میدان مغناطیسی</string>
@@ -62,13 +58,8 @@
     <string name="pick_exportFormat">فرمت داده‌ها را انتخاب کنید.</string>
     <string name="experimentinfo_hint">اطلاعات آزمایش را بررسی کنید تا بیاموزید چگونه از این آزمایش استفاده کنید.</string>
     <string name="newExperimentInputRate">نرخ نمونه‌برداری حسگر (به Hz، ۰ = سریع‌ترین حالت ممکن)</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
-    <string name="damageWarning">لطفا مراقب باشید در حین انجام آزمایش به تلفن همراه خود آسیبی نرسانید. لطفا مراقبت ویژه‌ای را برای جلوگیری از افتادن آن بر روی سطوح سخت انجام دهید و آن را در معرض میدان‌های مغناطیسی شدید قرار ندهید. سازندگان فیفاکس در قبال هرگونه آسیب به تلفن همراه شما مسئولیتی ندارند.</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="timedRunStartDelay">تاخیر در آغاز (s)</string>
-    <string name="export_subject">داده‌ها از فیفاکس</string>
-    <string name="share_subject">اسکرین‌شات از فیفاکس</string>
     <string name="remoteServer">اجازه به دسترسی از راه دور</string>
     <string name="hotspotSettings">تنظیمات هات‌اسپات</string>
     <string name="switchToPhoneLayout">نما: باریک</string>
@@ -87,21 +78,11 @@
     <string name="save_state">ذخیره‌ وضعیت آزمایش</string>
     <string name="save_state_category">وضعیت آزمایش ذخیره شده</string>
     <string name="save_state_message">شما می‌توانید وضعیت این آزمایش از جمله داده‌های خود را در مجموعه خود ذخیره کنید یا آن را با یک برنامه شخص ثالث به اشتراک بگذارید.</string>
-    <string name="save_state_subject">وضعیت آزمایش برای فیفاکس</string>
     <string name="save_state_success">وضعیت آزمایش در مجموعه شما ذخیره شده است.</string>
     <string name="timedRun">آزمایش زمان‌بندی شده</string>
     <string name="pick_exportSets">دسته داده‌ها را برای خروجی گرفتن انتخاب کنید.</string>
     <string name="noDrawableData">بدون داده‌های قابل رسم.</string>
     <string name="categoryRawSensor">حسگرهای خام</string>
-    <string name="creditsNames">Development and Concept:
-\nDr. Sebastian Staacks
-\nConcept:
-\nProf. Christoph Stampfer
-\nProgramming:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">رابط وب برای دسترسی از راه دور، از کتابخانه‌‌ی جاوااسکریپت «Chart.js» که تحت مجوز MIT در دسترس‌ است، استفاده می‌کند. برای تبدیل فوریه، از کتابخانه‌ی FFTW استفاده می‌کند.</string>
     <string name="remoteServerWarning">شما در آستانه‌ فعال کردن دسترسی از راه دور به داده‌های به‌دست آمده هستید. شما تنها باید آن را در یک شبکه مورد اعتماد انجام دهید! همچنین توجه داشته باشید که دسترسی مستقیم بین دستگاه‌ها ممکن است در بسیاری از شبکه‌های شرکت یا دانشگاه امکان‌پذیر نباشد.
 \n
@@ -145,7 +126,6 @@
     <string name="bt_exception_device_name">نام</string>
     <string name="bt_exception_notification_fail">ناموفق بود.</string>
     <string name="bt_more_info_link_button">اطلاعات بیشتر</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="applyZoomThis">تنها این نمودار</string>
     <string name="applyZoomSameVariable">نمودارهای دیگر: متغیر یکسان</string>
     <string name="applyZoomSameUnit">نمودارهای دیگر: یکای یکسان</string>
@@ -160,7 +140,6 @@
     <string name="force_gnss">تنها موقعیت ماهواره‌ای</string>
     <string name="open_save_all">ذخیره همه</string>
     <string name="open_bluetooth_assets_title">آزمایش‌ها برای دستگاه دارای بلوتوث</string>
-    <string name="open_bluetooth_assets">آزمایش‌های زیر برای دستگاه شما توسط فیفاکس پشتیبانی می‌شود. می‌توانید آنها را باز کرده و استفاده کنید یا همگی را به مجموعه خود افزوده تا به‌آسانی از منو اصلی به آنها دسترسی داشته باشید.</string>
     <string name="bluetooth">بلوتوث کم انرژی</string>
     <string name="bt_android_version">بلوتوث کم انرژی در نسخه‌های پایین‌تر از ۴.۳ اندروید پشتیبانی نمی‌شود.</string>
     <string name="bt_scanning_specific2">در نام خود…</string>
@@ -177,7 +156,6 @@
     <string name="bt_error_discovering">خطا در هنگام یافتن سرویس‌های دستگاه دارای بلوتوث.</string>
     <string name="bt_fail_reading">فرایند خواندن ناموفق بود.</string>
     <string name="bt_fail_writing">فرایند نوشتن ناموفق بود.</string>
-    <string name="bt_more_info_link_text">اگر دستگاه شما پشتیبانی نشده است، «اطلاعات بیشتر» را انتخاب کنید تا درباره پشتیبانی فیفاکس از بلوتوث کم‌انرژی و تنظیم‌پذیر بیشتر بیاموزید.</string>
     <string name="graph_tools_export">خروجی گرفتن از این مجموعه‌ی داده‌ها</string>
     <string name="applyZoomTitle">اجرای بزرگنمایی</string>
     <string name="applyZoomExplanation">هنگامی که حالت تعاملی این نمودار را می‌بندید، می‌توانید انتخاب کنید آیا می‌خواهید بزرگنمایی را نگهداری کنید.</string>
@@ -203,7 +181,6 @@
     <string name="newExperimentQRBadCRC">چک‌سام نامعتبر است. این بدان معنی است که یا کد QR خراب است یا اشکالی هنگام پویش آن رخ داده است.</string>
     <string name="copyToClipboard">رونوشت‌برداری به کلیپ‌بورد</string>
     <string name="deviceInfoCopied">اطلاعات دستگاه در کلیپ‌بورد رونوشت‌برداری شده است.</string>
-    <string name="gpl">فیفاکس «Phyphox» یک نرم‌افزار متن‌باز است که تحت پروانه عمومی همگانی گنو (GNU General Public License) منتشر شده است. لطفا برای اطلاعات بیشتر و دسترسی به کد منبع، از http://phyphox.org دیدن کنید. با این وجود، نام‌های «phyphox» و «RWTH Aachen» نشان‌های تجاری ثبت‌شده‌اند.</string>
     <string name="fontSize">اندازه‌ی فونت</string>
     <string name="open_zip_dialog_instructions">این منبع دربرگیرنده‌ی چند آزمایش است. شما می‌توانید یکی را انتخاب و باز و بصورت اختیاری آن را در مجموعه‌ی خود ذخیره کنید یا اینکه دکمه زیر را فشار دهید تا همه‌ی آن‌ها را بصورت یک‌باره در مجموعه‌ی خود ذخیره کنید.</string>
 </resources>

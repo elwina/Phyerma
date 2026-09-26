@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ಫೈಫಾಕ್ಸ್</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
-    <string name="title_activity_experiment">ಫೈಫಾಕ್ಸ್</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">ಪ್ಯಾನ್ ಮಾಡಿ ಮತ್ತು ಜೂಮ್ ಮಾಡಿ</string>
     <string name="graph_tools_pick">ಡೇಟಾವನ್ನು ಆರಿಸಿ</string>
     <string name="graph_tools_more">ಹೆಚ್ಚಿನ ಉಪಕರಣಗಳು</string>
@@ -31,7 +30,6 @@
     <string name="applyZoomSameAxis">ಇತರ ಗ್ರಾಫ್‌ಗಳು: ಅದೇ ಅಕ್ಷ</string>
     <string name="newExperiment">ಪ್ರಯೋಗಗಳನ್ನು ಸೇರಿಸಿ</string>
     <string name="newExperimentSimple">ಸರಳ ಪ್ರಯೋಗವನ್ನು ಸೇರಿಸಿ</string>
-    <string name="newExperimentPhyphoxInfo">ಡೇಟಾ ವಿಶ್ಲೇಷಣೆ ಸೇರಿದಂತೆ ಹೆಚ್ಚು ಮುಂದುವರಿದ ಪ್ರಯೋಗಗಳನ್ನು ರಚಿಸಲು ಮತ್ತು ಅವುಗಳನ್ನು ಸಹೋದ್ಯೋಗಿಗಳು, ವಿದ್ಯಾರ್ಥಿಗಳು ಮತ್ತು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಲು www.phyphox.org ವೆಬ್‌ಸೈಟ್‌ಗೆ ಭೇಟಿ ನೀಡಿ.</string>
     <string name="newExperimentInputTitle">ಶೀರ್ಷಿಕೆ</string>
     <string name="newExperimentInputBufferSize">ಬಫರ್ ಗಾತ್ರ (ಸಂಗ್ರಹಿಸಬೇಕಾದ ಮೌಲ್ಯಗಳ ಸಂಖ್ಯೆ)</string>
     <string name="newExperimentInputRate">ಸಂವೇದಕ ದರ (Hz ನಲ್ಲಿ, 0 = ಸಾಧ್ಯವಾದಷ್ಟು ವೇಗವಾಗಿ)</string>
@@ -53,37 +51,16 @@
     <string name="generalErrorDialog">ಒಂದು ದೋಷ ಸಂಭವಿಸಿದೆ.</string>
     <string name="help">ಸಹಾಯ ಮತ್ತು ಮಾಹಿತಿ</string>
     <string name="experimentsPhyphoxOrg">ಪ್ರಯೋಗ ಕಲ್ಪನೆಗಳು ಮತ್ತು ಸೂಚನೆಗಳು</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">ಪದೇ ಪದೇ ಕೇಳಲಾಗುವ ಪ್ರಶ್ನೆಗಳು (FAQ ಗಳು)</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">ರಿಮೋಟ್ ಕಂಟ್ರೋಲ್ ಸಹಾಯ</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#kn</string>
     <string name="deviceInfo">ಸಾಧನದ ಮಾಹಿತಿ</string>
     <string name="copyToClipboard">ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಿ</string>
     <string name="deviceInfoCopied">ಸಾಧನದ ಮಾಹಿತಿಯನ್ನು ನಿಮ್ಮ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ</string>
     <string name="warning">ಎಚ್ಚರಿಕೆ</string>
     <string name="donotshowagain">ಮತ್ತೆ ತೋರಿಸಬೇಡ</string>
-    <string name="damageWarning">ಗಮನಿಸಿ: 
-\n1. ಪ್ರಯೋಗ ಮಾಡುವಾಗ ನಿಮ್ಮ ಫೋನ್‌ಗೆ ಹಾನಿಯಾಗದಂತೆ ದಯವಿಟ್ಟು ಜಾಗರೂಕರಾಗಿರಿ. ಗಟ್ಟಿಯಾದ ಮೇಲ್ಮೈಗಳಲ್ಲಿ ಬೀಳದಂತೆ ದಯವಿಟ್ಟು ವಿಶೇಷ ಕಾಳಜಿ ವಹಿಸಿ.
-\n
-\n2. ಅತಿಯಾದ ಕಾಂತೀಯ ಕ್ಷೇತ್ರಗಳಿಗೆ ಅದನ್ನು ಒಡ್ಡಬೇಡಿ
-\n
-\nಗಮನಿಸಿ: 
-\nಫೈಫಾಕ್ಸ್‌ನ ಲೇಖಕರು/ಎಂಜಿನಿಯರ್‌ಗಳು/ವಿಜ್ಞಾನಿಗಳು ನಿಮ್ಮ ಫೋನ್‌ಗೆ ಯಾವುದೇ ಹಾನಿಗೆ ಜವಾಬ್ದಾರರಾಗಿರುವುದಿಲ್ಲ.</string>
     <string name="info">ಮಾಹಿತಿ</string>
     <string name="credits">ಕ್ರೆಡಿಟ್‌ಗಳು</string>
-    <string name="creditsRWTH">ಜರ್ಮನಿಯ RWTH ಆಚೆನ್ ವಿಶ್ವವಿದ್ಯಾಲಯದ 2 ನೇ ಭೌತಶಾಸ್ತ್ರ ಸಂಸ್ಥೆಯಲ್ಲಿ ಫೈಫಾಕ್ಸ್® ಅನ್ನು ರಚಿಸಲಾಗಿದೆ.</string>
-    <string name="creditsNames">ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಪರಿಕಲ್ಪನೆ:
-\nಡಾ. ಸೆಬಾಸ್ಟಿಯನ್ ಸ್ಟಾಕ್ಸ್
-\nಪರಿಕಲ್ಪನೆ:
-\nಪ್ರೊ. ಕ್ರಿಸ್ಟೋಫ್ ಸ್ಟಾಂಪ್ಫರ್
-\nಪ್ರೋಗ್ರಾಮಿಂಗ್:
-\nಗೌರವ್ ತ್ರಿಪಾಠಿ
-\nಡೊಮಿನಿಕ್ ಡಾರ್ಸೆಲ್
-\nಜೋನಾಸ್ ಗೆಸ್ನರ್
-\nಕ್ಯಾಮಿಲ್ಲಾ ಲುಮ್ಮರ್ಝೈಮ್</string>
-    <string name="gpl">Phyphox® ಎಂಬುದು GNU ಜನರಲ್ ಪಬ್ಲಿಕ್ ಲೈಸೆನ್ಸ್ ಅಡಿಯಲ್ಲಿ ಬಿಡುಗಡೆಯಾದ ಓಪನ್ ಸೋರ್ಸ್ ಸಾಫ್ಟ್‌ವೇರ್ ಆಗಿದೆ. ಹೆಚ್ಚಿನ ಮಾಹಿತಿಗಾಗಿ ಮತ್ತು ಅದರ ಮೂಲ ಕೋಡ್‌ಗೆ ಪ್ರವೇಶ ಪಡೆಯಲು ದಯವಿಟ್ಟು http://phyphox.org ಗೆ ಭೇಟಿ ನೀಡಿ. ಆದಾಗ್ಯೂ, \"phyphox\" ಮತ್ತು \"RWTH ಆಚೆನ್\" ಹೆಸರುಗಳು ನೋಂದಾಯಿತ ಟ್ರೇಡ್‌ಮಾರ್ಕ್‌ಗಳಾಗಿವೆ.</string>
     <string name="creditsLibs">ರಿಮೋಟ್ ಪ್ರವೇಶಕ್ಕಾಗಿ ವೆಬ್-ಇಂಟರ್ಫೇಸ್ GNU ಜನರಲ್ ಪಬ್ಲಿಕ್ ಲೈಸೆನ್ಸ್ v2 ಅಡಿಯಲ್ಲಿ ಜಾವಾ ಲೈಟ್‌ವೇಟ್ HTTP ಸರ್ವರ್ (jlhttp) ಅನ್ನು ಬಳಸುತ್ತದೆ ಮತ್ತು MIT ಪರವಾನಗಿ ಅಡಿಯಲ್ಲಿ ಲಭ್ಯವಿರುವ ಜಾವಾಸ್ಕ್ರಿಪ್ಟ್ ಲೈಬ್ರರಿ \"Chart.js\" (http://chartjs.org) ನೊಂದಿಗೆ ಡೇಟಾವನ್ನು ಪ್ಲಾಟ್ ಮಾಡುತ್ತದೆ. ಫೋರಿಯರ್ ರೂಪಾಂತರಕ್ಕಾಗಿ, ನಾವು FFTW ಲೈಬ್ರರಿ (http://fftw.org), ಹಕ್ಕುಸ್ವಾಮ್ಯ © 2003, 2007-11 ಮ್ಯಾಟಿಯೊ ಫ್ರಿಗೊ, ಹಕ್ಕುಸ್ವಾಮ್ಯ © 2003, 2007-11 ಮ್ಯಾಸಚೂಸೆಟ್ಸ್ ಇನ್‌ಸ್ಟಿಟ್ಯೂಟ್ ಆಫ್ ಟೆಕ್ನಾಲಜಿಯನ್ನು ಬಳಸುತ್ತೇವೆ, ಇದು GNU ಜನರಲ್ ಪಬ್ಲಿಕ್ ಲೈಸೆನ್ಸ್ (ಆವೃತ್ತಿ 2 ಅಥವಾ ನಂತರದ) ಅಡಿಯಲ್ಲಿ ಲಭ್ಯವಿದೆ. GPS ಎತ್ತರದ ಡೇಟಾವನ್ನು EGM84 ಡೇಟಾ (30\' ರೆಸಲ್ಯೂಶನ್) ಮತ್ತು GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 ಪರವಾನಗಿ) ನಿಂದ ಪೋರ್ಟ್ ಮಾಡಲಾದ ಕಾರ್ಯವನ್ನು ಬಳಸಿಕೊಂಡು WGS84 ಎಲಿಪ್ಸಾಯ್ಡ್‌ನಿಂದ EGM84 ಜಿಯಾಯ್ಡ್‌ಗೆ ಪರಿವರ್ತಿಸಲಾಗುತ್ತದೆ.</string>
     <string name="sensorPressure">ಒತ್ತಡ</string>
     <string name="sensorTemperature">ಉಷ್ಣಾ೦ಶ</string>
@@ -101,7 +78,6 @@
     <string name="sensorNotAvailableWarningText1">ಸಂವೇದಕ</string>
     <string name="sensorNotAvailableWarningText2">ಸೆನ್ಸರ್ ಲಭ್ಯವಿಲ್ಲ. ಸಾಮಾನ್ಯವಾಗಿ ಇದರರ್ಥ, ನಿಮ್ಮ ಸಾಧನವು ಈ ರೀತಿಯ ಸೆನ್ಸರ್ ಅನ್ನು ಹೊಂದಿಲ್ಲ.</string>
     <string name="sensorNotAvailableWarningMoreInfo">ಹೆಚ್ಚಿನ ಮಾಹಿತಿ</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">ಸರಿ</string>
     <string name="tryagain">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="doContinue">ಮುಂದುವರಿಸಿ</string>

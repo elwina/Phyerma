@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Podešavanja</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">Dodaj eksperiment</string>
-    <string name="newExperimentPhyphoxInfo">Posetite phyphox.org kako biste sproveli naprednije eksperimente, uključujući analizu podataka i deljenje istih sa kolegama, studentima i prijateljima.</string>
     <string name="newExperimentInputTitle">Naslov</string>
     <string name="newExperimentInputBufferSize">Veličina bafera</string>
     <string name="newExperimentInputRate">Brzina senzora (u Hz, 0=najbrže moguće)</string>
     <string name="newExperimentInputSensors">Aktivni senzori</string>
     <string name="help">Pomoć i informacije</string>
     <string name="experimentsPhyphoxOrg">Ideje za eksperimente i uputstva</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Često postavljana pitanja</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Pomoć za daljinsko upravljanje</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#sr</string>
     <string name="warning">Upozorenje</string>
     <string name="donotshowagain">Ne pokazuj ponovo</string>
-    <string name="damageWarning">Molimo vas da budete oprezni prilikom izvođenja eksperimenata, kako ne biste oštetili vaš telefon. Molimo vas da posebno povedete računa o ispuštanju telefona na čvrste površine i da ga ne izlažete jakom magnetnom polju. Autori Phyphox-a nisu odgovorni za bilo kakva oštećenja vašeg telefona.</string>
     <string name="info">Info</string>
     <string name="credits">Bodovi</string>
-    <string name="creditsRWTH">phyphox je nastao na drugom institutu za fiziku, Univerzitet u Aachan RWTH.</string>
-    <string name="creditsNames">Razvoj i koncept:
-\nDr. Sebastian Staacks
-\nKoncept:
-\nProf. Christoph Stampfer
-\nProgramiranje:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">Veb interfejs za daljinsko upravljanje koristi Java skript biblioteku \"Chart.js\"(http://chartjs.org), dostupnu pod MIT licencom. Za Furijeove transformacije, koristimo FFTW biblioteku (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, koja je dostupna pod GNU generalna javna licenca (verzija 2 ili kasnije).</string>
     <string name="sensorLinearAcceleration">Linearno ubrzanje</string>
     <string name="sensorLight">Svetlost</string>
@@ -47,7 +32,6 @@
     <string name="sensorNotAvailableWarningText1">Senzor</string>
     <string name="sensorNotAvailableWarningText2">nije dostupa. Uobičajeno ovo znači da vaš uređaj ne poseduje ovaj tip senzora.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Više informacija</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="close">Zatvori</string>
     <string name="next">Sledeće</string>
@@ -70,10 +54,8 @@
     <string name="timedRunDialogTitle">Podešavanje vremena</string>
     <string name="enableTimedRun">Podesi merač vremena</string>
     <string name="export">Otpremi podatke</string>
-    <string name="export_subject">Podaci sa phyphox-a</string>
     <string name="export_pick_share">Izaberi metod odpremanja</string>
     <string name="share">Podeli sliku ekrana</string>
-    <string name="share_subject">Slika ekrana iz phyphox-a</string>
     <string name="share_pick_share">Izaberi metod za deljenje</string>
     <string name="remoteServer">Dozvoli upravljanje na daljinu</string>
     <string name="remoteServerWarning">Omogućićete upravljanje na daljinu za izabrane podatke. Ovo bi trebalo da radite samo na poverljivoj mreži! Na mnogim univerzitetskim mrežama direktan pristup uređaju neće biti omogućen.
@@ -99,7 +81,6 @@
     <string name="save_state_title">Naslov</string>
     <string name="save_state_save">U kolekciju</string>
     <string name="save_state_share">Podeli</string>
-    <string name="save_state_subject">Stanje eksprimenta za phyhox</string>
     <string name="save_state_default_title">Merenje</string>
     <string name="save_state_success">Stanje je sačuvano u vašu kolekciju.</string>
     <string name="timedRun">Merenje vremena</string>
@@ -154,7 +135,6 @@
     <string name="deviceInfoCopied">Informacije o uređaju su kopirane u vaš klipbord.</string>
     <string name="vendorSensorWarning1">Senzor</string>
     <string name="vendorSensorWarning2">nije predstavljen tačan tip senzora. Izgleeda da je specifičan za proizvođača i njegov tip se može samo naslutiti iz naslova. Stoga, moguće je da neće raditi, kao što se očekuje.</string>
-    <string name="gpl">Phyphox je softver otvorenog koda realizovan pod GNU General Public Licence. Molimo posetite http://phyphox.org za više informacija i pristup izvornom kodu. Ipak, naziv \"phyphox\" i \"RWTH Aachen\" su registrovane robne marke.</string>
     <string name="sensorVendor">Karakteristike dobavljača</string>
     <string name="vendorSensorTitle">Senzor karakterističan za dobavljača</string>
     <string name="tryagain">Pokušajte ponovo</string>
@@ -169,7 +149,6 @@
     <string name="open_zip_dialog_instructions">Ovaj izvor sadrži više eksperimenata. Možete izabrati otvaranje jednog i ukoliko želite, sačuvate u Vašu kolekciju ili ih sve sačuvati odjednom-pritiskom na dugme ispod.</string>
     <string name="open_save_all">Sačuvaj sve</string>
     <string name="open_bluetooth_assets_title">Eksperimenti za Bluetooth uređaje</string>
-    <string name="open_bluetooth_assets">Sledeći eksperimenti za Vaš uređaj su dostupni na phyphox-u. Možete ih otvoriti i koristiti ili dodati sve u Vašu kolekciju za lako pristupanje sa glavnog menija.</string>
     <string name="start_hint">Dodirnite trougao za početak eksperimenta.</string>
     <string name="bluetooth">Blutut niske energije</string>
     <string name="bt_android_version">Bluetooth Low Energy nije podržan na Android verzijama nižim od 4.3.</string>
@@ -204,7 +183,5 @@
     <string name="bt_error_discovering">Greška pri pronalaženju usluga Bluetooth uređaja.</string>
     <string name="bt_fail_reading">Čitanje neuspešno.</string>
     <string name="bt_fail_writing">Upisivanje neuspešno.</string>
-    <string name="bt_more_info_link_text">Ukoliko Vaš uređaj nije podržan, izaberite opciju \"more info\" da biste saznali viže o prilagodljivoj Bluetooth Low Energy podršci u phyphox na našem veb sajtu.</string>
     <string name="bt_more_info_link_button">Više informacija</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
 </resources>

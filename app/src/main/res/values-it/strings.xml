@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="switchColumns1">Vista: 1 colonna</string>
     <string name="switchColumns3">Vista: 3 colonne</string>
     <string name="switchColumns2">Vista: 2 colonne</string>
     <string name="help">Aiuto e informazioni</string>
-    <string name="newExperimentPhyphoxInfo">Vai su phyphox.org per creare esperimenti di livello avanzato, compresa l\'analisi dei dati, e per condividerli con colleghi, studenti ed amici.</string>
     <string name="loadingText">Caricamento esperimento…</string>
     <string name="remoteServer">Consenti accesso remoto</string>
     <string name="faqPhyphoxOrg">Domande ricorrenti</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="timedRunStartDelay">Ritardo (s)</string>
     <string name="timed_start">Avvia partenza ritardata</string>
     <string name="stop">Stop</string>
@@ -18,7 +16,6 @@
     <string name="newExperimentInputBufferSize">Dimensione del buffer (numero di valori da memorizzare)</string>
     <string name="sensorLinearAcceleration">Accelerometro (no g)</string>
     <string name="categoryRawSensor">Sensori</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="save_locally_button">Salva nella collezione</string>
     <string name="timedRunDialogTitle">Partenza ritardata</string>
     <string name="sensorTemperature">Temperatura</string>
@@ -56,32 +53,19 @@
     <string name="clear_data">Elimina dati</string>
     <string name="remoteServerActive">Accesso remoto abilitato. Accedi all’esperimento dalla seguente URL:
 \n%1$s</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="remoteServerWarningTitle">Allarme sicurezza!</string>
     <string name="categoryNewExperiment">Esperimenti personalizzati</string>
     <string name="confirmDeleteTitle">Conferma eliminazione\?</string>
     <string name="pick_exportFormat">Scegli il formato dei dati.</string>
-    <string name="share_subject">Screenshot da phyphox</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="save_locally_done">L’esperimento è stato correttamente aggiunto alla collezione.</string>
     <string name="delete">Elimina</string>
     <string name="share_pick_share">Scegli come condividere</string>
     <string name="newExperimentInputRate">Frequenza sensore (in Hz, 0 = il più veloce possibile)</string>
     <string name="share">Condividi screenshot</string>
     <string name="warning">Avvertenza</string>
-    <string name="damageWarning">Fate attenzione a non danneggiare il telefono facendo gli esperimenti. Abbiate cura in particolare di non farlo cadere su superfici dure e di non esporlo a campi magnetici eccessivi. Gli autori di phyphox non sono responsabili di eventuali danni al vostro telefono.</string>
     <string name="sensorMagneticField">Campo magnetico</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="confirmDelete">Vuoi eliminare questo esperimento dalla tua collezione\?</string>
-    <string name="creditsNames">Sviluppatore e progettista:
-\nDr. Sebastian Staacks
-\nCreatore:
-\nProf. Christoph Stampfer
-\nProgrammatori:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="remoteServerWarning">Stai per abilitare l’accesso remoto ai dati acquisiti. Fallo solo se sei su una rete affidabile! Nota: l’accesso diretto fra dispositivi diversi potrebbe non essere consentito su alcune reti aziendali e universitarie.
 \n
 \nPer massimizzare la sicurezza e la performance è meglio connettersi a questo dispositivo col tethering (hotspot mobile).
@@ -91,7 +75,6 @@
     <string name="export_pick_share">Seleziona un metodo per esportare</string>
     <string name="sensorNotAvailableWarningTitle">Sensore non disponibile.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Più info</string>
-    <string name="export_subject">Dati_phyphox</string>
     <string name="experimentinfo_hint">Per sapere come funziona quest\'esperimento, guarda le info relative.</string>
     <string name="timedRun">Partenza ritardata</string>
     <string name="loadingTitle">Caricamento</string>
@@ -105,11 +88,9 @@
     <string name="save_state_title">Titolo</string>
     <string name="save_state_save">Vai alla collezione</string>
     <string name="save_state_share">Condividi</string>
-    <string name="save_state_subject">Stato dell\'esperimento</string>
     <string name="save_state_default_title">Misura</string>
     <string name="save_state_success">Lo stato è stato salvato nella tua collezione.</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#it</string>
-    <string name="creditsRWTH">phyphox è un prodotto del secondo istituto di fisica RWTH Aachen.</string>
     <string name="location">Posizione</string>
     <string name="graph_tools_more">Altri strumenti</string>
     <string name="graph_tools_linear_fit">Fit lineare</string>
@@ -154,7 +135,6 @@
     <string name="deviceInfo">Informazioni dispositivo</string>
     <string name="copyToClipboard">Copia negli appunti</string>
     <string name="deviceInfoCopied">Le informazioni sul dispositivo sono state copiate negli appunti.</string>
-    <string name="gpl">Phyphox è un software open source rilasciato con licenza GNU General Public Licence. Vai su http://phyphox.org per ulteriori informazioni e per accedere al codice sorgente. I nomi \"phyphox\" e \"RWTH Aachen\" sono marchi depositati.</string>
     <string name="sensorVendor">Specifico del produttore</string>
     <string name="vendorSensorTitle">Sensore specifico del produttore</string>
     <string name="vendorSensorWarning1">Il sensore</string>
@@ -171,7 +151,6 @@
     <string name="open_zip_dialog_instructions">Il pacchetto contiene più esperimenti. Puoi sceglierne uno da eseguire, salvandolo nella tua collezione oppure di salvarli tutti per un uso futuro.</string>
     <string name="open_save_all">Salva tutti</string>
     <string name="open_bluetooth_assets_title">Esperimenti per dispositivi Bluetooth</string>
-    <string name="open_bluetooth_assets">Gli esperimenti che seguono sono disponibili per il tuo dispositivo. Puoi scegliere se aprirne uno da eseguire oppure se salvarli tutti nella tua collezione per usarli in futuro.</string>
     <string name="start_hint">Fai click sul triangolino per avviare la misura.</string>
     <string name="bluetooth">Bluetooth Low Energy</string>
     <string name="bt_android_version">Il Bluetooth Low Energy non è supportato su versioni di Android inferiori alla 4.3.</string>
@@ -206,9 +185,7 @@
     <string name="bt_error_discovering">Si è verificato un errore nella ricerca di servizi del dispositivo Bluetooth.</string>
     <string name="bt_fail_reading">La lettura non è andata a buon fine.</string>
     <string name="bt_fail_writing">La scrittura non è stata possibile.</string>
-    <string name="bt_more_info_link_text">"Se il dispositivo non è supportato, fai click su \"più info\" per maggiori informazioni sul supporto Bluetooth Low Energy  di phyphox, presenti sul nostro sito web."</string>
     <string name="bt_more_info_link_button">più info</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="common_unit_short_arbitrary_unit">u.a.</string>
     <string name="common_unit_short_lux">lux</string>
     <string name="common_direction_short_north">N (nord)</string>

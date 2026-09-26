@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">फीफॉक्स</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">सेटिंग्स</string>
-    <string name="title_activity_experiment">फाईफॉक्स</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">ऊँगली से ज़ूम</string>
     <string name="graph_tools_pick">डाटा उठाएं</string>
     <string name="graph_tools_more">और अधिक टूल्स</string>
@@ -31,7 +31,6 @@
     <string name="applyZoomSameAxis">अन्य ग्राफ: वही अक्ष</string>
     <string name="newExperiment">प्रयोग जोड़ें</string>
     <string name="newExperimentSimple">सरल प्रयोग जोड़ें</string>
-    <string name="newExperimentPhyphoxInfo">डेटा विश्लेषण सहित अधिक उन्नत प्रयोग बनाने के लिए phyphox.org पर जाएं और उन्हें सहकर्मियों, छात्रों और दोस्तों के साथ साझा करें।</string>
     <string name="newExperimentInputTitle">शीर्षक</string>
     <string name="newExperimentInputBufferSize">बफर आकार (संग्रहीत किए जाने वाले मानों की संख्या)</string>
     <string name="newExperimentInputRate">सेंसर दर (हर्ट्ज में, 0 = जितनी जल्दी हो सके)</string>
@@ -45,11 +44,8 @@
     <string name="newExperimentBluetooth">ब्लूटूथ उपकरण के लिए प्रयोग जोड़ें</string>
     <string name="newExperimentBluetoothErrorTitle">ब्लूटूथ स्कैन त्रुटि</string>
     <string name="experimentsPhyphoxOrg">प्रायोगिक विचार एवं अनुदेश</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">बारबार पूंछे जाने वाले प्रश्न</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">रिमोट कण्ट्रोल सहायता</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
     <string name="deviceInfo">युक्ति (डिवाइस) का विवरण</string>
     <string name="copyToClipboard">क्लिप बोर्ड पर कॉपी करें</string>
@@ -76,20 +72,8 @@
     <string name="deviceInfoCopied">डिवाइस की जानकारी आपके क्लिपबोर्ड पर कॉपी कर दी गई है।</string>
     <string name="warning">चेतावनी</string>
     <string name="donotshowagain">पुनः न दिखाएँ</string>
-    <string name="damageWarning">प्रयोग करते समय कृपया सावधान रहें कि आपके फोन को नुकसान न पहुंचे। कृपया इसे कठोर सतहों पर गिरने से बचाने के लिए विशेष ध्यान रखें और इसे अत्यधिक चुंबकीय क्षेत्र के संपर्क में न आने दें। फाईफॉक्स के लेखक आपके फोन को होने वाली किसी भी क्षति के लिए जिम्मेदार नहीं हैं।</string>
     <string name="info">जानकारी</string>
     <string name="credits">आभार</string>
-    <string name="creditsRWTH">phyphox® को RWTH आचेन यूनिवर्सिटी के द्वितीय भौतिक विज्ञान संस्थान में बनाया गया है।</string>
-    <string name="creditsNames">Development and Concept:
-\nDr. Sebastian Staacks
-\nConcept:
-\nProf. Christoph Stampfer
-\nProgramming:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox® GNU जनरल पब्लिक लाइसेंस के तहत जारी किया गया ओपन सोर्स सॉफ्टवेयर है। अधिक जानकारी के लिए और इसके स्रोत कोड तक पहुंच प्राप्त करने के लिए कृपया http://phyphox.org पर जाएं। हालांकि, \"फाइफॉक्स\" और \"आरडब्ल्यूटीएच आचेन\" नाम पंजीकृत ट्रेडमार्क हैं।</string>
     <string name="creditsLibs">रिमोट एक्सेस के लिए वेब-इंटरफेस एमआईटी लाइसेंस के तहत उपलब्ध जावास्क्रिप्ट लाइब्रेरी \"चार्ट.जेएस\" (http://chartjs.org) का उपयोग करता है। फूरियर रूपांतरण के लिए, हम FFTW लाइब्रेरी (http://fftw.org), कॉपीराइट © 2003, 2007-11 मैटियो फ्रिगो, कॉपीराइट © 2003, 2007-11 मैसाचुसेट्स इंस्टीट्यूट ऑफ टेक्नोलॉजी का उपयोग करते हैं, जो जीएनयू जनरल पब्लिक के तहत उपलब्ध है लाइसेंस (संस्करण 2 या बाद का)। GPS उन्नयन डेटा को EGM84 डेटा (30\' रेजोल्यूशन) और GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 लाइसेंस) से पोर्ट किए गए फ़ंक्शन का उपयोग करके WGS84 दीर्घवृत्त से EGM84 जियोइड में परिवर्तित किया जाता है।</string>
     <string name="sensorLinearAcceleration">रैखिक त्वरण</string>
     <string name="sensorLight">प्रकाश</string>
@@ -110,7 +94,6 @@
     <string name="sensorNotAvailableWarningText1">सेंसर</string>
     <string name="sensorNotAvailableWarningText2">उपलब्ध नहीं है। आमतौर पर इसका मतलब है कि आपके डिवाइस में इस प्रकार का सेंसर नहीं है।</string>
     <string name="sensorNotAvailableWarningMoreInfo">अधिक जानकारी</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="tryagain">पुनः प्रयास करें</string>
     <string name="doContinue">जारी रखें</string>
     <string name="close">बंद</string>
@@ -137,10 +120,8 @@
     <string name="enableTimedRun">समयबद्ध रन करें</string>
     <string name="export">जानकारी भेजें</string>
     <string name="export_empty">यह प्रयोग कॉन्फ़िगरेशन निर्यात किए जाने वाले किसी भी डेटा को परिभाषित नहीं करता है। यदि यह एक त्रुटि है, तो कृपया QR कोड या कॉन्फ़िगरेशन फ़ाइल के स्रोत से संपर्क करें।</string>
-    <string name="export_subject">फिफॉक्स से डेटा</string>
     <string name="export_pick_share">निर्यात की विधि चुनें</string>
     <string name="share">स्क्रीनशॉट शेयर करें</string>
-    <string name="share_subject">फाईफॉक्स से स्क्रीनशॉट</string>
     <string name="share_pick_share">शेयर विधि चुनें</string>
     <string name="remoteServer">रिमोट एक्सेस की अनुमति दें</string>
     <string name="remoteServerWarning">आप प्राप्त डेटा तक दूरस्थ पहुंच को सक्षम करने वाले हैं। आपको ऐसा केवल विश्वसनीय नेटवर्क पर ही करना चाहिए! यह भी ध्यान दें कि कई कॉर्पोरेट या विश्वविद्यालय नेटवर्क पर उपकरणों के बीच सीधी पहुंच संभव नहीं हो सकती है।
@@ -180,15 +161,12 @@
     <string name="save_state_title">शीर्षक</string>
     <string name="save_state_save">संग्रह</string>
     <string name="save_state_share">साझा करें</string>
-    <string name="save_state_subject">फ़िफोक्स के लिए प्रयोग अवस्था</string>
     <string name="save_state_default_title">मापन</string>
     <string name="save_state_success">आपके संग्रह में अवस्था को सहेजा गया |</string>
     <string name="open_zip_title">प्रयोगों के एक सेट को खोलना</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
     <string name="open_zip_dialog_instructions">इस संसाधन में अनेक प्रयोग शामिल हैं. आप इसे खोलने के लिए या तो किसी एक को चुन सकते हैं और वैकल्पिक रूप से इसे अपने संग्रह में सहेज सकते हैं या उन सभी को एक ही बार में अपने संग्रह में सहेजने के लिए नीचे दिए गए बटन का उपयोग कर सकते हैं।</string>
     <string name="open_save_all">सब को सेव करें</string>
     <string name="open_bluetooth_assets_title">ब्लूटूथ डिवाइस के लिए प्रयोग</string>
-    <string name="open_bluetooth_assets">आपके डिवाइस के लिए निम्नलिखित प्रयोग फ़ाइफ़ॉक्स से उपलब्ध हैं। आप या तो बस उन्हें खोलकर उपयोग कर सकते हैं या मुख्य मेनू से उन तक आसानी से पहुंचने के लिए उन सभी को अपने संग्रह में जोड़ सकते हैं।</string>
     <string name="timedRun">समयबद्ध रन</string>
     <string name="pick_exportSets">निर्यात करने के लिए डेटा सेट चुनें.</string>
     <string name="pick_exportFormat">डेटा प्रारूप चुनें.</string>
@@ -211,8 +189,6 @@
     <string name="bt_exception_connection">ब्लूटूथ कनेक्शन खोला नहीं जा सका.</string>
     <string name="bt_exception_notfound">ब्लूटूथ डिवाइस नहीं मिला.</string>
     <string name="bt_exception_services">सर्विसेज खोजी नहीं जा सकीं.</string>
-    <string name="categoryPhyphoxOrg">फ़िफ़ॉक्स में योगदान करें</string>
-    <string name="categoryPhyphoxOrgHint">सूची के निचले भाग में फ़ाइफ़ॉक्स को सपोर्ट करने के लिए नए विकल्प हैं।</string>
     <string name="bt_exception_device">डिवाइस के लिए त्रुटि</string>
     <string name="bt_exception_rate">दर के लिए अमान्य मान.</string>
     <string name="bt_exception_notification">UUID के साथ विशेषता के लिए अधिसूचना</string>
@@ -230,17 +206,13 @@
     <string name="bt_error_discovering">ब्लूटूथ डिवाइस की सर्विसेज की खोज में त्रुटि।</string>
     <string name="bt_fail_reading">रीडिंग ऑपरेशन सफल नहीं हुआ.</string>
     <string name="bt_fail_writing">राइटिंग ऑपरेशन सफल नहीं रहा.</string>
-    <string name="bt_more_info_link_text">यदि आपका डिवाइस सपोर्टेड नहीं है, तो हमारी वेबसाइट पर फ़ाइफ़ॉक्स में फ्लेक्सिबल ब्लूटूथ लो एनर्जी सपोर्ट के बारे में अधिक जानने के लिए \"अधिक जानकारी\" चुनें।</string>
     <string name="bt_more_info_link_button">अधिक जानकारी</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">गोपनीयता चेतावनी</string>
     <string name="networkVisitPrivacyURL">गोपनीयता नीति</string>
-    <string name="networkPrivacyInfo">यह प्रयोग एक नेटवर्क कनेक्शन का उपयोग करता है, जिसका अर्थ है कि प्रयोग डेटा को नेटवर्क सेवा में भेजा जा सकता है। आप नीचे गोपनीयता नीति बटन पर क्लिक करके अधिक विवरण प्राप्त कर सकते हैं, जो आपको इस प्रयोग के निर्माता द्वारा प्रदान की गई गोपनीयता नीति वाली वेबसाइट पर ले जाएगा। यदि नेटवर्क सेवा एक स्थानीय उपकरण नहीं है, तो आपको पता होना चाहिए कि यदि आप यह प्रयोग शुरू करते हैं तो फ़ाइफ़ॉक्स निम्नलिखित जानकारी प्रसारित कर सकता है:</string>
     <string name="networkPrivacyUniqueID">एक ID जो इस डिवाइस और नेटवर्क सेवा के लिए अद्वितीय है, जो इस प्रयोग कॉन्फ़िगरेशन के माध्यम से इस डिवाइस से भेजे गए सभी डेटा का मिलान करने की अनुमति देती है।</string>
     <string name="networkPrivacySensorData">निम्नलिखित सेंसर से डेटा:</string>
     <string name="networkPrivacySensorMicrophone">रिकॉर्डिंग या माइक्रोफोन से रिकॉर्डिंग से प्राप्त डेटा।</string>
     <string name="networkPrivacySensorLocation">लोकेशन डेटा (जीपीएस या समान डेटा)।</string>
-    <string name="networkPrivacyDeviceInfo">आपके डिवाइस के मॉडल और/या फ़ाइफ़ॉक्स के संस्करण के बारे में विस्तृत जानकारी।</string>
     <string name="networkPrivacySensorInfo">निम्नलिखित सेंसर के बारे में तकनीकी विवरण:</string>
     <string name="timedRunBeeps">ध्वनिक संकेत</string>
     <string name="beeperCountdown">उलटी गिनती की आवाजें</string>

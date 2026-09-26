@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Paramètres</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">Ajouter des expériences</string>
-    <string name="newExperimentPhyphoxInfo">Visitez le site phyphox.org si vous voulez créer des expériences plus avancées et les partager avec des collègues, des étudiants ou des amis.</string>
     <string name="newExperimentInputTitle">Titre</string>
     <string name="newExperimentInputBufferSize">Taille du buffer (nombre de valeurs à enregistrer)</string>
     <string name="newExperimentInputRate">Fréquence de mesure (en hertz, 0 = aussi vite que possible)</string>
     <string name="newExperimentInputSensors">Capteurs activés</string>
     <string name="help">Aide et informations</string>
     <string name="experimentsPhyphoxOrg">Suggestions d\'expériences et instructions</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Foire Aux Questions</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Aide pour le contrôle à distance</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#fr</string>
     <string name="warning">Attention</string>
     <string name="donotshowagain">Ne plus montrer</string>
-    <string name="damageWarning">Soyez prudents ! Faites attention à ne pas endommager votre téléphone pendant vos expériences. Veuillez faire particulièrement attention à ne pas le laisser tomber sur des surfaces dures, et ne pas l\'exposer à des champs magnétiques excessifs. Les auteurs de phyphox ne sont pas responsables des dommages éventuels de votre téléphone.</string>
     <string name="info">Info</string>
     <string name="credits">Crédits</string>
-    <string name="creditsRWTH">phyphox® a été créé à l\'institut de physique II de l\'université technique de Rhénanie-Westphalie à Aix-la-Chapelle (RWTH Aachen University).</string>
-    <string name="creditsNames">Concept et développement :
-\nDr. Sebastian Staacks
-\nConcept :
-\nProf. Christoph Stampfer
-\nProgrammation :
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">L\'interface web pour le contrôle à distance utilise la bibliothèque JavaScript \"Chart.js\" (http://chartjs.org), disponible sous la licence MIT. Pour la transformée de Fourier, nous utilisons la bibliothèque FFTW (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, disponible avec GNU General Public Licence (version 2 ou plus). Les données d\'élévation GPS sont converties de l\'ellipsoïde WGS84 au géoïde EGM84 à l\'aide des données EGM84 (résolution 30 \') et d\'une fonction portée de GographicLib (https://geographiclib.sourceforge.io/, licence MIT / X11).</string>
     <string name="sensorLight">Luminosité</string>
     <string name="sensorGyroscope">Gyroscope</string>
@@ -46,7 +31,6 @@
     <string name="sensorNotAvailableWarningText1">Le capteur</string>
     <string name="sensorNotAvailableWarningText2">n\'est pas disponible. La raison la plus probable est que votre téléphone ne dispose pas de ce capteur.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Plus d\'informations</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="close">Fermer</string>
     <string name="next">Suite</string>
@@ -66,10 +50,8 @@
     <string name="timedRunStopDelay">Durée de l\'expérience (s)</string>
     <string name="enableTimedRun">Faire des mesures pendant un temps donné</string>
     <string name="export">Exporter les mesures</string>
-    <string name="export_subject">Mesures de phyphox</string>
     <string name="export_pick_share">Choisissez votre moyen d\'exporter les mesures</string>
     <string name="share">Partager une capture d\'écran</string>
-    <string name="share_subject">Capture d\'écran de phyphox</string>
     <string name="share_pick_share">Choisissez votre moyen de partage</string>
     <string name="remoteServer">Autoriser le contrôle à distance</string>
     <string name="remoteServerWarning">Vous êtes sur le point d\'activer l\'accès à distance aux mesures. Vous ne devez le faire que sur un réseau de confiance ! Notez également que l\'accès direct entre appareils peut ne pas être possible sur de certains réseaux d\'entreprise ou universitaires.
@@ -132,7 +114,6 @@
     <string name="deviceInfo">Information sur l\'appareil</string>
     <string name="copyToClipboard">Copier dans le presse-papiers</string>
     <string name="deviceInfoCopied">Les informations de votre appareil ont été copiées dans le presse-papiers.</string>
-    <string name="gpl">Phyphox® est un logiciel open source distribué sous licence GNU General Public License. Veuillez visiter http://phyphox.org pour plus d\'informations et pour accéder à son code source. Cependant, les noms \"phyphox\" et \"RWTH Aachen\" sont des marques déposées.</string>
     <string name="sensorLinearAcceleration">Accélération linéaire</string>
     <string name="sensorVendor">Spécifique au fabricant</string>
     <string name="vendorSensorTitle">Capteur spécifique au fabricant</string>
@@ -157,14 +138,12 @@
     <string name="save_state_title">Titre</string>
     <string name="save_state_save">Dans ma collection</string>
     <string name="save_state_share">Partager</string>
-    <string name="save_state_subject">État de l\'expérience phyphox</string>
     <string name="save_state_default_title">Mesures</string>
     <string name="save_state_success">Cette expérience à été enregistrée dans votre collection en l\'état.</string>
     <string name="open_zip_title">Ouverture d\'une série d\'expériences</string>
     <string name="open_zip_dialog_instructions">Cette ressource contient plusieurs expériences. Vous pouvez en choisir une pour l\'ouvrir et éventuellement l\'enregistrer dans votre collection, ou utiliser le bouton ci-dessous pour les enregistrer toutes en même temps dans votre collection.</string>
     <string name="open_save_all">Enregistrer tout</string>
     <string name="open_bluetooth_assets_title">Expériences propres aux appareils Bluetooth</string>
-    <string name="open_bluetooth_assets">Les expériences suivantes sont propres à cet appareil Bluetooth sont disponibles auprès de Phyphox. Vous pouvez les ouvrir et les utiliser, ou bien les ajouter à votre collection pour y accéder facilement à partir du menu principal.</string>
     <string name="timedRun">Définir le temps de mesure</string>
     <string name="pick_exportSets">Choisir le jeu de données à exporter.</string>
     <string name="pick_exportFormat">Choisir le format des données.</string>
@@ -206,20 +185,16 @@
     <string name="bt_error_discovering">Error while discovering the services of the bluetooth device.</string>
     <string name="bt_fail_reading">The reading operation was not successful.</string>
     <string name="bt_fail_writing">The writing operation was not successful.</string>
-    <string name="bt_more_info_link_text">Si votre appareil n\'est pas pris en charge, cliquez sur \"plus d\'infos\" pour en savoir plus sur la prise en charge par phyphox du Bluetooth à basse consommation (Bluetooth Low Energy, BLE) sur notre site Web.</string>
     <string name="bt_more_info_link_button">Plus d\'info</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="export_empty">Cette configuration expérimentale ne nécessite pas de définir de données à exporter. Si il s\'agit d\'une erreur, merci de contacter le responsable du QR code ou du fichier de configuration.</string>
     <string name="toggleBrightMode">Mode Lumineux</string>
     <string name="bt_location_service_explanation">En plus de l\'autorisation d\'obtenir des informations sur la localisation, Android exige que les services de localisation soient activés pour les scans Bluetooth car le résultat pourrait être utilisé pour trouver des informations de localisation. Nous vous redirigerons vers les paramètres de votre système.</string>
     <string name="networkPrivacyWarning">Avertissement de confidentialité</string>
     <string name="networkVisitPrivacyURL">Politique de confidentialité</string>
-    <string name="networkPrivacyInfo">"Cette expérience utilise une connexion réseau, ce qui signifie que les données de l\'expérience peuvent être transmises à un service réseau. Vous pouvez trouver plus de détails en cliquant sur le bouton  \"politique de confidentialité\" ci-dessous, qui vous amènera au site Web donnant la politique de confidentialité fournie par le créateur de cette expérience. Si le service réseau n\'est pas un appareil local, vous devez savoir que phyphox peut transmettre les informations suivantes si vous démarrez cette expérience :"</string>
     <string name="networkPrivacyUniqueID">Un identifiant unique à cet appareil et au service réseau, qui permet de faire correspondre toutes les données envoyées depuis cet appareil via cette configuration d\'expérience.</string>
     <string name="networkPrivacySensorData">Données issues des capteurs suivants :</string>
     <string name="networkPrivacySensorMicrophone">Enregistrements ou données issues des enregistrements du microphone.</string>
     <string name="networkPrivacySensorLocation">Données de localisation (données GPS ou similaires).</string>
-    <string name="networkPrivacyDeviceInfo">Des informations détaillées sur le modèle de votre appareil et / ou la version de phyphox.</string>
     <string name="networkPrivacySensorInfo">Détails techniques sur les capteurs suivants :</string>
     <string name="common_unit_short_arbitrary_unit">unité arb.</string>
     <string name="common_direction_short_west">O</string>
@@ -293,8 +268,6 @@
     <string name="leave_experiment_question">Quitter l\'expérience et jeter les données enregistrées \?</string>
     <string name="leave">Quitter</string>
     <string name="graph_tools_system_time">Utiliser l\'heure comme base de temps</string>
-    <string name="categoryPhyphoxOrg">Contribuer à phyphox</string>
-    <string name="categoryPhyphoxOrgHint">Il y a de nouvelles façons d\'aider phyphox à la fin de la liste.</string>
     <string name="timedRunBeeps">Signaux sonores</string>
     <string name="beeperCountdown">Bips de compte à rebours</string>
     <string name="beeperStart">Bip de début</string>
@@ -366,7 +339,6 @@
     <string name="settings_mode_dark">On (valeur par défaut)</string>
     <string name="settings_mode_no_dark">Off</string>
     <string name="settings_mode_dark_system">Comme le système</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
     <string name="cameraFront">Avant</string>
     <string name="cameraBack">Arrière</string>
     <string name="off">Off</string>

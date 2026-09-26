@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Inställningar</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">Flytta och zooma</string>
     <string name="graph_tools_pick">Välj datapunkt</string>
     <string name="graph_tools_more">Fler verktyg</string>
@@ -29,7 +29,6 @@
     <string name="applyZoomSameAxis">Andra grafer: Samma axel</string>
     <string name="newExperiment">Lägg till experiment</string>
     <string name="newExperimentSimple">Lägg till ett enkelt experiment</string>
-    <string name="newExperimentPhyphoxInfo">Besök phyphox.org för att skapa mer avancerade experiment, inklusive dataanalys, och dela med kolleger, studenter och vänner.</string>
     <string name="newExperimentInputTitle">Titel</string>
     <string name="newExperimentInputBufferSize">Bufferstorlek (hur många värden ska lagras)</string>
     <string name="newExperimentInputRate">Sensorfrekvens (i Hz, 0 = så snabbt som möjligt)</string>
@@ -51,31 +50,16 @@
     <string name="generalErrorDialog">Ett fel uppstod.</string>
     <string name="help">Hjälp och info</string>
     <string name="experimentsPhyphoxOrg">Experiment-förslag och instruktioner</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Vanliga frågor</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Fjärrkontroll-hjälp</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#se</string>
     <string name="deviceInfo">Information om din enhet</string>
     <string name="copyToClipboard">Kopiera till urklipp</string>
     <string name="deviceInfoCopied">Informationen om din enhet har kopierats till Urklipp.</string>
     <string name="warning">Varning</string>
     <string name="donotshowagain">Visa inte igen</string>
-    <string name="damageWarning">Var försiktig så att du inte skadar din telefon medan du experimenterar. Var speciellt försiktig så att du inte tappar den på hårda ytor och utsätt den inte för mycket starka magnetfält. Skaparna av phyphox tar inte något ansvar för skador på din telefon.</string>
     <string name="info">Info</string>
     <string name="credits">Credit</string>
-    <string name="creditsRWTH">phyphox® har utvecklats på 2nd Institute of Physics vid RWTH Aachen University.</string>
-    <string name="creditsNames">Utveckling och koncept:
-\nDr. Sebastian Staacks
-\nKoncept:
-\nProf. Christoph Stampfer
-\nProgramming:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox® är öppen mjukvara under GNU General Public Licence. Besök http://phyphox.org för ytterligare information och tillgång till källkod. Namnet \"phyphox\" och \"RWTH Aachen\" är dock regisserade varumärken.</string>
     <string name="creditsLibs">The web-interface for remote access uses the JavaScript library \"Chart.js\" (http://chartjs.org), available under the MIT licence. For the fourier transform, we use the FFTW library (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, which is available under the GNU General Public Licence (version 2 or later). GPS elevation data is converted from the WGS84 ellipsoid to the EGM84 geoid using EGM84 data (30\' resolution) and a ported function from the GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 licence).</string>
     <string name="sensorLinearAcceleration">Linjär acceleration</string>
     <string name="sensorLight">Ljus</string>
@@ -95,7 +79,6 @@
     <string name="sensorNotAvailableWarningText1">Sensorn</string>
     <string name="sensorNotAvailableWarningText2">är inte tillgänglig. Detta betyder vanligen att din enhet inte har denna sensortyp.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Mer information</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="tryagain">Försök igen</string>
     <string name="doContinue">Fortsätt</string>
@@ -123,10 +106,8 @@
     <string name="enableTimedRun">Gör en tidsstyrd mätning</string>
     <string name="export">Exportera data</string>
     <string name="export_empty">Denna experiment-konfiguration definierar inte några data som ska exporteras. Om detta är fel, kontakta den som skapat QR-koden eller konfigurationsfilen.</string>
-    <string name="export_subject">Data från phyphox</string>
     <string name="export_pick_share">Välj metod för dataexport</string>
     <string name="share">Dela skärmklipp</string>
-    <string name="share_subject">Skärmklipp från phyphox</string>
     <string name="share_pick_share">Välj metod för datadelning</string>
     <string name="remoteServer">Tillåt fjärranslutning</string>
     <string name="remoteServerWarning">Du håller på att tillåta fjärranslutning till dina insamlade data. Du ska bara göra detta på ett pålitligt nätverk. Notera också att direkt access mellan olika uenheter inte är möjlig på alla företags- eller universitetsnätverk.
@@ -159,14 +140,12 @@
     <string name="save_state_title">Titel</string>
     <string name="save_state_save">Till samlingen</string>
     <string name="save_state_share">Dela</string>
-    <string name="save_state_subject">Experiment-tillstånd för phyphox</string>
     <string name="save_state_default_title">Mätning</string>
     <string name="save_state_success">Tillståndet har sparats till din samling.</string>
     <string name="open_zip_title">Öppnar en grupp experiment</string>
     <string name="open_zip_dialog_instructions">Denna resurs innehåller flera experiment. Du kan antingen välja ett av dem och öppna det och eventuellt spara det till din samling, eller använda knappen nedan för att spara alla på en gång.</string>
     <string name="open_save_all">Spara alla</string>
     <string name="open_bluetooth_assets_title">Experiment för Bluetooth enhet</string>
-    <string name="open_bluetooth_assets">Följande experiment för din enhet är tillgängliga från phyphox. Du kan antingen bara öppna dem och använda dem eller lägga till alla till din samling för att lätt komma åt dem från huvudmenyn.</string>
     <string name="timedRun">Tidsstyrd körning</string>
     <string name="pick_exportSets">Välj data att exportera.</string>
     <string name="pick_exportFormat">Välj dataformat.</string>
@@ -209,16 +188,12 @@
     <string name="bt_error_discovering">Fel medan bluetooth-enhetens tjänster upptäcktes.</string>
     <string name="bt_fail_reading">Läsningen misslyckades.</string>
     <string name="bt_fail_writing">Skrivningen misslyckades.</string>
-    <string name="bt_more_info_link_text">Om det inte finns stöd för din enhet, välj \"mer information\" för att få veta mer om flexibelt stöd i phyphox för Bluetooth Low Energy.</string>
     <string name="bt_more_info_link_button">Mer information</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">Integritetsvarning</string>
     <string name="networkVisitPrivacyURL">Integritetspolicy</string>
-    <string name="networkPrivacyInfo">Detta experiment använder en nätverksanslutning vilket innebär att experimentdata kan skickas över ett nätverk. Du hittar fler detaljer genom att klicka på integritetspolicy-knappen nedan. Du kommer då till en webbplats med en integritetspolicy skapad av den som tagit fram detta experiment. Om nätverksservicen inte är lokal bör du vara medveten om att phyphox kan skicka följande information när du startar detta experiment:</string>
     <string name="networkPrivacyUniqueID">Ett ID som är unikt för denna enhet och nätverks-tjänst, som möjliggör matchning av alla data som skickas från enjeten genom denna experiment-konfiguration.</string>
     <string name="networkPrivacySensorData">Data från följande sensorer:</string>
     <string name="networkPrivacySensorMicrophone">Inspelningar eller data som skapats från inspelningar genom telefonen.</string>
     <string name="networkPrivacySensorLocation">Platsinformation (GPS data eller liknande).</string>
-    <string name="networkPrivacyDeviceInfo">Detaljerad information om din enhet och/eller phyphox-versionen.</string>
     <string name="networkPrivacySensorInfo">Tekniska detaljer för följande sensorer:</string>
 </resources>

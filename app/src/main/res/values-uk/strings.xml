@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Налаштування</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">Зсув і масштабування</string>
     <string name="graph_tools_pick">Вибрати дані</string>
     <string name="graph_tools_more">Інші інструменти</string>
@@ -29,7 +29,6 @@
     <string name="applyZoomSameAxis">Інших графіків: Однакова вісь</string>
     <string name="newExperiment">Додати експерименти</string>
     <string name="newExperimentSimple">Додати простий експеримент</string>
-    <string name="newExperimentPhyphoxInfo">Щоб створити складніші експерименти і поділитися ними з колегами, студентами та друзями - завітайте на phyphox.org.</string>
     <string name="newExperimentInputTitle">Назва</string>
     <string name="newExperimentInputBufferSize">Розмір буферу (кількість значень,що треба зберегти)</string>
     <string name="newExperimentInputRate">Частота сенсора (в Гц, 0= максимально можлива)</string>
@@ -51,31 +50,16 @@
     <string name="generalErrorDialog">Сталася помилка.</string>
     <string name="help">Допомога та інформація</string>
     <string name="experimentsPhyphoxOrg">Ідеї для експериментів і інструкції</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Часті питання</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Інформація про віддалений контроль</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
     <string name="deviceInfo">Інформація про пристрій</string>
     <string name="copyToClipboard">Скопіювати в буфер обміну</string>
     <string name="deviceInfoCopied">Інформацію про пристрій скопійовано до буфера обміну.</string>
     <string name="warning">Попередження</string>
     <string name="donotshowagain">Більше не показувати</string>
-    <string name="damageWarning">Будь-ласка, дбайливо поводьтеся з Вашим телефоном під час експериментів. Ні в якому разі не дозволяйте йому падати на тверді поверхні з висоти і не піддавайте його впливу сильних магнітних полів. Автори phyphox не несуть відповідальності за будь-які пошкодження Вашого телефону.</string>
     <string name="info">Інформація</string>
     <string name="credits">Подяки</string>
-    <string name="creditsRWTH">phyphox було створено в Інституті Фізики №2 Університету Аахена.</string>
-    <string name="creditsNames">Розробка і концепт:
-\nDr. Sebastian Staacks
-\nКонцепт:
-\nProf. Christoph Stampfer
-\nПрограмування:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox це програма з відкритим кодом, що розповсюджується згідно GNU General Public Licence. Для додаткової інформації і отримання доступу до коду відвідайте http://phyphox.org. Ти не менше, назви \"phyphox\" і \"RWTH Aachen\" є зареєстрованими торговими марками.</string>
     <string name="creditsLibs">Веб-інтерфейс для віддаленого доступу використовує JavaScript бібліотеку\"Chart.js\" (http://chartjs.org), що доступна згідно MIT ліцензії. Для перетворень Фур\'є, ми використовуємо бібліотеку FFTW (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, що доступна згідно GNU General Public Licence (версії 2 чи вище).</string>
     <string name="sensorLinearAcceleration">Лінійне прискорення</string>
     <string name="sensorLight">Освітлення</string>
@@ -95,7 +79,6 @@
     <string name="sensorNotAvailableWarningText1">Сенсор</string>
     <string name="sensorNotAvailableWarningText2">не доступний. Зазвичай це означає, що Ваш пристрій просто не має сенсора цього типу.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Додаткова інформація</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="tryagain">Ще раз</string>
     <string name="doContinue">Продовжити</string>
@@ -123,10 +106,8 @@
     <string name="enableTimedRun">Використовувати контроль часу</string>
     <string name="export">Експорт даних</string>
     <string name="export_empty">Конфігурація цього експерименту не передбачає експорт даних. Якщо це помилка, зв\'яжіться з розробником QR коду чи конфігураційного файлу.</string>
-    <string name="export_subject">Дані з phyphox</string>
     <string name="export_pick_share">Виберіть метод експорту</string>
     <string name="share">Поділитись знімком екрану</string>
-    <string name="share_subject">Знімок екрану з phyphox</string>
     <string name="share_pick_share">Поділитися через</string>
     <string name="remoteServer">Дозволити віддалений доступ</string>
     <string name="remoteServerWarning">Ви збираєтеся дозволити віддалений доступ до отриманих Вами даних. Робіть це тільки у мережах, яким Ви довіряєте! Майте на увазі, що прямий доступ між приладами може бути неможливим у багатьох корпоративних та університетських мережах.
@@ -159,14 +140,12 @@
     <string name="save_state_title">Назва</string>
     <string name="save_state_save">До колекції</string>
     <string name="save_state_share">Поділитись</string>
-    <string name="save_state_subject">Стан експерименту від phyphox</string>
     <string name="save_state_default_title">Виміри</string>
     <string name="save_state_success">Стан було збережено до твоєї колекції.</string>
     <string name="open_zip_title">Відкриття кількох експериментів</string>
     <string name="open_zip_dialog_instructions">Цей ресурс містить кілька експериментів. Ви можете або вибрати один з них і, якщо хочете, зберегти його до Вашої колекції, або натиснути на кнопку нижче щоб зберегти їх всіх до Вашої колекції відразу.</string>
     <string name="open_save_all">Зберегти все</string>
     <string name="open_bluetooth_assets_title">Експерименти для пристрою Bluetooth</string>
-    <string name="open_bluetooth_assets">Наступні експерименти від phyphox доступні для Вашого пристрою. Можете просто відкрити і використовувати їх або додати їх до колекції для зручного доступу до них з головного меню.</string>
     <string name="timedRun">Контроль часу</string>
     <string name="pick_exportSets">Виберіть набір даних для експорту.</string>
     <string name="pick_exportFormat">Виберіть формат даних.</string>
@@ -208,9 +187,7 @@
     <string name="bt_error_discovering">Помилка при відкритті сервісів з пристрою Bluetooth.</string>
     <string name="bt_fail_reading">Невдала операція зчитування.</string>
     <string name="bt_fail_writing">Невдала операція запису.</string>
-    <string name="bt_more_info_link_text">Якщо Ваш пристрій не підтримується, виберіть \"Інформація\", щоб дізнатись більше про гнучку підтримку Bluetooth Low Energy в phyphox на нашій веб-сторінці.</string>
     <string name="bt_more_info_link_button">Інформація</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="sensorAttitude">Позиція</string>
     <string name="leave_experiment">Вийти з експерименту</string>
     <string name="leave_experiment_question">Вийти з експерименту і видалити виміри\?</string>
@@ -218,16 +195,12 @@
     <string name="bt_location_service_explanation">На додачу до дозволу на отримання інформації про місцезнаходження, Android вимагає, щоб служби визначення місцезнаходження були ввімкнені для сканування Bluetooth, оскільки результат можна використовувати для отримання інформації про місцезнаходження. Ми перенаправимо вас до налаштувань системи.</string>
     <string name="networkPrivacyWarning">Попередження про захист персональних даних</string>
     <string name="networkVisitPrivacyURL">Політика конфіденційності</string>
-    <string name="networkPrivacyInfo">Цей експеримент використовує мережеве з\'єднання, що означає, що дані можуть бути передані до мережевого сервісу. Для отримання більш детальної інформації ви можете натиснути на Політику конфіденційності нижче, яка переведе вас на веб-сторінку з політикою конфіденційності, надану автором цього експерименту. Якщо мережева служба не є локальним пристроєм, ви повинні знати, що phyphox може передавати наступні дані під час цього експерименту:</string>
     <string name="networkPrivacyUniqueID">Ідентифікатор, який є унікальним для цього пристрою та мережевої служби. Він дає можливість зв\'язати всі дані, надіслані цим пристроєм під час цього експерименту, між собою.</string>
     <string name="networkPrivacySensorData">Дані наступних сенсорів:</string>
     <string name="networkPrivacySensorMicrophone">Записи з мікрофону або дані, отримані з таких записів.</string>
     <string name="networkPrivacySensorLocation">Дані про місцезнаходження (дані GPS або аналогічні).</string>
-    <string name="networkPrivacyDeviceInfo">Точна інформація про модель вашого пристрою та/або версію програмного забезпечення.</string>
     <string name="networkPrivacySensorInfo">Технічні характеристики наступних сенсорів:</string>
     <string name="graph_tools_system_time">Конвертувати в системний час</string>
-    <string name="categoryPhyphoxOrg">Підтримати phyphox</string>
-    <string name="categoryPhyphoxOrgHint">В кінці списку - нові способи підтримки phyphox.</string>
     <string name="timedRunBeeps">Акустичні сигнали</string>
     <string name="beeperCountdown">Звуки зворотного відліку</string>
     <string name="beeperStart">Звук початку</string>

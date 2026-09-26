@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">設定</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">新しい実験の追加</string>
-    <string name="newExperimentPhyphoxInfo">データ分析や同僚，学生，友人との共有等の高度の実験を行うには phyphox.org のリンクを参照ください．</string>
     <string name="newExperimentInputTitle">タイトル</string>
     <string name="newExperimentInputBufferSize">バッファーサイズ(格納する値の数)</string>
     <string name="newExperimentInputRate">センサーレート (Hz，0は最速処理を意味する)</string>
     <string name="newExperimentInputSensors">有効なセンサー</string>
     <string name="help">ヘルプ＆インフォ</string>
     <string name="experimentsPhyphoxOrg">実験アイデアと説明</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">よくある質問</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">遠隔操作ヘルプ</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#ja</string>
     <string name="warning">注意</string>
     <string name="donotshowagain">今後表示しない</string>
-    <string name="damageWarning">実験中にお持ちのスマーフォンを損傷しないように気をつけてください．固い表面のものに落とすことのないように特に細心の注意を払い，過度に強度な磁場には晒さないようにしてください．開発者はお持ちのスマートフォンの損傷への責任は負えませんのでご了承ください．</string>
     <string name="info">Phyphoxについて</string>
     <string name="credits">クレジット</string>
-    <string name="creditsRWTH">phyphoxはRWTH Aachen大学の2nd Institute of Physicsにて開発されました．</string>
-    <string name="creditsNames">開発とコンセプト:
-\nDr. Sebastian Staacks
-\nコンセプト:
-\nProf. Christoph Stampfer
-\nプログラミング:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">遠隔操作のためのウェブのインターフェースには \"MIT licence\"のもとで利用可能な \"JavaScript library \"Chart.js\" (http://chartjs.org)\" が使われています．フーリエ変換には, GNU General Public Licence (version 2 or later)の下で利用可能な，\"FFTW library (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology\"を使用しています。</string>
     <string name="sensorLinearAcceleration">線形加速</string>
     <string name="sensorLight">光</string>
@@ -47,7 +32,6 @@
     <string name="sensorNotAvailableWarningText1">センサー</string>
     <string name="sensorNotAvailableWarningText2">が利用できません．これは基本的にお持ちのデバイスがこの種類のセンサーを保持していないことを意味します．</string>
     <string name="sensorNotAvailableWarningMoreInfo">詳細</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="close">閉じる</string>
     <string name="next">次へ</string>
@@ -70,10 +54,8 @@
     <string name="timedRunStopDelay">実験時間 (s)</string>
     <string name="enableTimedRun">プログラム計測を実行する</string>
     <string name="export">データのエクスポート</string>
-    <string name="export_subject">phyphoxからのデータ</string>
     <string name="export_pick_share">エクスポート方法を選択する</string>
     <string name="share">スクリーンショットの共有</string>
-    <string name="share_subject">phyphoxからのスクリーンショット</string>
     <string name="share_pick_share">共有方法の選択</string>
     <string name="remoteServer">遠隔アクセスの許可</string>
     <string name="remoteServerWarning">取得データへの遠隔アクセスをしようとしています．信頼されたネットワーク環境においてのみこれを実行してください！また，多くの企業と大学のネットワーク環境下ではデバイス間の直接アクセスができない場合が多いことに注意してください．
@@ -101,7 +83,6 @@
     <string name="save_state_title">タイトル</string>
     <string name="save_state_save">コレクション</string>
     <string name="save_state_share">共有</string>
-    <string name="save_state_subject">phyphoxの実験状態</string>
     <string name="save_state_default_title">実験</string>
     <string name="save_state_success">状態はあなたのコレクションに保存されました．</string>
     <string name="timedRun">プログラム計測</string>
@@ -154,7 +135,6 @@
     <string name="deviceInfo">デバイス情報</string>
     <string name="copyToClipboard">クリップボードにコピー</string>
     <string name="deviceInfoCopied">デバイス情報はクリップボードにコピーされました。</string>
-    <string name="gpl">PhyphoxはGNU一般公衆利用許諾書に基づくオープンソースのフリーソフトウェアです。webページ　http://phyphox.org に詳細情報とソースコードがあります。ただし、\"phyphox\" と\"RWTH Aachen\"は商標登録されています。</string>
     <string name="sensorVendor">ベンダー独自</string>
     <string name="vendorSensorTitle">ベンダー独自のセンサー</string>
     <string name="vendorSensorWarning1">センサー</string>
@@ -171,7 +151,6 @@
     <string name="open_zip_dialog_instructions">このリソースは複数の実験を使用します。それぞれの実験を選択して、一つづつコレクションに保存することができます。または”すべてを保存”を選択することでコレクションに一度にすべて保存できます。</string>
     <string name="open_save_all">すべてを保存</string>
     <string name="open_bluetooth_assets_title">Bluetoothデバイス用いた実験</string>
-    <string name="open_bluetooth_assets">このデバイスでは以下の実験をphyphoxで行うことができます。それぞれの実験を選択して開始するか、すべてをコレクションに追加してメニューからアクセスできるようにします。</string>
     <string name="start_hint">矢印にタッチして実験を開始.</string>
     <string name="bluetooth">Bluetooth低消費電力モード</string>
     <string name="bt_android_version">Bluetooth低消費電力モードはAndroid Versions 4.3以前ではサポートされていません。</string>
@@ -206,7 +185,5 @@
     <string name="bt_error_discovering">Bluetoothデバイスのservices検索エラー。</string>
     <string name="bt_fail_reading">読み込み失敗。</string>
     <string name="bt_fail_writing">書き込み失敗。</string>
-    <string name="bt_more_info_link_text">もしあなたのデバイスがサポートされていない場合、以下の”さらに詳しく”からBluetooth低消費電力機能のサポート状況についてphyphoxのホームページで知ることができます。</string>
     <string name="bt_more_info_link_button">さらに詳しく</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
 </resources>

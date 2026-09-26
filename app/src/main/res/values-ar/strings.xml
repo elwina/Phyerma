@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox - مختبر الفيزياء على الهاتف</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">الإعدادات</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">التحريك و التكبير</string>
     <string name="graph_tools_pick">إختيار البيانات</string>
     <string name="graph_tools_more">أدوات إضافية</string>
@@ -30,7 +30,6 @@
     <string name="applyZoomSameAxis">الرسوم البيانية الأخري : نفس المحاور</string>
     <string name="newExperiment">إضافة تجارب</string>
     <string name="newExperimentSimple">إضافة تجارب بسيطة</string>
-    <string name="newExperimentPhyphoxInfo">قم بزيارة phyphox.org لإنشاء تجارب أكثر تقدّمًا، بما في ذلك تحليل البيانات، ومشاركتها مع الزملاء ,الطلاب والأصدقاء.</string>
     <string name="newExperimentInputTitle">العنوان</string>
     <string name="newExperimentInputBufferSize">سعة الذاكرة المؤقتة (عدد القيم التي سيتم تخزينها)</string>
     <string name="newExperimentInputRate">تردد المستشعر (بالهرتز، 0 = بأقصى سرعة ممكنة)</string>
@@ -48,38 +47,22 @@
     <string name="newExperimentQRCodesMissing2">الرموز. يرجى الضغط على متابعة لمسح الرموز المتبقية. الرموز لا تزال مفقودة:</string>
     <string name="activate_all">تفعيل الكل</string>
     <string name="deactivate_all">إلغاء تفعيل الكل</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
     <string name="newExperimentQRBadCRC">فشلت خوارزمية التأكد. هذا يعني إما أن رمز QR تالف أو حدث خطأ أثناء مسحه.</string>
     <string name="newExperimentBTReadErrorTitle">خطأ في تجربة بلوتوث.</string>
     <string name="newExperimentBTReadErrorCorrupted">بيانات التجربة التي تم إرسالها تالفة.</string>
     <string name="generalErrorDialog">حدث خطأ ما.</string>
     <string name="help">دعم و معلومات</string>
     <string name="experimentsPhyphoxOrg">أفكار و إرشادات التجارب</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">الأسئلة الشائعة</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">مساعدة للتحكم عن بُعد</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
     <string name="deviceInfo">معلومات الجهاز</string>
     <string name="copyToClipboard">نسخ إلى الحافظة</string>
     <string name="deviceInfoCopied">تم نسخ معلومات الجهاز إلى الحافظة.</string>
     <string name="warning">تحذير</string>
     <string name="donotshowagain">عدم الإظهار مرة أخرى</string>
-    <string name="damageWarning">يرجى الحذر من إتلاف هاتفك أثناء إجراء التجارب. يرجى توخي الحذر الشديد لتجنب إسقاطه على أسطح صلبة، وعدم تعريضه لمجالات مغناطيسية قوية. مطورو \"Phyphox - مختبر الفيزياء\" غير مسؤولين عن أي أضرار تلحق بهاتفك.</string>
     <string name="info">معلومات</string>
     <string name="credits">الحقوق و التقدير</string>
-    <string name="creditsRWTH">تم تطوير phyphox® بمعهد الفيزياء الثاني بجامعة\" آخن\" (RWTH Aachen.</string>
-    <string name="creditsNames">الفكرة و التطوير:
-\nالدكتور.سيباستيان ستاك
-\nالفكرة:
-\nالبروقيسور.كريستوف ستامفر
-\nالبرمجة:
-\nقوراف تريباثي
-\nدومينيك دورسال
-\nجوناس جيسنر
-\nكاميلا لوميرزهايم</string>
-    <string name="gpl">تطبيق ®phyphox هو برنامج مفتوح المصدر تم إصداره بموجب رخصة \"جنو\" العمومية (GNU General Public Licence). يرجى زيارة http://phyphox.org لمزيد من المعلومات وللوصول إلى الكود المصدري الخاص به. ومع ذلك، فإن اسم \"phyphox\" واسم \"RWTH Aachen\" هما علامتان تجاريتان مسجلتان.</string>
     <string name="creditsLibs">تستخدم واجهة الويب للتحكم عن بُعد خادم Java Lightweight HTTP Server المعروف اختصارًا بـ (jlhttp) و المندرج تحت رخصة \"جنو\" العمومية العامة(GNU GPL v2) الإصدار 2، كما تستخدم مكتبة \"Chart.js\"من JavaScript بـ (http://chartjs.org) لتمثيل البيانات، وهي متاحة بموجب رخصة MIT. و لإجراء تحويل فورييه، نستخدم مكتبة FFTW من (http://fftw.org)، حقوق النشر © 2003، 2007-11 محفوظة لـ \"ماتيو فريغو\"، حقوق النشر © 2003، 2007-11 محفوظة لـ \"معهد ماساتشوستس للتقنية\" MIT، و هي متاحة تحت رخصة \"جنو\" العمومية العامة (الإصدار 2 أو أحدث). يتم تحويل بيانات الإرتفاع الخاصة بنظام تحديد المواقع GPS من النظام الإهليجي (WGS84 ellipsoid) إلى نظام الجيود (EGM84 geoid) بإستخدام بيانات EGM84 (بدقة 30 دقيقة قوسية - 30\' resolution)، إضافة إلى دالة منقولة من مكتبة GeographicLib (https://geographiclib.sourceforge.io) المتاحة بموجب رخصة (MIT/X11).</string>
     <string name="sensorLinearAcceleration">التسارع الخطي</string>
     <string name="sensorLight">الضوء</string>
@@ -102,7 +85,6 @@
     <string name="sensorNotAvailableWarningText1">المستشعر</string>
     <string name="sensorNotAvailableWarningText2">غير متوفر. يعني هذا عادةً أن جهازك ببساطة لا يحتوي على هذا النوع من المستشعرات.</string>
     <string name="sensorNotAvailableWarningMoreInfo">المزيد من المعلومات</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">موافق</string>
     <string name="tryagain">إعادة المحاولة</string>
     <string name="doContinue">متابعة</string>
@@ -133,10 +115,8 @@
     <string name="enableTimedRun">إجراء تشغيل مؤقت</string>
     <string name="export">تصدير البيانات</string>
     <string name="export_empty">لم يتم تعريف أي بيانات قابلة للتصدير في إعدادات هذه التجربة. إذا كان هذا خطأََ،يرجى التواصل مع الجهة التي وفرت رمز QR أو ملف الإعدادات.</string>
-    <string name="export_subject">بيانات من phyphox</string>
     <string name="export_pick_share">اختر وسيلة التصدير</string>
     <string name="share">مشاركة لقطة الشاشة</string>
-    <string name="share_subject">لقطة شاشة من phyphox</string>
     <string name="share_pick_share">اختر وسيلة للمشاركة</string>
     <string name="remoteServer">السماح بالوصول عن بعد</string>
     <string name="remoteServerWarning">أنت على وشك تفعيل الوصول عن بعد للبيانات المجمَّعة. يجب القيام بذالك فقط على شبكة موثوقة! كما يجب ملاحظة أن الوصول المباشر بين الأجهزة قد لا يكون ممكنًا على العديد من شبكات الشركات أو الجامعات.
@@ -170,22 +150,18 @@
     <string name="save_state_title">العنوان</string>
     <string name="save_state_save">إلى المجموعة</string>
     <string name="save_state_share">مشاركة</string>
-    <string name="save_state_subject">حالة تجربة phyphox</string>
     <string name="save_state_default_title">القياس</string>
     <string name="save_state_success">تم حفظ الحالة في مجموعتك.</string>
     <string name="open_zip_title">فتح مجموعة التجارب</string>
     <string name="open_zip_dialog_instructions">يحتوي هذا المورد على تجارب متعددة.يمكنك إما اختيار واحدة لفتحها وحفظها في مجموعتك اختيارياً، أو استخدام الزر أدناه لحفظها جميعاً في مجموعتك دفعة واحدة.</string>
     <string name="open_save_all">حفظ الجميع</string>
     <string name="open_bluetooth_assets_title">التجارب الخاصة بجهاز البلوتوث</string>
-    <string name="open_bluetooth_assets">تتوفر هذه التجارب لجهازك من phyphox. يمكنك فتحها واستخدامها مباشرة، أو إضافتها جميعا إلى مجموعتك للوصول إليها بسهولة من القائمة الرئيسية.</string>
     <string name="timedRun">تشغيل محدد بوقت</string>
     <string name="pick_exportSets">اختر مجموعات البيانات لتصديرها.</string>
     <string name="pick_exportFormat">اختر صيغة البيانات.</string>
     <string name="noDrawableData">لا توجد بيانات قابلة للرسم.</string>
     <string name="categoryNewExperiment">تجارب بسيطة مخصَّصة</string>
     <string name="categoryRawSensor">المستشعرات الخام</string>
-    <string name="categoryPhyphoxOrg">ساهم في تطوير phyphox</string>
-    <string name="categoryPhyphoxOrgHint">توجد خيارات جديدة لدعم phyphox في أسفل القائمة.</string>
     <string name="experimentinfo_hint">تحقق من معلومات التجربة لمعرفة كيفية استخدامها.</string>
     <string name="start_hint">اضغط على المثلث لبدء التجربة.</string>
     <string name="bluetooth">بلوتوث منخفض الطاقة</string>
@@ -233,17 +209,13 @@
     <string name="bt_error_discovering">حدث خطأ أثناء البحث عن خدمات جهاز البلوتوث.</string>
     <string name="bt_fail_reading">لم تكن عملية القراءة ناجحة.</string>
     <string name="bt_fail_writing">لم تكن عملية الكتابة ناجحة.</string>
-    <string name="bt_more_info_link_text">إذا لم يكن جهازك مدعوم، اختر \"المزيد من المعلومات\" لمعرفة المزيد حول دعم \"البلوتوث منخفض الطاقة\" المرن (flexible Bluetooth Low Energy) في تطبيق phyphox على موقعنا الإلكتروني.</string>
     <string name="bt_more_info_link_button">المزيد من المعلومات</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">تحذير بشأن الخصوصية</string>
     <string name="networkVisitPrivacyURL">سياسة الخصوصية</string>
-    <string name="networkPrivacyInfo">تستخدم هذة التجربة اتصالاً بالشبكة، مما يعني أنه يمكن نقل بيانات التجربة إلى خدمة الشبكة. يمكنك الاطلاع على المزيد من التفاصيل بالنقر على زر سياسة الخصوصية أدناه، والذي سيأخذك إلى موقع يحتوي على سياسة الخصوصية المقدمة من منشئ هذه التجربة. إذا كانت خدمة الشبكة ليست جهازا محليّا، يجب أن تكون على علم بأن تطبيق phyphox قد ينقل المعلومات التالية إذا بدأت هذه التجربة:</string>
     <string name="networkPrivacyUniqueID">معرّف فريد لهذا الجهاز وخدمة الشبكة، يُتيح ربط جميع البيانات المُرسلة من هذا الجهاز عبر إعدادات هذه التجربة.</string>
     <string name="networkPrivacySensorData">بيانات من المُستشعرات التالية:</string>
     <string name="networkPrivacySensorMicrophone">تسجيلات أو بيانات مُستخلصة من تسجيلات الميكروفون.</string>
     <string name="networkPrivacySensorLocation">بيانات الموقع الجغرافي (بيانات GPS أو ما شابه ذلك).</string>
-    <string name="networkPrivacyDeviceInfo">معلومات تفصيلية حول طراز جهازك و/أو إصدار تطبيق phyphox.</string>
     <string name="networkPrivacySensorInfo">تفاصيل فنية حول المُستشعرات التالية:</string>
     <string name="timedRunBeeps">الإشارات الصوتية</string>
     <string name="beeperCountdown">أصوات العد التنازلي</string>

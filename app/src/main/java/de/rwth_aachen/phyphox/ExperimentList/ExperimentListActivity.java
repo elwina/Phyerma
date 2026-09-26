@@ -385,23 +385,15 @@ public class ExperimentListActivity extends AppCompatActivity {
         PopupMenu popup = new PopupMenu(wrapper, v);
         popup.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.action_privacy) {
-                openLink(res.getString(R.string.privacyPolicyURL));
+                showPrivacyDialog();
                 return true;
             }
             else if (item.getItemId() == R.id.action_credits) {
                 openCreditDialog();
                 return true;
             }
-            else if (item.getItemId() == R.id.action_helpExperiments) {
-                openLink(res.getString(R.string.experimentsPhyphoxOrgURL));
-                return true;
-            }
-            else if (item.getItemId() == R.id.action_helpFAQ) {
-                openLink(res.getString(R.string.faqPhyphoxOrgURL));
-                return true;
-            }
-            else if (item.getItemId() == R.id.action_helpRemote) {
-                openLink(res.getString(R.string.remotePhyphoxOrgURL));
+            else if (item.getItemId() == R.id.action_source) {
+                openLink(res.getString(R.string.phyerma_source_url));
                 return true;
             }
             else if (item.getItemId() == R.id.action_settings) {
@@ -419,6 +411,14 @@ public class ExperimentListActivity extends AppCompatActivity {
         });
         popup.inflate(R.menu.menu_help);
         popup.show();
+    }
+
+    private void showPrivacyDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.phyerma_privacy_title)
+                .setMessage(R.string.phyerma_privacy_body)
+                .setPositiveButton(R.string.close, null)
+                .show();
     }
 
     private void openLink(String URLString) {
@@ -445,7 +445,7 @@ public class ExperimentListActivity extends AppCompatActivity {
             sb.append(" <font color='black'");
         }
 
-        sb.append("<b>phyphox</b><br />");
+        sb.append("<b>Phyerma</b><br />");
         if (pInfo != null) {
             sb.append("Version: ");
             sb.append(pInfo.versionName);

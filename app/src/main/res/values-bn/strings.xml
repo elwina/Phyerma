@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">ফিফক্স</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">সেটিংস</string>
-    <string name="title_activity_experiment">ফিফক্স</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">আঙুল দিয়ে জুম</string>
     <string name="graph_tools_pick">ডাটা নেওয়া</string>
     <string name="graph_tools_more">আরো টুলস</string>
@@ -31,7 +30,6 @@
     <string name="applyZoomSameAxis">অন্য গ্রাফেঃ একই অক্ষ</string>
     <string name="newExperiment">পরীক্ষা যোগ করুন</string>
     <string name="newExperimentSimple">সহজ পরীক্ষা যোগ করুন</string>
-    <string name="newExperimentPhyphoxInfo">আরো উন্নতমানের পরীক্ষা বা ডাটা বিশ্লেষণ যোগ করতে হলে phyphox.org সাইটে যান। আপনার সহকর্মী, বন্ধু আর ছাত্রদের সাথে ভাগ করে নিন।</string>
     <string name="newExperimentInputTitle">শীর্ষক</string>
     <string name="newExperimentInputBufferSize">বাফারের আকার (যতগুলি রাশি সংগ্রহ করা হবে তার সংখ্যা)</string>
     <string name="newExperimentInputRate">সেন্সরের হার (rate) (হার্ৎসে, 0 = যতো বেশি সম্ভব</string>
@@ -53,30 +51,16 @@
     <string name="generalErrorDialog">কোনো সমস্যা হয়েছে।</string>
     <string name="help">তথ্য এবং সহায়তা</string>
     <string name="experimentsPhyphoxOrg">পরীক্ষার ধারণা ও প্রণালী</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">প্রায়শই জিজ্ঞাসা করা প্রশ্ন</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">রিমোট কন্ট্রোল সহায়তা</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
     <string name="deviceInfo">ডিভাইসের বিবরণ</string>
     <string name="copyToClipboard">ক্লিপবোর্ডে কপি করুন</string>
     <string name="deviceInfoCopied">ডিভাইস সম্বন্ধে তথ্য আপনার ক্লিপবোর্ডে কপি করা হয়েছে।</string>
     <string name="warning">সাবধান</string>
     <string name="donotshowagain">পুনরায় দেখাবেন না</string>
-    <string name="damageWarning">পরীক্ষা করার সময় যাতে আপনার ফোনের কোনো রকম ক্ষতি না হয় সেদিকে দৃষ্টি দেবেন। বিশেষ করে খেয়াল রাখবেন যেন ফোন কোনো শক্ত জায়গায় না পড়ে বা অতিরিক্ত প্রাবল্যের চৌম্বক ক্ষেত্রের সংস্পর্শে না আসে। আপনার ফোনের কোনো ক্ষতির জন্য ফিফক্স প্রণেতারা দায়ী থাকবেন না।</string>
     <string name="info">তথ্য</string>
     <string name="credits">স্বীকৃতি</string>
-    <string name="creditsRWTH">phyphox® তৈরি করেছেন RWTH, আচেন বিশ্ববিদ্যালয়ের দ্বিতীয় পদার্থবিদ্যা সংস্থান।</string>
-    <string name="creditsNames">মূল ধারণা এবং প্রস্তুতি :
-\nডাঃ. সেবাস্টিয়ান স্ট্যাকস
-\nমূল ধারণা:
-\nপ্রফেসর ক্রিস্টোফ স্ট্যাম্পফার
-\nপ্রোগ্রামিং:
-\nগৌরব ত্রিপাঠী
-\nডমিনিক ডরসেল
-\nজোনাস গেসনার
-\nক্যামিলা লুমারঝেইম</string>
     <string name="sensorLinearAcceleration">রৈখিক ত্বরণ</string>
     <string name="sensorGravity">গুরুত্ব</string>
     <string name="sensorLight">লাইট</string>
@@ -88,7 +72,6 @@
     <string name="sensorHumidity">আদ্রতা</string>
     <string name="sensorProximity">নৈকট্য</string>
     <string name="sensorAttitude">দেহভঙ্গিমা</string>
-    <string name="gpl">ফিফক্স (Phyphox®) GNU জেনারেল পাব্লিক লাইসেন্সের অধীণ। আরো জানতে হলে বা এর সোর্সকোড পেতে হলে দয়া করে http://phyphox.org সাইটে যান। অবশ্য, \"ফিফক্স\" এবং \"আর ডব্লিউ টি এইচ আচেন\" এই নাম দুটি ট্রেডমার্ক হিসাবে নথিভুক্ত আছে।</string>
     <string name="creditsLibs">রিমোট অ্যাক্সেস এর জন্য নির্মিত ওয়েব-ইন্টারফেসটি MIT লাইসেন্সের অধীনে প্রাপ্ত জাভাস্ক্রিপ্ট লাইব্রেরি \"Chart.js\"(http://chartjs.org) ব্যবহার করে। ফ্যুরিয়র ট্রান্সফর্মের জন্য আমরা ব্যবহার করেছি FFTW লাইব্রেরি (http://fftw.org), কপিরাইট © 2003, 2007-11 ম্যাত্তিও ফ্রিগো, কপিরাইট © 2003, 2007-11 ম্যাসাচুসেটস ইনস্টিটিউট অফ টেকনোলজি , যেটি, GNU জেনারেল পাবলিক লাইসেন্সের (২ নম্বর বা তার পরবর্তী ভার্সন) অধীন। GPS উচ্চতার ডাটা</string>
     <string name="sensorVendor">বিক্রেতা সংক্রান্ত</string>
     <string name="sensorDepth">গভীরতা (LiDAR/ToF)</string>
@@ -101,7 +84,6 @@
     <string name="sensorNotAvailableWarningText1">সেন্সর</string>
     <string name="sensorNotAvailableWarningText2">পাওয়া যাচ্ছে না। সাধারণত এর অর্থ হলো যে আপনার মোবাইলে এই ধরনের সেন্সর নেই।</string>
     <string name="sensorNotAvailableWarningMoreInfo">অধিক তথ্য</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">ঠিক আছে।</string>
     <string name="tryagain">পুনরায় প্রয়াস করুন</string>
     <string name="doContinue">করতে থাকুন</string>
@@ -158,12 +140,9 @@
     <string name="bt_error_discovering">ব্লুটুথ ডিভাইস পরিষেবাগুলির জন্য অনুসন্ধানে ত্রুটি</string>
     <string name="bt_fail_reading">রিডিংয়ের প্রক্রিয়া সফল হয়নি।</string>
     <string name="bt_fail_writing">রাইটিংয়ের প্রক্রিয়া সফল হয়নি।</string>
-    <string name="bt_more_info_link_text">আপনার ডিভাইস সাপোর্ট না করলে, আমাদের ওয়েবসাইটে phyphox-এ ফ্লেক্সিবল ব্লুটুথ লো এনার্জি সাপোর্ট সম্পর্কে আরও জানতে \"আরো তথ্য\" নির্বাচন করুন।</string>
     <string name="bt_more_info_link_button">আরো তথ্য</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">গোপনীয়তার সতর্কতা</string>
     <string name="networkVisitPrivacyURL">গোপনীয়তা নীতি</string>
-    <string name="networkPrivacyInfo">এই পরীক্ষাটি একটি নেটওয়ার্ক সংযোগ ব্যবহার করে, যার অর্থ হল পরীক্ষার ডেটা একটি নেটওয়ার্ক পরিষেবাতে পাঠানো যেতে পারে। আপনি নীচের \'গোপনীয়তা নীতি\'তে বোতামে ক্লিক করে আরও বিশদ বিবরণ পেতে পারেন, যা আপনাকে এই পরীক্ষার নির্মাতার দেওয়া গোপনীয়তা নীতি সহ এক ওয়েবসাইটে নিয়ে যাবে৷ যদি নেটওয়ার্ক পরিষেবা স্থানীয় ডিভাইস না হয়, তাহলে আপনার সচেতন হওয়া উচিত যে আপনি এই পরীক্ষা শুরু করলে phyphox নিম্নলিখিত তথ্য প্রেরণ করতে পারে:</string>
     <string name="settings_theme_no_night">লাইট মোড</string>
     <string name="settings_theme_sync_setting">সিস্টেমের সাথে মিলিয়ে নিন</string>
     <string name="settingGraphViewEdit">ব্যবহারকারী ইন্টারফেস</string>
@@ -282,7 +261,6 @@
     <string name="networkPrivacySensorData">নিম্নলিখিত সেন্সরগুলি থেকে ডেটা:</string>
     <string name="networkPrivacySensorMicrophone">মাইক্রোফোন দ্বারা রেকর্ডিং থেকে প্রাপ্ত রেকর্ডিং বা ডেটা।</string>
     <string name="networkPrivacySensorLocation">অবস্থান ডেটা (GPS ডেটা বা অনুরূপ)।</string>
-    <string name="networkPrivacyDeviceInfo">আপনার ডিভাইসের মডেল এবং / অথবা phyphox এর সংস্করণ সম্পর্কে বিস্তারিত তথ্য।</string>
     <string name="settingsHeadLanguage">ভাষা</string>
     <string name="settingsLanguage">অ্যাপের ভাষা</string>
     <string name="settingsTranslation">অনুবাদ</string>
@@ -308,9 +286,7 @@
     <string name="timedRunDialogTitle">সময় শুরু করুন</string>
     <string name="timedRunStartDelay">দেরিতে শুরু</string>
     <string name="timedRunStopDelay">পরীক্ষার নির্দিষ্ট সময়</string>
-    <string name="export_subject">ফিফক্স থেকে প্রাপ্ত ডাটা</string>
     <string name="share">স্ক্রীনশর্ট শেয়ার করুন</string>
-    <string name="share_subject">ফিফক্স থেকে স্ক্রীনশর্ট নিন</string>
     <string name="share_pick_share">শেয়ার করার পদ্ধতি নিন</string>
     <string name="remoteServer">রিমোট অ্যাক্সেস কে অনুমতি দিন</string>
     <string name="remoteServerWarningTitle">সুরক্ষা সচেতন!</string>
@@ -337,7 +313,6 @@
     <string name="save_state_title">শীর্ষক</string>
     <string name="save_state_save">সংগ্রহ করতে</string>
     <string name="save_state_share">ভাগাভাগি</string>
-    <string name="save_state_subject">ফিফক্স এর জন্য পরীক্ষার স্থিতি</string>
     <string name="save_state_default_title">মাপা</string>
     <string name="save_state_success">আপনার সংগ্রহ তে স্থিতি সেভ করা হয়েছে।</string>
     <string name="open_zip_title">পরীক্ষাটির একটি সেট কে খুলুন</string>

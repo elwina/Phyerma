@@ -23,7 +23,6 @@
     <string name="applyZoomSameAxis">Други графики: Същата ос</string>
     <string name="newExperiment">Добави експерименти</string>
     <string name="newExperimentSimple">Добави прост експеримент</string>
-    <string name="newExperimentPhyphoxInfo">За да създадете други експерименти, включително анализ на данни, и за да ги споделите с колеги, ученици, студенти, и приятели посетете phyphox.org.</string>
     <string name="newExperimentInputTitle">Заглавие</string>
     <string name="newExperimentInputBufferSize">Размер на буфера (брой стойности, които да бъдат запазени)</string>
     <string name="newExperimentInputRate">Честота на сензора (Hz, 0 = възможно най-бързо)</string>
@@ -45,31 +44,16 @@
     <string name="generalErrorDialog">Възникна грешка.</string>
     <string name="help">Помощ и информация</string>
     <string name="experimentsPhyphoxOrg">Идеи за експеримент и инструкции</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Често задавани въпроси</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Помощ за дистанционен контрол</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#en</string>
     <string name="deviceInfo">Информация за устройството</string>
     <string name="copyToClipboard">Копирай във временния буфер</string>
     <string name="deviceInfoCopied">Информацията за устройството е копирана във временния ви буфер.</string>
     <string name="warning">Предупреждение</string>
     <string name="donotshowagain">Не показвай отново</string>
-    <string name="damageWarning">Внимавайте да не повредите телефона си по време на експериментите. Особено внимавайте да не го изпуснете върху твърди повърости, и да не го излагата на силни магнитни полета. Авторите на phyphox не носят отговорност за повреди на телефона ви.</string>
     <string name="info">Информация</string>
     <string name="credits">Принос</string>
-    <string name="creditsRWTH">phyphox® е създаден в 2nd Institute of Physics at the RWTH Aachen University.</string>
-    <string name="creditsNames">Концепция и Разработка:
-\nDr. Sebastian Staacks
-\nКонцепция:
-\nDr. Sebastian Staacks
-\nПрограмиране:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox® е софтуеър с отворен код, публикуван под лизенз GNU General Public Licence. За повече информация и достъп до кода посетете http://phyphox.org for further information and to get access to its source code. Името \"phyphox\" и \"RWTH Aachen\" са регистрирани търговски марки.</string>
     <string name="creditsLibs">Уеб-интерфейсът за дистанционен достъп използва Java Lightweight HTTP Server (jlhttp) лизензиран под GNU General Public Licence v2 и изобразява данните чрез JavaScript библиотеката \"Chart.js\" (http://chartjs.org), достъпни под лиценза MIT licence. За преобразувания на Фурие използваме библиотеката FFTW library (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, която е достъпна под лиценз GNU General Public Licence (версия 2 или по-висока). GPS данните за височина са превърнати от елипсоид WGS84 към геоид EGM84 използвайки данните EGM84 (разделителна способност 30\') и функция ported от GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 licence).</string>
     <string name="sensorLinearAcceleration">Линейно ускорение</string>
     <string name="sensorGravity">Гравитация</string>
@@ -90,7 +74,6 @@
     <string name="sensorNotAvailableWarningText1">Сензорът</string>
     <string name="sensorNotAvailableWarningText2">не е наличен. Обикновено това означава, че устройството ви не притежава този тип сензор.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Повече информация</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="tryagain">Опитайте отново</string>
     <string name="doContinue">Продължете</string>
     <string name="close">Затвори</string>
@@ -120,14 +103,12 @@
     <string name="enableTimedRun">Изпълни със зададено времетраене</string>
     <string name="export">Експортиране на данни</string>
     <string name="export_empty">Тази конфигурация на експеримента не дефинира данни за експортиране. Ако това е грешка, моля обърнете се към източника на QR кода или конфигурационния файл.</string>
-    <string name="export_subject">Данни от phyphox</string>
     <string name="export_pick_share">Избери метод за експортиране</string>
     <string name="share">Сподели снимка на екрана</string>
     <string name="download">Изтегляне</string>
     <string name="savedToDownloadsMessage">Файлът е запазен при изтеглените файлове</string>
     <string name="permissionRequiredToSaveToDownloads">Необходимо е разрешение за да може да се запазват изтеглените файлове</string>
     <string name="errorWritingStateFile">Грешка при записване на файл със състоянието:</string>
-    <string name="share_subject">Екранна снимка от phyphox</string>
     <string name="share_pick_share">Избор на метод за споделяне</string>
     <string name="remoteServer">Разрешаване на отдалечен достъп</string>
     <string name="remoteServerWarning">Избрали сте да разрешите отдалечен достъп до набраните данни. Правете го единствено в сигурна мрежа! Също така имайте предвид, че в много корпоративни или университетски мрежи, директен достъп между устройства може да не е възможен.
@@ -161,7 +142,6 @@
     <string name="save_state_title">Наименование</string>
     <string name="save_state_save">В колекция</string>
     <string name="save_state_share">Споделяне</string>
-    <string name="save_state_subject">Състояние на експеримент за phyphox</string>
     <string name="save_state_default_title">Измерване</string>
     <string name="save_state_success">Състоянието е запазено във вашата колекция.</string>
     <string name="open_zip_title">Отваряне на група експерименти</string>

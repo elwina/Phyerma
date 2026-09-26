@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Indstillinger</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">Flyt/zoom</string>
     <string name="graph_tools_pick">Vælg datapunkt</string>
     <string name="graph_tools_more">Flere værktøjer</string>
@@ -30,7 +30,6 @@
     <string name="applyZoomSameAxis">Andre grafer: samme akse</string>
     <string name="newExperiment">Nyt eksperiment</string>
     <string name="newExperimentSimple">Nyt enkelt eksperiment</string>
-    <string name="newExperimentPhyphoxInfo">Besøg phyphox.org for at lave mere avancerede eksperimenter med dataanalyse, og dele dem med kollegaer, elever og venner.</string>
     <string name="newExperimentInputTitle">Titel</string>
     <string name="newExperimentInputBufferSize">Bufferstørrelse (antal værdier, der skal gemmes)</string>
     <string name="newExperimentInputRate">Sensorfrekvens (i Hz, 0 = så hurtigt som muligt)</string>
@@ -60,20 +59,8 @@
     <string name="deviceInfoCopied">Enhed info blev kopieret til udklipsholderen.</string>
     <string name="warning">Advarsel</string>
     <string name="donotshowagain">Vis ikke igen</string>
-    <string name="damageWarning">Vær forsigtigt, når du eksperimenterer, så du ikke skader din telefon. Undgå især, at tabe enheden på hårde overflader, eller at udsætte den for stærke magnetfelter. Udviklerne af denne app tager intet ansvar for skaderne på din enhed.</string>
     <string name="info">Info</string>
     <string name="credits">Credits</string>
-    <string name="creditsRWTH">phyphox® blev udviklet på 2. Physikalisches Institut ved RWTH Aachen Universitet.</string>
-    <string name="creditsNames">Development and Concept:
-\nDr. Sebastian Staacks
-\nConcept:
-\nProf. Christoph Stampfer
-\nProgramming:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
-    <string name="gpl">Phyphox® er open source software, som licenseres under GNU General Public Licence. Yderligere informationer og kildekoden finder du her: http://phyphox.org. \"phyphox\" og \"RWTH Aachen\" er derimod beskyttede varemærker.</string>
     <string name="sensorLinearAcceleration">Lineær acceleration</string>
     <string name="sensorLight">Lys</string>
     <string name="sensorGyroscope">Gyroskop</string>
@@ -113,10 +100,8 @@
     <string name="timedRunStopDelay">Eksperimentets varighed (s)</string>
     <string name="export">Eksportér data</string>
     <string name="export_empty">Denne eksperimentkonfiguration mangler en definition for data eksport. Hvis det er en fejl, kontakt venligst vedkommende, der har skabt QR-koden eller konfigurationsfilen.</string>
-    <string name="export_subject">Data fra phyphox</string>
     <string name="export_pick_share">Vælg en App til eksport</string>
     <string name="share">Del screenshot</string>
-    <string name="share_subject">Screenshot fra phyphox</string>
     <string name="share_pick_share">Vælg en App til deling</string>
     <string name="remoteServer">Tillad fjernadgang</string>
     <string name="remoteServerWarning">Du er i gang med at aktivere fjernadgang. Du bør kun gøre det på et sikkert netværk! Vær venligst opmærksom på, at den direkte adgang mellem forskellige enheder på mange universitets- eller virksomhedsnetværk ikke er muligt.
@@ -156,8 +141,6 @@
     <string name="noDrawableData">Ingen data at vise.</string>
     <string name="categoryNewExperiment">Enkle egne eksperimenter</string>
     <string name="categoryRawSensor">Sensorer</string>
-    <string name="categoryPhyphoxOrg">Støt phyphox</string>
-    <string name="categoryPhyphoxOrgHint">Der er nye måder at støtte phyphox på, se nederst på listen.</string>
     <string name="experimentinfo_hint">Tjek eksperiment info for at finde ud af, hvordan dette eksperiment fungerer.</string>
     <string name="start_hint">Rør trekanten for at starte eksperimentet.</string>
     <string name="bluetooth">Bluetooth Low Energy</string>

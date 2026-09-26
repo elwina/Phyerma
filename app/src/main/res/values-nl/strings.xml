@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Instellingen</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">Voeg experimenten toe</string>
-    <string name="newExperimentPhyphoxInfo">Ga naar phyphox.org om geavanceerdere experimenten te maken, inclusief data-analyse en deel deze met collega\'s, studenten en vrienden.</string>
     <string name="newExperimentInputTitle">Titel</string>
     <string name="newExperimentInputBufferSize">Buffer omvang (aantal op te slaan getallen)</string>
     <string name="newExperimentInputRate">Sensor frequentie</string>
     <string name="newExperimentInputSensors">Actieve sensoren</string>
     <string name="help">Help en info</string>
     <string name="experimentsPhyphoxOrg">Experiment: ideeën en instructies</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Vaak gestelde vragen</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Afstandsbediening: help</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#nl</string>
     <string name="warning">Waarschuwing</string>
     <string name="donotshowagain">Niet opnieuw tonen</string>
-    <string name="damageWarning">Let op dat tijdens het experimenteren je smartphone niet beschadigd wordt. Laat hem niet vallen op een hard oppervlak en stel hem niet bloot aan sterke magnetische velden. De auteurs van phyphox zijn niet verantwoordelijk voor enige schade aan je smartphone.</string>
     <string name="info">Info</string>
     <string name="credits">Credits</string>
-    <string name="creditsRWTH">phyphox werd ontwikkeld aan het Instituut voor Fysica aan de RWTH Aachen University.</string>
-    <string name="creditsNames">Concept en uitwerking:
-\nDr. Sebastian Staacks
-\nConcept:
-\nProf. Christoph Stampfer
-\nProgrammering:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">De webinterface voor afstandsbediening gebruikt de JavaScript-bibliotheek \"Chart\" (http://chartjs.org) beschikbaar onder MIT-licentie. Voor de fourier transformaties, gebruiken we de FFTW libbibliotheek ary (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, die ook beschikbaar is onder GNU General Public Licence (versie 2 of later).</string>
     <string name="sensorLinearAcceleration">Lineaire Versnelling</string>
     <string name="sensorLight">Licht</string>
@@ -47,7 +32,6 @@
     <string name="sensorNotAvailableWarningText1">De sensor</string>
     <string name="sensorNotAvailableWarningText2">is niet beschikbaar. Meestal betekent dit dat uw apparaat niet over dit type sensor beschikt.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Meer informatie</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OKE</string>
     <string name="close">Sluiten</string>
     <string name="next">Volgende</string>
@@ -70,10 +54,8 @@
     <string name="timedRunStopDelay">Duur experiment (s)</string>
     <string name="enableTimedRun">Doe een getimede meting</string>
     <string name="export">Export Data</string>
-    <string name="export_subject">Data van phyphox</string>
     <string name="export_pick_share">Kies een export methode</string>
     <string name="share">Schermafbeelding delen</string>
-    <string name="share_subject">Schermafbeelding van phyphox</string>
     <string name="share_pick_share">Kies een methode om te delen</string>
     <string name="remoteServer">Sta bediening op afstand toe</string>
     <string name="remoteServerWarning">U staat op het punt om toegang op afstand tot de verkregen data mogelijk te maken. Doe dit alleen via een betrouwbaar netwerk! Let er ook op dat een directe toegang tussen toestellen niet mogelijk kan zijn op vele bedrijfs- of universiteitsnetwerken.
@@ -101,7 +83,6 @@
     <string name="save_state_title">Titel</string>
     <string name="save_state_save">Naar experimentenlijst</string>
     <string name="save_state_share">Delen</string>
-    <string name="save_state_subject">Status van het experiment voor phyphox</string>
     <string name="save_state_default_title">Meting</string>
     <string name="save_state_success">Status is opgeslagen in uw experimentenlijst.</string>
     <string name="timedRun">Getimede meting</string>
@@ -154,7 +135,6 @@
     <string name="deviceInfo">Apparaatinfo</string>
     <string name="copyToClipboard">Kopieer naar klembord</string>
     <string name="deviceInfoCopied">Het apparaat heeft info gekopieerd naar je klembord.</string>
-    <string name="gpl">Phyphox is open source software vrijgegeven onder de GNU General Public Licence. Bezoekt http://phyphox.org voor meer informatie en toegang tot de broncode. Niettemin zijn \"phyphox\" en \"RWTH Aachen\" geregistreerde merknamen.</string>
     <string name="sensorVendor">Specifiek voor de leverancier</string>
     <string name="vendorSensorTitle">Sensor van specifieke leverancier</string>
     <string name="vendorSensorWarning1">De sensor</string>
@@ -171,7 +151,6 @@
     <string name="open_zip_dialog_instructions">Deze bron bevat meerdere experimenten. Je kunt er een uitkiezen en openen en het eventueel opslaan in je verzameling experimenten of de knop hieronder gebruiken om ze allemaal in een keer op te slaan in je verzameling.</string>
     <string name="open_save_all">Alles opslaan</string>
     <string name="open_bluetooth_assets_title">Experimenten voor Bluetooth apparaat</string>
-    <string name="open_bluetooth_assets">Volgende experimenten zijn via phyphox beschikbaar op jouw smartphone. Je kunt er een openen en gebruiken of ze alle toevoegen aan je verzameling experimenten om ze makkelijk op te roepen vanuit het hoofdmenu.</string>
     <string name="start_hint">Tik op de driehoek om het experiment te starten.</string>
     <string name="bluetooth">Bluetooth Lage Energie</string>
     <string name="bt_android_version">Bluetooth Lage Energie wordt niet ondersteund op Android versies lager dan 4.3.</string>
@@ -206,9 +185,7 @@
     <string name="bt_error_discovering">Fout bij het schrijven naar Bluetooth apparaat.</string>
     <string name="bt_fail_reading">Het inlezen was niet succesvol.</string>
     <string name="bt_fail_writing">De schrijfoperatie was niet succesvol.</string>
-    <string name="bt_more_info_link_text">Als je apparaat niet ondersteund wordt, klik dan op \"meer info\" om meer te leren over de flexibele Bluetooth Low Energy ondersteuning in phyphox op onze website.</string>
     <string name="bt_more_info_link_button">Meer info</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="common_direction_short_south">Z</string>
     <string name="common_direction_short_east">O</string>
     <string name="common_direction_short_north_east">NO</string>

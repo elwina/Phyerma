@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Ρυθμίσεις</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">Προσθήκη πειράματος</string>
-    <string name="newExperimentPhyphoxInfo">Επισκεφθείτε την σελίδα phyphox.org για να δημιουργήσετε πιο σύνθετα πειράματα που περιλαμβάνουν ανάλυση δεδομένων και μοιραστείτε τα με συναδέλφους, μαθητές και φίλους.</string>
     <string name="newExperimentInputTitle">Τίτλος</string>
     <string name="newExperimentInputBufferSize">Μέγεθος buffer (πλήθος τιμών για αποθήκευση)</string>
     <string name="newExperimentInputRate">Ρυθμός Αισθητήρα (σε Hz, 0= όσο γρηγορότερα γίνεται)</string>
     <string name="newExperimentInputSensors">Ενεργοί αισθητήρες</string>
     <string name="help">Βοήθεια και πληροφορίες</string>
     <string name="experimentsPhyphoxOrg">Ιδέες για πειράματα και οδηγίες</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Συχνές ερωτήσεις</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Βοήθεια για τον έλεγχο εξ αποστάσεως</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#el</string>
     <string name="warning">Προειδοποίηση</string>
     <string name="donotshowagain">Να μην προβληθεί ξανά</string>
-    <string name="damageWarning">Προσέξτε να μην προκαλέσετε ζημιά στο κινητό σας κατά τη διάρκεια του πειράματος. Δώστε ιδιαίτερη προσοχή ώστε να μην χτυπήσει σε σκληρές επιφάνειες και αποφύγετε την έκθεσή του σε ισχυρά μαγνητικά πεδία. Οι δημιουργοί του phyphox δεν είναι υπεύθυνοι για τυχόν ζημιές στο κινητό σας.</string>
     <string name="info">Πληροφορίες</string>
     <string name="credits">Μνεία</string>
-    <string name="creditsRWTH">Η εφαρμογή phyphox® δημιουργήθηκε στο 2ο Ινστιτούτο Φυσικής στο Πανεπιστήμιο RWTH Aachen.</string>
-    <string name="creditsNames">Ανάπτυξη και Ιδέα:
-\nDr. Sebastian Staacks
-\nΙδέα:
-\nProf. Christoph Stampfer
-\nΠρογραμματισμός:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">Το web-interface της απομακρυσμένης πρόσβασης χρησιμοποιεί τον Java Lightweight HTTP Server (jlhttp) διαθέσιμο με βάση την GNU General Public Licence v2 και σχεδιάζει τα διαγράμματα με τη βιβλιοθήκη JavaScript \"Chart.js\" (http://chartjs.org), διαθέσιμη υπό την άδεια του ΜΙΤ. Για το μετασχηματισμό fourier χρησιμοποιούμε την βιβλιοθήκη FFTW (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology που είναι διαθέσιμη υπό την άδεια GNU General Public Licence (version 2 or later). Τα δεδομένα υψομέτρου του GPS μετατρέπονται από το ελλειψοειδές WGS84 στο γεωειδές EGM84 χρησιμοποιώντας δεδομένα EGM84 (30\' ανάλυσης) και μια τροποποιημένη συνάρτηση από το GographicLib (https://geographiclib.sourceforge.io/, MIT/X11 licence).</string>
     <string name="sensorLinearAcceleration">Γραμμική επιτάχυνση</string>
     <string name="sensorLight">Φως</string>
@@ -47,7 +32,6 @@
     <string name="sensorNotAvailableWarningText1">Ο αισθητήρας</string>
     <string name="sensorNotAvailableWarningText2">δεν είναι διαθέσιμος. Συνήθως αυτό σημαίνει ότι η συσκευή σας δε διαθέτει αισθητήρα αυτού του τύπου.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Περισσότερες πληροφορίες</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="close">Κλείσιμο</string>
     <string name="next">Επόμενο</string>
@@ -70,10 +54,8 @@
     <string name="timedRunStopDelay">Διάρκεια πειράματος (s)</string>
     <string name="enableTimedRun">Χρονομετρημένη εκτέλεση</string>
     <string name="export">Εξαγωγή δεδομένων</string>
-    <string name="export_subject">Δεδομένα από phyphox</string>
     <string name="export_pick_share">Επιλογή του τρόπου εξαγωγής</string>
     <string name="share">Διαμοιρασμός εικόνας οθόνης</string>
-    <string name="share_subject">Screenshot του phyphox</string>
     <string name="share_pick_share">Επιλογή του τρόπου διαμοιρασμού</string>
     <string name="remoteServer">Να επιτρέπεται απομακρυσμένη πρόσβαση</string>
     <string name="remoteServerWarning">Πρόκειται να επιτρέψετε απομακρυσμένη πρόσβαση στην λήψη δεδομένων. Αυτό θα πρέπει να επιτρέπεται μόνο σε έμπιστο δίκτυο! Επίσης σημειώστε ότι η απευθείας πρόσβαση ανάμεσα σε συσκευές μπορεί να μην είναι δυνατή σε πολλά εταιρικά ή πανεπιστημιακά δίκτυα
@@ -100,7 +82,6 @@
     <string name="save_state_title">Τίτλος</string>
     <string name="save_state_save">Σε συλλογή</string>
     <string name="save_state_share">Διαμοιρασμός</string>
-    <string name="save_state_subject">Κατάσταση πειράματος για phyphox</string>
     <string name="save_state_default_title">Μέτρηση</string>
     <string name="save_state_success">Η κατάσταση αποθηκεύτηκε στη συλλογή σας.</string>
     <string name="timedRun">Χρονομετρημένη εκτέλεση</string>
@@ -154,7 +135,6 @@
     <string name="deviceInfo">Πληροφορίες συσκευής</string>
     <string name="copyToClipboard">Αντιγραφή στο πρόχειρο</string>
     <string name="deviceInfoCopied">Οι πληροφορίες της συσκευής αντιγράφηκαν στο πρόχειρο.</string>
-    <string name="gpl">Το phyphox® είναι λογισμικό ανοιχτού κώδικα που δημοσιεύτηκε κάτω από την άδεια GNU General Public Licence. Παρακαλώ επισκεφτείτε τη σελίδα http://phyphοx.org για παραπάνω πληροφορίες καθώς και για να αποκτήσετε πρόσβαση στον κώδικά του. Όμως τα ονόματα \"phyphox\" και \"RWTH Aachen\" είναι καταχωρημένα εμπορικά σήματα.</string>
     <string name="sensorVendor">Καθοριζόμενος από τον προμηθευτή</string>
     <string name="vendorSensorTitle">Αισθητήρας καθοριζόμενος από τον προμηθευτή</string>
     <string name="vendorSensorWarning1">Ο αισθητήρας</string>
@@ -171,7 +151,6 @@
     <string name="open_zip_dialog_instructions">Αυτή η πηγή περιέχει πολλά πειράματα. Μπορείτε να επιλέξετε είτε να ανοίξετε ένα και αν θέλετε να το αποθηκεύσετε στη συλλογή σας είτε χρησιμοποιώντας το επόμενο κουμπί να τα αποθηκεύσετε όλα στη συλλογή σας απευθείας.</string>
     <string name="open_save_all">Αποθήκευση όλων</string>
     <string name="open_bluetooth_assets_title">Πειράματα για συσκευή Bluetooth</string>
-    <string name="open_bluetooth_assets">Τα επόμενα πειράματα για τη συσκευή σας είναι διαθέσιμα από το phyphox. Μπορείτε είτε απλά να τα ανοίξετε και να τα χρησιμοποιήσετε είτε να τα προσθέσετε όλα στη συλλογή σας ώστε να έχετε εύκολη πρόσβαση σ\' αυτά από το κυρίως μενού.</string>
     <string name="start_hint">Πατήστε το τρίγωνο για να ξεκινήσετε το πείραμα.</string>
     <string name="bluetooth">Bluetooth χαμηλής ενέργειας</string>
     <string name="bt_android_version">Το Bluetooth χαμηλής ενέργειας δεν υποστηρίζεται στην συσκευή αυτή</string>
@@ -206,17 +185,13 @@
     <string name="bt_error_discovering">Σφάλμα κατά την αναγνώριση των υπηρεσιών της συσκευής bluetooth.</string>
     <string name="bt_fail_reading">Η διαδικασία ανάγνωσης δεν ήταν επιτυχής.</string>
     <string name="bt_fail_writing">Η διαδικασία εγγραφής δεν ήταν επιτυχής.</string>
-    <string name="bt_more_info_link_text">Αν η συσκευή σας δεν υποστηρίζεται, επιλέξτε \"περισσότερες πληροφορίες\" για να μάθετε περισσότερα σχετικά με την ευέλικτη υποστήριξη του phyphox στο Bluetooth Low Energy.</string>
     <string name="bt_more_info_link_button">Περισσότερες πληροφορίες</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">Προειδοποίηση Απορρήτου</string>
     <string name="networkVisitPrivacyURL">Πολιτική Απορρήτου</string>
-    <string name="networkPrivacyInfo">Το πείραμα αυτό χρησιμοποιεί μια σύνδεση δικτύου, το οποίο σημαίνει ότι δεδομένα μπορεί να μεταδίδονται σε μια δικτυακή υπηρεσία. Μπορείτε να βρείτε περισσότερες λεπτομέρειες πατώντας το πλήκτρο Πολιτικής Απορρήτου το οποίο θα σας μεταφέρει σε μια ιστοσελίδα με την πολιτική απορρήτου, που παρέχει ο δημιουργός του προγράμματος. Αν η υπηρεσία δικτύου δεν είναι μια τοπική συσκευή, πρέπει να γνωρίζετε ότι το phyphox ενδέχεται να μεταδώσει τις παρακάτω πληροφορίες με την εκκίνηση του πειράματος:</string>
     <string name="networkPrivacyUniqueID">Ένα αναγνωριστικό που είναι μοναδικό για αυτή τη συσκευή και τη συσκευή δικτύου, το οποίο χρησιμοποιείται για την αντιστοίχηση των δεδομένων που στέλνονται από τη συσκευή.</string>
     <string name="networkPrivacySensorData">Δεδομένα απο τους παρακάτω αισθητήρες:</string>
     <string name="networkPrivacySensorMicrophone">Εγγραφές ή δεδομένα προερχόμενα από εγγραφές του μικροφώνου.</string>
     <string name="networkPrivacySensorLocation">Δεδομένα τοποθεσίας (δεδομένα GPS ή παραπλήσια).</string>
-    <string name="networkPrivacyDeviceInfo">Αναλυτικές πληροφορίες που αφορούν το μοντέλο της συσκευής και/ή την έκδοση του phyhox.</string>
     <string name="networkPrivacySensorInfo">Τεχνικές λεπτομέρειες σχετικά με τους ακόλουθους αισθητήρες:</string>
     <string name="sensorAttitude">Προσανατολισμός</string>
     <string name="leave_experiment">Αποχώρηση</string>
@@ -226,8 +201,6 @@
     <string name="toggleBrightMode">Διαμόρφωση έντονου φωτισμού</string>
     <string name="bt_location_service_explanation">Εκτός της άδειας για την απόκτηση πληροφοριών θέσης, το Android για τις αναζητήσεις Bluetooth, απαιτεί να είναι ενεργοποιημένες και οι υπηρεσίες εντοπισμού θέσης καθώς το αποτέλεσμα της αναζήτησης θα μπορούσε χρησιμοποιηθεί για να εξαχθούν πληροφορίες για τη θέση. Θα σας ανακατευθύνουμε προς τις ρυθμίσεις συστήματος.</string>
     <string name="graph_tools_system_time">Χρήση του χρόνου συστήματος</string>
-    <string name="categoryPhyphoxOrg">Συνεισφέρετε στο phyphox</string>
-    <string name="categoryPhyphoxOrgHint">Υπάρχουν νέοι τρόποι υποστήριξης του phyphox στο τέλος της λίστας.</string>
     <string name="timedRunBeeps">Ακουστικά σήματα</string>
     <string name="beeperCountdown">Ήχοι αντίστροφης μέτρησης</string>
     <string name="beeperStart">Ήχος έναρξης</string>
@@ -372,7 +345,6 @@
     <string name="settings_mode_dark">Οn (Προεπιλογή)</string>
     <string name="settings_mode_no_dark">Off</string>
     <string name="settings_mode_dark_system">Όμοιο με το σύστημα</string>
-    <string name="privacyPolicyURL">https://phyphox.org/privacy</string>
     <string name="cameraFront">Εμπρός</string>
     <string name="cameraBack">Πίσω</string>
     <string name="off">Off</string>
@@ -423,12 +395,9 @@
 \n{startTime} – ώρα έναρξης της μέτρησης
 \n{duration} – διάρκεια της μέτρησης</string>
     <string name="spectrum_orientation">Προσανατολισμός</string>
-    <string name="localNetworkLoadMessage">Δεν ήταν δυνατή η φόρτωση του πειράματος από αυτή τη διεύθυνση. Εάν το πείραμα φιλοξενείται από μια συσκευή στο τοπικό σας δίκτυο, το phyphox χρειάζεται άδεια πρόσβασης στο τοπικό δίκτυο. Θέλετε να παραχωρήσετε την άδεια και να δοκιμάσετε ξανά;</string>
-    <string name="localNetworkExperimentMessage">Αυτό το πείραμα χρησιμοποιεί σύνδεση με μια συσκευή στο τοπικό σας δίκτυο. Το phyphox χρειάζεται άδεια πρόσβασης στο τοπικό δίκτυο για να συνδεθεί με τη συσκευή αυτή.</string>
     <string name="localNetworkDeniedHint">Χωρίς άδεια πρόσβασης στο τοπικό δίκτυο, οι συνδέσεις με συσκευές στο τοπικό σας δίκτυο θα αποτύχουν.</string>
     <string name="common_unit_short_nano_meter">nm</string>
     <string name="common_unit_short_micro_meter">μm</string>
     <string name="common_quantity_short_wavelength">λ</string>
     <string name="remoteServerPortInUseTitle">Δεν μπόρεσε να ενεργοποιηθεί η απομακρυσμένη πρόσβαση</string>
-    <string name="remoteServerPortInUse">Η απομακρυσμένη πρόσβαση δεν επιτυγχάνεται γιατί η θύρα χρησιμοποιείται ήδη από άλλη εφαρμογή. Σταματήστε την εφαρμογή που χρησιμοποιεί τη θύρα ή ορίστε μια διαφορετική θύρα από τις ρυθμίσεις του phyphox.</string>
 </resources>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Tənzimləmələr</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_pan_and_zoom">Sürüşdür və miqyası dəyişdir</string>
     <string name="graph_tools_pick">verilənləri seç</string>
     <string name="graph_tools_more">Əlavə alətlər</string>
@@ -28,7 +28,6 @@
     <string name="applyZoomSameAxis">Digər qrafiklər: Eyni ox</string>
     <string name="newExperiment">Təcrübələri əlavə et</string>
     <string name="newExperimentSimple">Sadə təcrübə əlavə et</string>
-    <string name="newExperimentPhyphoxInfo">Verilənlərin təhlili də daxil olmaqla daha mürəkkəb təcrübələr aparmaq üçün phyphox.org saytını ziyarət edin və onları həmkarlarınız, tələbələriniz və dostlarınız ilə paylaşın.</string>
     <string name="newExperimentInputTitle">Başlıq</string>
     <string name="newExperimentInputBufferSize">Buffer ölçüsü (saxlanılacaq dəyərlərin sayı)</string>
     <string name="newExperimentInputRate">Sensorun tezliyi (Hz-lə, 0 = mümkün qədər sürətli)</string>

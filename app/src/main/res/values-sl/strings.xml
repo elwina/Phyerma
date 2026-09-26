@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Nastavitve</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="graph_tools_more">Več</string>
     <string name="graph_tools_reset">Ponastavi</string>
     <string name="graph_tools_export">Izvozi podatke</string>
@@ -37,24 +37,13 @@
     <string name="generalErrorDialog">Prišlo je do napake.</string>
     <string name="help">Pomoč in info</string>
     <string name="experimentsPhyphoxOrg">Predlogi za eksperimente in navodila</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Pogosto zastavljena vprašanja</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="deviceInfo">Informacije o napravi</string>
     <string name="copyToClipboard">Kopiraj v odložišče</string>
     <string name="deviceInfoCopied">Informacije o napravi so kopirane v odložišče.</string>
     <string name="warning">Opozorilo</string>
     <string name="donotshowagain">Ne prikaži več</string>
     <string name="info">Info</string>
-    <string name="creditsNames">Development and Concept:
-\nDr. Sebastian Staacks
-\nConcept:
-\nProf. Christoph Stampfer
-\nProgramming:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="sensorGyroscope">Žiroskop</string>
     <string name="sensorAccelerometer">Merilnik pospeška</string>
     <string name="sensorMagneticField">Magnetno polje</string>
@@ -92,10 +81,8 @@
     <string name="timedRunStopDelay">Trajanje eksperimenta (s)</string>
     <string name="enableTimedRun">Uporabi časovni potek</string>
     <string name="export">Izvozi podatke</string>
-    <string name="export_subject">Podatki iz phyphox</string>
     <string name="export_pick_share">Izberite način izvoza</string>
     <string name="share">Delite posnetek zaslona</string>
-    <string name="share_subject">Posnetek zaslona iz phyphoxa</string>
     <string name="share_pick_share">Izberite način skupne rabe</string>
     <string name="remoteServer">Dovoli oddaljeni dostop</string>
     <string name="remoteServerWarningTitle">Varnostno opozorilo!</string>
@@ -121,7 +108,6 @@
     <string name="save_state_title">Naslov</string>
     <string name="save_state_save">V zbirko</string>
     <string name="save_state_share">Deli</string>
-    <string name="save_state_subject">Stanje phyphox eksperimenta</string>
     <string name="save_state_default_title">Meritev</string>
     <string name="save_state_success">Stanje je bilo shranjeno v vašo zbirko.</string>
     <string name="open_zip_title">Odpiranje niza eksperimentov</string>

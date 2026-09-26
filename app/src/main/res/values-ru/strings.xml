@@ -1,37 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="action_settings">Настройки</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">Добавить эксперимент</string>
-    <string name="newExperimentPhyphoxInfo">Посетите phyphox.org, чтобы создать эксперименты более высокого уровня и поделиться ими с коллегами, студентами и друзьями.</string>
     <string name="newExperimentInputTitle">Название</string>
     <string name="newExperimentInputBufferSize">Размер буфера (количество сохраняемых значений)</string>
     <string name="newExperimentInputRate">Скорость датчика (в Гц, 0 = как можно быстрее)</string>
     <string name="newExperimentInputSensors">Активные датчики</string>
     <string name="help">Помощь и информация</string>
     <string name="experimentsPhyphoxOrg">Экспериментальные идеи и инструкции</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">Часто задаваемые вопросы</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">Дистанционная помощь</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#ru</string>
     <string name="warning">Предупреждение</string>
     <string name="donotshowagain">Не показывать снова</string>
-    <string name="damageWarning">Будьте осторожны, чтобы не повредить телефон во время экспериментов. Не бросайте его на твердые поверхности и не подвергайте его воздействию чрезмерных магнитных полей. Авторы phyphox не несут ответственности за любой ущерб, нанесённый вашему телефону.</string>
     <string name="info">Информация</string>
     <string name="credits">Авторы</string>
-    <string name="creditsRWTH">phyphox был создан во 2-м институте физики Рейнско-Вестфальского Технического Университета Ахена.</string>
-    <string name="creditsNames">Разработка и концепция:
-\nDr. Sebastian Staacks
-\nКонцепция:
-\nProf. Christoph Stampfer
-\nПрограммное обеспечение:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">Веб-интерфейс для удаленного доступа использует библиотеку JavaScript «Chart.js» (http://chartjs.org), доступную под лицензией MIT. Для преобразования Фурье мы используем библиотеку FFTW (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Массачусетский технологический институт, который доступен под общим названием GNU General Public Лицензия (версия 2 или новее). Данные GPS по высоте над уровнем моря преобразуются из эллипсоида WGS84 в геоид EGM84 с помощью данных EGM84 (разрешение 30\') и функции переноса из GographicLib (https://geographiclib.sourceforge.io/, лицензия MIT/X11).</string>
     <string name="sensorLinearAcceleration">Линейное ускорение</string>
     <string name="sensorLight">Свет</string>
@@ -47,7 +32,6 @@
     <string name="sensorNotAvailableWarningText1">Датчик</string>
     <string name="sensorNotAvailableWarningText2">недоступен. Обычно это означает, что на вашем устройстве нет такого типа датчиков.</string>
     <string name="sensorNotAvailableWarningMoreInfo">Больше информации</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">OK</string>
     <string name="close">Закрыть</string>
     <string name="next">Следующий</string>
@@ -70,10 +54,8 @@
     <string name="timedRunStopDelay">Продолжительность эксперимента (с)</string>
     <string name="enableTimedRun">Провести хронометраж</string>
     <string name="export">Экспорт данных</string>
-    <string name="export_subject">Данные из phyphox</string>
     <string name="export_pick_share">Выберите способ экспорта</string>
     <string name="share">Поделиться скриншотом</string>
-    <string name="share_subject">Скриншот из phyphox</string>
     <string name="share_pick_share">Выберите метод раздачи</string>
     <string name="remoteServer">Разрешить удаленный доступ</string>
     <string name="remoteServerWarning">Вы собираетесь включить удаленный доступ к полученным данным. Рекомендуется делать это только в надежной сети! Также обратите внимание, что прямой доступ между устройствами может быть невозможен во многих корпоративных или университетских сетях.
@@ -101,7 +83,6 @@
     <string name="save_state_title">Название</string>
     <string name="save_state_save">В коллекцию</string>
     <string name="save_state_share">Поделиться</string>
-    <string name="save_state_subject">Эксперимент для phyphox</string>
     <string name="save_state_default_title">Измерение</string>
     <string name="save_state_success">Эксперимент сохранен в вашей коллекции.</string>
     <string name="timedRun">Хронометраж</string>
@@ -154,7 +135,6 @@
     <string name="deviceInfo">Информация об устройстве</string>
     <string name="copyToClipboard">Скопировать в буфер обмена</string>
     <string name="deviceInfoCopied">Информация об устройстве была скопирована в буфер обмена.</string>
-    <string name="gpl">Phyphox® - это программное обеспечение с открытым исходным кодом, выпущенное под лицензией GNU General Public License. Посетите http://phyphox.org для получения дополнительной информации и получения доступа к исходному коду. Однако названия «phyphox» и «RWTH Aachen» являются зарегистрированными товарными знаками.</string>
     <string name="sensorVendor">Специфический для производителя</string>
     <string name="vendorSensorTitle">Специфический датчик от производителя</string>
     <string name="vendorSensorWarning1">Датчик</string>
@@ -171,7 +151,6 @@
     <string name="open_zip_dialog_instructions">Этот ресурс содержит несколько экспериментов. Вы можете выбрать его, чтобы открыть его, и, при необходимости, сохранить его в своей коллекции или использовать кнопку ниже, чтобы сохранить их все в свою коллекцию.</string>
     <string name="open_save_all">Сохранить все</string>
     <string name="open_bluetooth_assets_title">Эксперименты для устройства Bluetooth</string>
-    <string name="open_bluetooth_assets">Следующие эксперименты от phyphox доступны для вашего устройства. Вы можете открыть их и использовать напрямую, либо добавить их в свою коллекцию, чтобы получить к ним доступ из главного меню.</string>
     <string name="start_hint">Коснитесь треугольника, чтобы начать эксперимент.</string>
     <string name="bluetooth">Энергосберегающий модус Bluetooth</string>
     <string name="bt_android_version">Bluetooth Low Energy не поддерживается в версиях Android ниже 4.3.</string>
@@ -206,20 +185,16 @@
     <string name="bt_error_discovering">Ошибка при обнаружении услуг Bluetooth-устройства.</string>
     <string name="bt_fail_reading">Операция чтения была безуспешной.</string>
     <string name="bt_fail_writing">Операция записи была безуспешной.</string>
-    <string name="bt_more_info_link_text">Если ваше устройство не поддерживается, выберите «подробнее», чтобы узнать больше о поддержке Bluetooth Low Energy в phyphox на нашем веб-сайте.</string>
     <string name="bt_more_info_link_button">Подробнее</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="export_empty">Эта экспериментальная конфигурация не определяет какие-либо данные для экспорта. В случае ошибки обратитесь к источнику QR-кода или файла конфигурации.</string>
     <string name="toggleBrightMode">Яркий режим</string>
     <string name="bt_location_service_explanation">В дополнение к разрешению на получение информации о местоположении, Android требует, чтобы службы местоположения были включены для сканирования по Bluetooth, в результате чего их можно было бы использовать для получения информации о местоположении. Мы перенаправим вас к настройкам вашей системы.</string>
     <string name="networkPrivacyWarning">Предупреждение о конфиденциальности</string>
     <string name="networkVisitPrivacyURL">Политика конфиденциальности</string>
-    <string name="networkPrivacyInfo">В этом эксперименте используется сетевое соединение, что означает, что экспериментальные данные могут передаваться в сетевую службу. Вы можете найти более подробную информацию, нажав ниже на кнопку \"Политика конфиденциальности\", которая приведет вас на веб-сайт с политикой конфиденциальности, предоставленной создателем этого эксперимента. Если сетевая служба не является локальным устройством, следует помнить, что при запуске данного эксперимента phyphox может передавать следующую информацию:</string>
     <string name="networkPrivacyUniqueID">Идентификатор, уникальный для данного устройства и сетевой службы, позволяющий сопоставлять все данные, отправляемые с этого устройства через эту экспериментальную конфигурацию.</string>
     <string name="networkPrivacySensorData">Данные следующих датчиков:</string>
     <string name="networkPrivacySensorMicrophone">Записи или данные, полученные из записей с микрофона.</string>
     <string name="networkPrivacySensorLocation">Данные о местоположении (данные GPS или аналогичные данные).</string>
-    <string name="networkPrivacyDeviceInfo">Подробная информация о модели устройства и/или версии phyphox.</string>
     <string name="networkPrivacySensorInfo">Технические подробности о следующих датчиках:</string>
     <string name="sensorAttitude">Позиция</string>
     <string name="leave_experiment">Покинуть эксперимент</string>
@@ -331,8 +306,6 @@
     <string name="common_musical_note_g7">G7</string>
     <string name="common_musical_note_ab7">G#7 / Ab7</string>
     <string name="graph_tools_system_time">Преобразование в системное время</string>
-    <string name="categoryPhyphoxOrg">Внести вклад в phyphox</string>
-    <string name="categoryPhyphoxOrgHint">В нижней части списка есть новые опции для поддержки phyphox.</string>
     <string name="timedRunBeeps">Акустические сигналы</string>
     <string name="beeperCountdown">Звуки обратного отсчета</string>
     <string name="beeperStart">Запустить звук</string>

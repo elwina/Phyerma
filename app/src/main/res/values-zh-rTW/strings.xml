@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="action_settings">設定</string>
-    <string name="app_name">手機物理實作</string>
-    <string name="title_activity_experiment">手機物理實作</string>
+    <string name="app_name">Phyerma</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="newExperiment">新建實驗</string>
-    <string name="newExperimentPhyphoxInfo">參考phyphox.org網站資訊，創建更好的手機物理實作實驗，包括數據分析，可與同事，學生和朋友分享。</string>
     <string name="newExperimentInputTitle">標題</string>
     <string name="newExperimentInputBufferSize">緩衝區大小(以數字表示取樣數)</string>
     <string name="newExperimentInputRate">感應器感應速率(單位赫茲，0代表最快)</string>
     <string name="newExperimentInputSensors">選擇感應器</string>
     <string name="help">協助訊息</string>
     <string name="experimentsPhyphoxOrg">實驗設計與說明</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="faqPhyphoxOrg">經常問的問題</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="remotePhyphoxOrg">遠程控制協助說明</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="translationToWebsiteURL">http://phyphox.org/languages#zh_Hant</string>
     <string name="warning">警示</string>
     <string name="donotshowagain">不要再顯示</string>
-    <string name="damageWarning">使用phyphox實作時，請注意不要損壞手機。 尤其特別注意要避免將手機掉落在堅硬的表面上，並且不要將其暴露在過強的電磁場中。 phyphox的作者對於您手機的任何損壞概不負責。</string>
     <string name="info">訊息</string>
     <string name="credits">創立團隊</string>
-    <string name="creditsRWTH">phyphox是由亞琛工業大學第二物理學院所開發。</string>
-    <string name="creditsNames">發展與概念：Sebastian Staacks 博士
-\n概念：Christoph Stampfer 教授
-\n程式設計：Gaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="creditsLibs">The web-interface for remote access uses the JavaScript library \"Chart.js\" (http://chartjs.org), available under the MIT licence. For the fourier transform, we use the FFTW library (http://fftw.org), Copyright © 2003, 2007-11 Matteo Frigo, Copyright © 2003, 2007-11 Massachusetts Institute of Technology, which is available under the GNU General Public Licence (version 2 or later).</string>
     <string name="sensorLinearAcceleration">線性加速度</string>
     <string name="sensorLight">光感應</string>
@@ -44,7 +32,6 @@
     <string name="sensorNotAvailableWarningText1">感應裝置</string>
     <string name="sensorNotAvailableWarningText2">不可用。 通常表示您的設備沒有這種類型的感應器。</string>
     <string name="sensorNotAvailableWarningMoreInfo">更多資訊</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="ok">確認</string>
     <string name="close">關閉</string>
     <string name="next">下一步</string>
@@ -66,10 +53,8 @@
     <string name="export">匯出數據</string>
     <string name="pick_exportFormat">選擇數據格式</string>
     <string name="timedRunStopDelay">實驗長短(秒)</string>
-    <string name="export_subject">手機物理實作的數據</string>
     <string name="export_pick_share">選擇輸出模式</string>
     <string name="share">分享螢幕截圖</string>
-    <string name="share_subject">手機物理實作的螢幕截圖</string>
     <string name="share_pick_share">選擇分享模式</string>
     <string name="remoteServer">允許遠端存取</string>
     <string name="remoteServerWarningTitle">安全性警告 !</string>
@@ -92,7 +77,6 @@
     <string name="save_state_title">標題</string>
     <string name="save_state_save">收藏</string>
     <string name="save_state_share">分享</string>
-    <string name="save_state_subject">手機物理實作的實驗狀態</string>
     <string name="save_state_default_title">測量</string>
     <string name="save_state_success">狀態已存入珍藏集</string>
     <string name="pick_exportSets">匯出挑選的數據組</string>
@@ -149,7 +133,6 @@
     <string name="deviceInfo">設備(手機)資訊</string>
     <string name="copyToClipboard">複製到剪貼板</string>
     <string name="deviceInfoCopied">此設備的規格已經複製到剪貼板。</string>
-    <string name="gpl">Phyphox® 是由 GNU General Public Licence 所發行的開源軟體，請上 http://phyphox.org 以取得開源碼以及更多資訊。請注意，phyphox 以及 RWTH Aachen 已經註冊商標。</string>
     <string name="sensorAttitude">高度</string>
     <string name="sensorVendor">特定供應商</string>
     <string name="vendorSensorTitle">特定供應商的感應器</string>
@@ -172,7 +155,6 @@
     <string name="open_zip_dialog_instructions">該來源包含多個實驗。 您可以選擇一個將其打開並將其保存到珍藏集中，也可以從下面選擇全部，並保存到收藏夾中。</string>
     <string name="open_save_all">全部儲存</string>
     <string name="open_bluetooth_assets_title">針對藍牙感測器的實驗</string>
-    <string name="open_bluetooth_assets">以下實驗適用於您手機上的物理實作app。 您可以打開並使用它們，也可以將它們全部添加到珍藏集中，並從主選單輕鬆選擇它們。</string>
     <string name="start_hint">點觸三角圖標以開始實驗</string>
     <string name="bluetooth">低功耗藍牙</string>
     <string name="bt_android_version">低於安卓4.3的系統不支持低功耗藍牙。</string>
@@ -208,17 +190,13 @@
     <string name="bt_error_discovering">尋找藍芽設備的服務時發生錯誤</string>
     <string name="bt_fail_reading">讀取操作不成功。</string>
     <string name="bt_fail_writing">寫入操作不成功。</string>
-    <string name="bt_more_info_link_text">如果您的手機不支援這個設備，請在我們的網站上選擇“更多信息”以了解有關手機物理實作中的彈性藍牙低功耗信息。</string>
     <string name="bt_more_info_link_button">更多訊息</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="networkPrivacyWarning">隱私權警告</string>
     <string name="networkVisitPrivacyURL">隱私權條款</string>
-    <string name="networkPrivacyInfo">此實驗需連接到網絡，這意味著可以將實驗數據傳輸到網絡服務。 您可以通過點擊下面的隱私權政策按鈕找到更多詳細信息，頁面將轉跳到該實驗創建者提供的網站，您可以在裡面找到相關的隱私權政策。 如果網絡服務不是本地設備，則應注意，如果您開始此實驗，phyphox可能會傳輸以下信息：</string>
     <string name="networkPrivacyUniqueID">該設備和網絡服務有唯一的ID，該ID允許在此實驗配置下，從這些設備發送的所有數據。</string>
     <string name="networkPrivacySensorData">來自以下感應器的數據：</string>
     <string name="networkPrivacySensorMicrophone">麥克風紀錄的數據。</string>
     <string name="networkPrivacySensorLocation">位置數據（GPS數據或類似數據）。</string>
-    <string name="networkPrivacyDeviceInfo">有關您的手機型號或手機物理實作版本的詳細信息。</string>
     <string name="networkPrivacySensorInfo">有關以下感應器的技術細節：</string>
     <string name="common_unit_short_second">秒</string>
     <string name="common_unit_short_milli_second">毫秒</string>

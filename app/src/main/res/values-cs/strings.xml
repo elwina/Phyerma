@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">phyphox</string>
+    <string name="app_name">Phyerma</string>
     <string name="switchColumns1">Zobrazit: 1 sloupec</string>
     <string name="switchColumns3">Zobrazit: 3 sloupce</string>
     <string name="switchColumns2">Zobrazit: 2 sloupce</string>
     <string name="help">Nápověda a informace</string>
-    <string name="newExperimentPhyphoxInfo">Na stránce phyphox.org můžete vytvářet další pokročilé experimenty obsahující i analýzu naměřených dat a sdílet je se svými kolegy, studenty a přáteli.</string>
     <string name="loadingText">Načítám experiment…</string>
     <string name="save_state_success">Stav experimentu byl uložen.</string>
     <string name="save_state">Uložit stav experimentu</string>
     <string name="location">Pozice</string>
     <string name="remoteServer">Umožnit vzdálený přístup</string>
     <string name="faqPhyphoxOrg">Často kladené otázky</string>
-    <string name="sensorNotAvailableWarningMoreInfoURL">http://phyphox.org/faq/#faqMissingSensor</string>
     <string name="timedRunStartDelay">Zpoždění startu (s)</string>
     <string name="timed_start">Časová spoušť</string>
     <string name="stop">Stop</string>
@@ -22,10 +20,8 @@
     <string name="newExperimentInputBufferSize">Velikost vyrovnávací paměti (počet ukládaných hodnot)</string>
     <string name="sensorLinearAcceleration">Lineární Akcelerace</string>
     <string name="categoryRawSensor">Senzory</string>
-    <string name="faqPhyphoxOrgURL">http://phyphox.org/faq</string>
     <string name="save_locally_button">Uložit do sbírky</string>
     <string name="save_state_message">Můžete uložit současný stav experimentu včetně nasbíraných dat do své sbírky nebo jej sdílet s dalšími aplikacemi.</string>
-    <string name="save_state_subject">Stav experimentu pro phyphox</string>
     <string name="timedRunDialogTitle">Stopovaný úsek</string>
     <string name="sensorTemperature">Teplota</string>
     <string name="export">Exportuji data</string>
@@ -62,15 +58,13 @@
     <string name="clear_data">Vymazat data</string>
     <string name="remoteServerActive">Vzdálený přístup povolen. K tomuto experimentu se můžete připojit z následující URL:
 \n%1$s</string>
-    <string name="experimentsPhyphoxOrgURL">http://phyphox.org/experiments</string>
     <string name="remoteServerWarningTitle">Bezpečnostní varování!</string>
     <string name="clear_data_question">Přejete si vymazat data\?</string>
     <string name="info">Informace</string>
     <string name="categoryNewExperiment">Vlastní jednoduché experimenty</string>
     <string name="confirmDeleteTitle">Potvrdit smazání\?</string>
     <string name="pick_exportFormat">Zvolte formát dat pro export.</string>
-    <string name="share_subject">Screenshot z phyphoxu</string>
-    <string name="title_activity_experiment">phyphox</string>
+    <string name="title_activity_experiment">Phyerma</string>
     <string name="save_locally_done">Experiment úspěšně přidán do sbírky.</string>
     <string name="save_state_save">Do sbírky</string>
     <string name="delete">Smazat</string>
@@ -79,20 +73,8 @@
     <string name="share">Sdílet screenshot</string>
     <string name="save_state_category">Uložené experimenty</string>
     <string name="warning">Varování</string>
-    <string name="damageWarning">Prosím vyvarujte se během experimentování poškození svého mobilního telefonu. Obzvláště se vyhněte upuštění mobilu na tvrdý povrch anebo jeho přiblížení k příliš silnému magnetickému poli. Autoři phyphoxu nejsou zodpovědní za žádné poškození vzniklé na vašem mobilním zařízení.</string>
-    <string name="creditsRWTH">phyphox byl vytvořen na Druhém Institutu Fyziky na RWTH Univerzitě v Aachen.</string>
     <string name="sensorMagneticField">Magnetické pole</string>
-    <string name="remotePhyphoxOrgURL">http://phyphox.org/remote-control</string>
     <string name="confirmDelete">Chcete tento experiment smazat ze své sbírky\?</string>
-    <string name="creditsNames">Vývoj a koncept:
-\nDr. Sebastian Staacks
-\nKoncept:
-\nProf. Christoph Stampfer
-\nProgramování:
-\nGaurav Tripathee
-\nDominik Dorsel
-\nJonas Gessner
-\nCamilla Lummerzheim</string>
     <string name="remoteServerWarning">Právě se chystáte povolit aplikaci vzdálený přístup k naměřeným datům. Prosím ověřte si, že jste připojeni k důvěryhodné síti! Zároveň vás chceme upozornit, že přímé spojení přístrojů není na mnoha univerzitních či firemních sítích povoleno a tedy ani umožněno. 
 \n
 \nPro zajištění maximální bezpečnosti a výkonu doporučujeme připojení tohoto zařízení pomocí tetheringu (vytvoření mobilního hotspotu). 
@@ -104,7 +86,6 @@
     <string name="sensorNotAvailableWarningMoreInfo">Více informací</string>
     <string name="clear">Vymazat</string>
     <string name="save_state_default_title">Měření</string>
-    <string name="export_subject">Data z phyphoxu</string>
     <string name="experimentinfo_hint">Prosím pročtěte si informace k tomuto experimentu pro jeho snadnější používaní.</string>
     <string name="timedRun">Časované měření</string>
     <string name="loadingTitle">Načítám</string>
@@ -150,7 +131,6 @@
     <string name="deviceInfo">Informace o zařízení</string>
     <string name="copyToClipboard">Zkopírovat do schránky</string>
     <string name="deviceInfoCopied">Informace o zařízení byly zkopírovány do schránky.</string>
-    <string name="gpl">Phyphox je otevřený software vydaný pod GNU Všeobecnou veřejnou licencí. Pro více informací čí přístup ke zdrojovému kódu prosím navštivte http://phyphox.org. Nicméně, název \"phyphox\" a \"RWTH Aachen\" jsou chráněné.</string>
     <string name="sensorVendor">Závisí na výrobci</string>
     <string name="vendorSensorTitle">Senzor - typ závisí na výrobci</string>
     <string name="vendorSensorWarning1">Senzor</string>
@@ -166,7 +146,6 @@
     <string name="open_zip_title">Otevírám sadu experimentů</string>
     <string name="open_zip_dialog_instructions">Vybraná položka obsahuje několik experimentů. Můžete si vybrat, který otevřete nebo uložíte do vaší sbírky experimentů nebo můžete také uložit všechny experimenty najednou pomocí tlačítka dole.</string>
     <string name="open_save_all">Uložit všechny</string>
-    <string name="open_bluetooth_assets">Následující experimenty určené pro vaše zařízení jsou dostupné skrze phyphox. Můžete je buď rovnou otevřít nebo si je přidat do vaší sbírky, abyste k nim měli snadný přístup z hlavního menu.</string>
     <string name="start_hint">Dotkněte se trojúhelníku pro spuštění experimentu.</string>
     <string name="bt_pick_device">Prosím vyberte si zařízení.</string>
     <string name="bt_scanning_generic">Hledám zařízení Bluetooth…</string>
@@ -198,9 +177,7 @@
     <string name="bt_error_discovering">Chyba při prozokoumávání \"services\" zařízení Bluetooth.</string>
     <string name="bt_fail_reading">Operace načítání nebyla úspěšná.</string>
     <string name="bt_fail_writing">Operace zápis nebyla úspěšná.</string>
-    <string name="bt_more_info_link_text">Pokud vaše zařízení není podporováno, pak zvolte možnost \"více informací\" abyste se na našich stránkách dozvěděli, jak phyphox podporuje flexibilní Bluetooth Low Energy.</string>
     <string name="bt_more_info_link_button">Více informací</string>
-    <string name="bt_more_info_link_url">https://phyphox.org/ble</string>
     <string name="graph_tools_follow">Sledovat nová data</string>
     <string name="applyZoomKeep">Ponechat nastavení</string>
     <string name="applyZoomFollow">Ponechat nastavení a sledovat nová data</string>
@@ -227,16 +204,12 @@
     <string name="bt_location_service_explanation">Kromě oprávnění k získávání informací o poloze systém Android vyžaduje, aby byly pro skenování Bluetooth povoleny služby určování polohy, protože výsledek by mohl být použit k odvození informací o poloze. Přesměrujeme vás do nastavení vašeho systému.</string>
     <string name="networkPrivacyWarning">Upozornění ohledně soukromí</string>
     <string name="networkVisitPrivacyURL">Zásady ochrany osobních údajů</string>
-    <string name="networkPrivacyInfo">Tento experiment používá síťové připojení, což znamená, že data experimentu lze přenést do síťové služby. Další podrobnosti naleznete po kliknutí na tlačítko zásad ochrany osobních údajů níže, které vás přesměruje na webovou stránku se zásadami ochrany osobních údajů poskytnutými tvůrcem tohoto experimentu. Pokud síťová služba není místní zařízení, měli byste si být vědomi toho, že phyphox může přenášet následující informace, pokud spustíte tento experiment:</string>
     <string name="networkPrivacyUniqueID">ID, které je jedinečné pro toto zařízení a síťovou službu, což umožňuje porovnat všechna data odeslaná z tohoto zařízení prostřednictvím této konfigurace experimentu.</string>
     <string name="networkPrivacySensorData">Data z následujících senzorů:</string>
     <string name="networkPrivacySensorMicrophone">Nahrávky nebo data odvozená z nahrávek prostřednictvím mikrofonu.</string>
     <string name="networkPrivacySensorLocation">Údaje o poloze (GPS nebo podobná data).</string>
-    <string name="networkPrivacyDeviceInfo">Detailní informace o modelu vašeho zařízení a/nebo verzi phyphox.</string>
     <string name="networkPrivacySensorInfo">Technické informace o následujících senzorech:</string>
     <string name="graph_tools_system_time">Převést na systémový čas</string>
-    <string name="categoryPhyphoxOrg">Přispějte k phyphox</string>
-    <string name="categoryPhyphoxOrgHint">Ve spodní části seznamu jsou nové možnosti podpory phyphox.</string>
     <string name="timedRunBeeps">Akustické signály</string>
     <string name="beeperCountdown">Zvuky odpočítávání</string>
     <string name="beeperStart">Startovací zvuk</string>
@@ -372,5 +345,4 @@
     <string name="settings_mode_dark">Zapnuto (základní)</string>
     <string name="settings_mode_no_dark">Vypnuto</string>
     <string name="settings_mode_dark_system">Jako systém</string>
-    <string name="privacyPolicyURL">Soukromí</string>
 </resources>

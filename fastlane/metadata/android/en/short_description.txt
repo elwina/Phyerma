@@ -1,1 +1,1 @@
-Perform physics experiments with your phone. (by the RWTH Aachen University)
+Physics experiments, with this phone's sensors in the open.

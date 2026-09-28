@@ -1,30 +1,18 @@
-Did you know that you are carrying a 3D magnetometer? That you can use your phone as a pendulum to measure earth's local gravitational acceleration? That you can turn your phone into a sonar?
+Phyerma turns the phone you are holding into a physics lab.
 
-phyphox gives you access to the sensors of your phone either directly or through ready-to-play experiments which analyze your data and let you export raw data along with the results for further analysis. You can even define your own experiments on phyphox.org and share them with colleagues, students and friends.
+Run a ready-made experiment, or open the sensors directly: acceleration, rotation, magnetic field, light, pressure, sound, location, and camera. Export the data as CSV, TSV, or Excel. Turn on remote access and drive the experiment from a browser on the same network — nothing to install on the computer.
 
-Selected Features:
-• A selection of pre-defined experiments. Just press play to start.
-• Export your data to a range of widely used formats
-• Remote-control your experiment through a web interface from any PC on the same network as your phone. No need to install anything on those PCs - all you need is a modern web browser.
-• Define your own experiments by selecting sensor inputs, defining analysis steps and creating views as an interface using our web-editor (<a href="http://phyphox.org/editor">http://phyphox.org/editor</a>). The analysis consists of just adding two values or using advanced methods like Fourier transforms and crosscorrelation. We offer a whole toolbox of analysis functions.
+What you can see about this phone:
 
-Sensors supported:
-• Accelerometer
-• Magnetometer
-• Gyroscope
-• Light intensity
-• Pressure
-• Microphone
-• Proximity
-• GPS
-• Camera
-• LiDAR/ToF
-*some sensors are not present on every phone.
+• Brand, model, and system skin (HyperOS, ColorOS, OriginOS, MagicOS, HarmonyOS, and others).
+• A match against a crowd-sourced sensor database, shown as a baseline. It is a reference. It is not applied as a hidden correction.
+• A sensor lab: SI units, measured noise, measured sample rate, and the range Android claims, labeled as a claim.
+• Chinese and English.
 
-Export formats
-• CSV (Comma separated values)
-• TSV (Tab-separated values)
-• Excel
-(if you need other formats, please let us know)
+Sensor readings stay on the phone unless you export them, enable remote access, or start an experiment that itself uses the network. Phyerma does not use Google Play Services, Firebase, Crashlytics, or an advertising SDK.
 
-This app has been developed at the 2nd Institute of Physics A at the RWTH Aachen University.
+Phyerma is an open-source fork of phyphox-android (GPL-3.0). The names “phyphox” and “RWTH Aachen University” are trademarks of the upstream project. Phyerma is not published by RWTH Aachen.
+
+Source: https://github.com/elwina/Phyerma
+
+Sensors (not every phone has every one): accelerometer, gyroscope, magnetometer, light, pressure, proximity, microphone, GPS, camera, depth.

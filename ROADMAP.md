@@ -1,5 +1,7 @@
 # Phyerma roadmap
 
+Two directions: fit more phones, especially phones from China where sensor errors have already shown up, and put AI in the lab — draft an experiment on the phone, and explain the control you press.
+
 Status words used below:
 
 | Status | Meaning |
@@ -119,6 +121,8 @@ Each pack uses the explanation panels, so a student can ask what a number means 
 ---
 
 ## 中文
+
+两条方向：适配更多手机，尤其是已经出现过传感器错误的中国手机；把 AI 放进实验——在手机上起草实验，并解释你按住的控件。
 
 状态：**已在此版本** / **设计中**（行为已定，还没进应用）/ **计划中**（打算做，设计未定）。后两类都不是对当前安装包的承诺。
 

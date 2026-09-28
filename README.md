@@ -1,10 +1,12 @@
 # Phyerma
 
-**The physics lab that knows which phone it is running on.**
+**A fork of phyphox, with AI in the lab, and a real fit for the phone.**
 
-Phyerma is an open-source Android app for real physics experiments. It keeps the [phyphox](https://phyphox.org) experiment engine and adds a device-honest layer for the phones people actually carry: Xiaomi, OPPO, vivo, Honor, Huawei, and a separate track for HarmonyOS.
+Phyerma keeps [phyphox](https://phyphox.org), the open-source physics app from RWTH Aachen that people use around the world: a phone as a pendulum, a magnetometer, a sonar. Two things are being added on top of that.
 
-A generic “Android sensor” reading is not the same number on HyperOS, ColorOS, OriginOS, and HarmonyOS. Phyerma shows the phone, the sensor, and the crowd baseline beside the experiment — and the corrections we add later will be switches you can see.
+**Fit more phones, especially phones from China.** Sensor errors have already shown up on them. An experiment that trusts the wrong reading teaches the wrong result. The fix is for that phone — Xiaomi, OPPO, vivo, Honor, Huawei, and the phones around them — and you can see it. It stays off until you turn it on. HarmonyOS is a different system, so it gets its own track.
+
+**AI inside the experiment.** This is the part meant to be used every time you open the lab. Describe the measurement in ordinary language, and the app drafts it on the phone: the sensors, the analysis, the screen. You check the draft and save it there, with no desktop editor. Press a graph, a formula, or a button, and it tells you what the number is, what a sane result looks like, and what this phone tends to do.
 
 Source: [github.com/elwina/Phyerma](https://github.com/elwina/Phyerma) · Application id: `com.phyerma.app` · License: [GPL-3.0](LICENSE)
 
@@ -26,11 +28,11 @@ Refresh the bundled database snapshot with `python tools/import_phyphox_sensordb
 
 ## Where it is going
 
-The next three surfaces are the product. They are written down so the direction is public. They are **not in the current build**.
+Phone adaptation and AI assistance are the product. They are written down so the direction is public. They are **not in the current build**.
 
-1. **Calibration you can read.** Per-brand packs for Xiaomi (including Redmi and POCO), OPPO (including OnePlus and realme), and vivo (including iQOO), plus Honor and Huawei. HarmonyOS and HarmonyOS NEXT are their own track — their own sensor APIs and their own test phones — not a label on an Android skin. Every coefficient is a switch: raw value, corrected value, the number used, and where it came from.
-2. **An experiment studio on the phone.** Describe the measurement in ordinary language. Phyerma drafts the sensors, the analysis, and the view. You preview it and save it on the device. A desktop editor is no longer required to add an experiment in class or in the field.
-3. **An explanation on every control.** Press a trace, a formula, a sensor channel, or a button. A short note says what the number is, what a sane result looks like, and what this phone model tends to do. Built-in experiments ship with written notes. An optional model can answer a follow-up. The experiment still runs with that model off.
+1. **AI drafts the experiment on the phone.** Describe the measurement in ordinary language. Phyerma drafts the sensors, the analysis, and the view. You preview it and save it on the device. A class can add an experiment without a desktop editor.
+2. **AI explains the control you press.** A trace, a formula, a sensor channel, or a button. What the number is, what a sane result looks like, and what this phone model tends to do. The assistance sits on the device that is running the experiment.
+3. **Calibration you can read.** Per-brand packs for Xiaomi (including Redmi and POCO), OPPO (including OnePlus and realme), and vivo (including iQOO), plus Honor and Huawei, aimed at sensor errors that have already shown up on phones from China. HarmonyOS and HarmonyOS NEXT are their own track: their own sensor APIs and their own test phones. Every coefficient is a switch: raw value, corrected value, the number used, and where it came from. Off until you turn it on.
 
 Also on the roadmap: the noise and the crowd baseline on the experiment screen itself, a QR that hands your new experiment to the next phone with no account, and school packs (pendulum, free fall, speed of sound, coil, spring) with the brand note attached. Detail and status: [ROADMAP.md](ROADMAP.md).
 
@@ -54,11 +56,13 @@ Sensor-database snapshots are crowd-sourced by phyphox users. FFTW, jlhttp, ZXin
 
 ## 中文
 
-**Phyerma 是认得自己跑在哪台手机上的物理实验室。**
+**Phyerma 是 phyphox 的分支：实验里有 AI，手机也要真正适配。**
 
-它是开源的 Android 物理实验应用，保留 [phyphox](https://phyphox.org) 的实验引擎，并为实际在用的手机加一层诚实的设备信息：小米、OPPO、vivo、荣耀、华为，以及单独的鸿蒙线。
+它保留 [phyphox](https://phyphox.org)。phyphox 来自亚琛工业大学，开源，在全球使用：手机可以是单摆、磁力计、声纳。Phyerma 在这之上加两件事。
 
-HyperOS、ColorOS、OriginOS、鸿蒙上，同一个“Android 传感器”并不是同一个数。Phyerma 把机型、传感器和众包基线摆在实验旁边。以后加上的校正，都会是你能看见的开关。
+**适配更多手机，尤其是来自中国的手机。** 这些机器上已经出现过传感器错误。实验如果信任了错误读数，教出去的就是错的结果。校正针对那一台手机——小米、OPPO、vivo、荣耀、华为，以及周围的机型——而且你看得见。默认关闭，直到你打开。鸿蒙是另一套系统，单独成线。
+
+**实验里的 AI。** 这是每次打开实验室都用得上的部分。用白话描述要测什么，应用在手机上起草实验：传感器、分析、界面。你核对草稿，直接保存在手机上，不用电脑编辑器。按住一条曲线、一个公式或一个按钮，它说明这个数是什么、怎样算正常、这台手机通常会怎样。
 
 ### 现在就能用
 
@@ -74,9 +78,11 @@ HyperOS、ColorOS、OriginOS、鸿蒙上，同一个“Android 传感器”并�
 
 ### 正在做（当前安装包里还没有）
 
-1. **看得懂的校准。** 小米（含 Redmi、POCO）、OPPO（含一加、真我）、vivo（含 iQOO）分品牌做，荣耀和华为同样单独成包。鸿蒙和鸿蒙 NEXT 是另一条线：另一套传感器接口、另一组测试机，不是 Android 皮肤上的一个标签。每个系数都是开关：原始值、校正值、用了哪个数、数从哪来。
-2. **手机上的实验工作室。** 用白话描述要测什么。Phyerma 起草传感器、分析和界面，你在手机上预览并保存。课堂和野外加实验，不再依赖电脑上的网页编辑器。
-3. **每个控件都能解释。** 按住一条曲线、一个公式、一个传感器通道或一个按钮，弹出短说明：这个数是什么、怎样算正常、这台手机通常会怎样。内置实验自带写好的说明。可选模型回答追问。模型关掉，实验照样跑。
+手机适配和 AI 辅助是产品本身。
+
+1. **AI 在手机上起草实验。** 用白话描述要测什么。Phyerma 起草传感器、分析和界面，你在手机上预览并保存。课堂上加实验，不用电脑编辑器。
+2. **AI 解释你按住的地方。** 曲线、公式、传感器通道或按钮。这个数是什么、怎样算正常、这台手机通常会怎样。辅助就在正在跑实验的那台设备上。
+3. **看得懂的校准。** 针对中国手机上已经出现过的传感器错误，小米（含 Redmi、POCO）、OPPO（含一加、真我）、vivo（含 iQOO）分品牌做，荣耀和华为同样单独成包。鸿蒙和鸿蒙 NEXT 是另一条线：另一套传感器接口、另一组测试机。每个系数都是开关：原始值、校正值、用了哪个数、数从哪来。默认关闭，直到你打开。
 
 同一条路线上还有：实验画面上直接看到噪声和众包基线；一个二维码把刚做好的实验交给下一台手机，不需要账号；单摆、自由落体、声速、线圈、弹簧等课程包，并附上品牌备注。状态表见 [ROADMAP.md](ROADMAP.md)。
 

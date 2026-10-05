@@ -40,7 +40,8 @@
 ## 7. 待测机型与问题
 
 - [ ] 曝光锁定是否可用
-- [ ] `<video>` 录制在国产机上的 SurfaceTexture 时间戳时基（`timeAdjustment` 修偏是否触发）
+- [x] vivo V2452A（Android 16）`<video>` 实测：相机 SurfaceTexture 时间戳时基正常（无 `timeAdjustment` 警告），但时钟域比 `elapsedRealtime` 慢 ~0.1s——首帧映射落在 START 之前，`experimentTimeAt` 用首映射向后外推处理。编码器输入侧丢帧（surface 模式下喂快即丢，`framesSubmitted` > `frames` 可见）
+- [x] vivo V2452A MediaMuxer 怪癖：`writeSampleData` 成功返回但样本不进容器（stsz 验证）——原因是 muxer 等 AAC 音轨 announce 才能 start，期间到达的视频包若被丢弃，开头 ~1s 全丢。修法：两条轨共用一个按 PTS 排序的包队列，muxer start 前不丢包，`frames`/`framesInContainer` 双计数核对
 - [ ] 编码器吞吐：720p30 下 `framesSubmitted` vs MP4 实际帧数（丢帧）
 - [ ] 长时间录制的发热/存储与 ZIP 导出体积
 - [ ] 光谱实验在主摄上的可用性

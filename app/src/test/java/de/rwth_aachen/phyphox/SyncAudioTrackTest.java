@@ -26,7 +26,7 @@ import java.util.zip.ZipOutputStream;
 //be a canonical PCM16 mono RIFF so any audio tool opens it, and sync.json must carry the
 //monotonic anchors that map file frames onto experiment time.
 @RunWith(RobolectricTestRunner.class)
-@Config(manifest = Config.NONE, sdk = 34) //Robolectric's max supported SDK (36) is below the app's targetSdk (37)
+@Config(sdk = 35) //Robolectric's max supported SDK (36) is below the app's targetSdk (37)
 public class SyncAudioTrackTest {
 
     private File baseDir;
@@ -110,7 +110,9 @@ public class SyncAudioTrackTest {
         assertEquals(9600, seg.getInt("frames"));
         assertEquals("audio_0.wav", seg.getString("file"));
         JSONArray range = seg.getJSONArray("experimentTimeRange");
-        assertTrue(range.getDouble(0) < range.getDouble(1));
+        //Robolectric's clock is frozen, so begin and end land on the same instant - what the
+        //assertion actually guards is a range written in reverse order.
+        assertTrue(range.getDouble(0) <= range.getDouble(1));
         //No AudioRecord behind the test seam: getTimestamp never answers, so no anchors.
         assertEquals(0, seg.getJSONArray("anchors").length());
 

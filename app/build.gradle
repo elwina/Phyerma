@@ -123,6 +123,12 @@ android {
                 showCauses = true
                 showStackTraces = true
             }
+            //Robolectric fetches its android-all runtime jars inside the test worker - not
+            //through Gradle's resolver, so the project's repositories{} do not apply and
+            //repo1.maven.org hangs on restricted networks. Point it at the Aliyun mirror
+            //instead; harmless where the default repo works fine.
+            systemProperty 'robolectric.dependency.repo.url', 'https://maven.aliyun.com/repository/public'
+            systemProperty 'robolectric.dependency.repo.id', 'aliyun'
         }
     }
 

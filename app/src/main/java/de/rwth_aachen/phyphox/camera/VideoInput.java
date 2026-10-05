@@ -55,6 +55,10 @@ public class VideoInput implements Serializable {
         double endExperimentTime;
         long frames;
         long framesSubmitted;
+        long packetsSkipped;
+        long framesInContainer;
+        boolean missing;
+        final java.util.List<Double> frameTimes = new java.util.ArrayList<>();
 
         Segment(int index, File file, long startNanos, double startExperimentTime) {
             this.index = index;
@@ -97,10 +101,38 @@ public class VideoInput implements Serializable {
         return file;
     }
 
+    //Experiment time of an arbitrary monotonic timestamp, found by interval rather than the last
+    //mapping: getExperimentTimeFromEvent only consults the latest mapping, so frames flushed or
+    //read back after a PAUSE would all clamp to the pause instant. This walks the event list and
+    //uses the START whose interval actually contains the timestamp.
+    public double experimentTimeAt(long eventTimeNanos) {
+        double candidate = -1;
+        java.util.List<ExperimentTimeReference.TimeMapping> maps = timeReference.getTimeMappings();
+        for (ExperimentTimeReference.TimeMapping m : maps) {
+            if (m.event == ExperimentTimeReference.TimeMappingEvent.START && eventTimeNanos >= m.eventTime)
+                candidate = m.experimentTime + (eventTimeNanos - m.eventTime) * 1e-9;
+            else if (m.event == ExperimentTimeReference.TimeMappingEvent.PAUSE && eventTimeNanos < m.eventTime)
+                break;
+        }
+        if (candidate >= 0)
+            return candidate;
+        //The timestamp sits outside every START interval - e.g. a camera clock whose domain is
+        //slightly behind elapsedRealtime (vivo, ~100 ms). Extrapolate from the first mapping
+        //instead of clamping to the last event the way getExperimentTimeFromEvent would.
+        if (!maps.isEmpty()) {
+            ExperimentTimeReference.TimeMapping f = maps.get(0);
+            return f.experimentTime + (eventTimeNanos - f.eventTime) * 1e-9;
+        }
+        return 0;
+    }
+
     //Called on the GL executor thread after the encoder has flushed. framesSubmitted counts the
-    //camera frames handed to the codec, framesWritten the packets that made it into the file -
-    //they match unless the encoder silently dropped some.
-    public void endSegmentFile(long framesWritten, long framesSubmitted) {
+    //camera frames handed to the codec, framesWritten the packets that made it into the file and
+    //packetsSkipped the ones the muxer rejected - all three belong in the metadata because on
+    //real hardware the encoder may reorder or drop frames. writtenNanos carries the monotonic
+    //timestamp of every written frame - their experiment times are the authoritative
+    //frame->time mapping of the MP4.
+    public void endSegmentFile(long framesWritten, long framesSubmitted, long packetsSkipped, java.util.List<Long> writtenNanos) {
         Segment seg = current;
         if (seg == null)
             return;
@@ -108,9 +140,43 @@ public class VideoInput implements Serializable {
         seg.endExperimentTime = timeReference.getExperimentTime();
         seg.frames = framesWritten;
         seg.framesSubmitted = framesSubmitted;
+        seg.packetsSkipped = packetsSkipped;
+        for (long nano : writtenNanos)
+            seg.frameTimes.add(experimentTimeAt(nano));
+        //The muxer's sample count is the last truth: on devices whose MediaMuxer loses accepted
+        //packets, the written count alone would overstate what is inside the file.
+        countContainerFrames(seg);
         if (framesWritten == 0) {
             seg.file.delete();
             segments.remove(seg);
+        }
+    }
+
+    private void countContainerFrames(Segment seg) {
+        android.media.MediaExtractor extractor = new android.media.MediaExtractor();
+        try {
+            extractor.setDataSource(seg.file.getAbsolutePath());
+            int videoTrack = -1;
+            for (int i = 0; i < extractor.getTrackCount(); i++) {
+                String mime = extractor.getTrackFormat(i).getString(android.media.MediaFormat.KEY_MIME);
+                if (mime != null && mime.startsWith("video/")) {
+                    videoTrack = i;
+                    break;
+                }
+            }
+            if (videoTrack < 0)
+                return;
+            extractor.selectTrack(videoTrack);
+            long count = 0;
+            while (extractor.getSampleTime() >= 0) {
+                count++;
+                extractor.advance();
+            }
+            seg.framesInContainer = count;
+        } catch (Exception e) {
+            android.util.Log.w("VideoInput", "Could not count container frames: " + e.getMessage());
+        } finally {
+            extractor.release();
         }
     }
 
@@ -141,18 +207,24 @@ public class VideoInput implements Serializable {
             return;
         int index = 0;
         for (Segment seg : segments) {
-            String name = "video/video_" + index + ".mp4";
-            zstream.putNextEntry(new ZipEntry(name));
-            FileInputStream in = new FileInputStream(seg.file);
-            try {
-                byte[] chunk = new byte[8192];
-                int n;
-                while ((n = in.read(chunk)) != -1)
-                    zstream.write(chunk, 0, n);
-            } finally {
-                in.close();
+            //A segment file may be gone (files deleted out from under the app) - skip the zip
+            //entry but keep the segment in video.json marked missing so no metadata is lost.
+            if (seg.file.exists()) {
+                String name = "video/video_" + index + ".mp4";
+                zstream.putNextEntry(new ZipEntry(name));
+                FileInputStream in = new FileInputStream(seg.file);
+                try {
+                    byte[] chunk = new byte[8192];
+                    int n;
+                    while ((n = in.read(chunk)) != -1)
+                        zstream.write(chunk, 0, n);
+                } finally {
+                    in.close();
+                }
+                zstream.closeEntry();
+            } else {
+                seg.missing = true;
             }
-            zstream.closeEntry();
             index++;
         }
         zstream.putNextEntry(new ZipEntry("video/video.json"));
@@ -180,6 +252,17 @@ public class VideoInput implements Serializable {
                 s.put("file", "video_" + seg.index + ".mp4");
                 s.put("frames", seg.frames);
                 s.put("framesSubmitted", seg.framesSubmitted);
+                s.put("packetsSkipped", seg.packetsSkipped);
+                s.put("framesInContainer", seg.framesInContainer);
+                if (seg.missing)
+                    s.put("fileMissing", true);
+                //Exact per-frame experiment times read back from the finished container - index
+                //into video_<i>.mp4's video track. This is the authoritative mapping; the `t`
+                //buffer lists frames accepted by the muxer which may be a superset.
+                org.json.JSONArray times = new org.json.JSONArray();
+                for (double ft : seg.frameTimes)
+                    times.put(ft);
+                s.put("frameTimes", times);
                 s.put("startNanos", seg.startNanos);
                 s.put("experimentTimeRange", new JSONArray(new double[]{seg.startExperimentTime, seg.endExperimentTime}));
                 segs.put(s);

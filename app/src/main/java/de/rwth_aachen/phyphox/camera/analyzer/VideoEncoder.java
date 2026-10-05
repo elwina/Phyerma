@@ -74,8 +74,15 @@ public class VideoEncoder {
     private long segmentStartNanos = 0;
     private long framesSubmitted = 0;
     private long framesWritten = 0;
+    private long packetsSkipped = 0;
     private int encWidth = 0;
     private int encHeight = 0;
+    private final java.util.PriorityQueue<PendingPacket> pendingPackets = new java.util.PriorityQueue<>();
+    //How far behind the newest packet a queued packet may lag before it is released to the muxer.
+    //3 s covers deep encoder lookahead without much memory (~90 video + ~140 audio packets).
+    private static final long REORDER_US = 3_000_000L;
+    private long maxEnqueuedPts = Long.MIN_VALUE;
+    private final java.util.List<Long> writtenNanos = new java.util.ArrayList<>();
 
     //Optional AAC track
     private final boolean withAudio;
@@ -104,6 +111,11 @@ public class VideoEncoder {
         return framesSubmitted;
     }
 
+    public long getPacketsSkipped() {
+        return packetsSkipped;
+    }
+
+
     //GL thread. Starts a new segment file. Returns false if the encoder could not be brought up -
     //the caller surfaces that as "video unavailable" while the experiment keeps running.
     public boolean beginSegment(File file, int width, int height, int fps) {
@@ -115,6 +127,13 @@ public class VideoEncoder {
             format.setInteger(MediaFormat.KEY_BIT_RATE, bitrateFor(width, height));
             format.setInteger(MediaFormat.KEY_FRAME_RATE, fps);
             format.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 1);
+            //Baseline = no B-frames. On devices whose encoder reorders frames (lookahead buffering),
+            //the packets come out in decode order and their presentation times are no longer
+            //monotonic - MediaMuxer then rejects writes with "timestamp must be monotonically
+            //increasing" and the segment loses its first frames silently. Baseline profile keeps
+            //decode order == presentation order, so timestamps always increase.
+            format.setInteger(MediaFormat.KEY_PROFILE, MediaCodecInfo.CodecProfileLevel.AVCProfileBaseline);
+            format.setInteger(MediaFormat.KEY_LATENCY, 0);
 
             videoCodec = MediaCodec.createEncoderByType(MediaFormat.MIMETYPE_VIDEO_AVC);
             videoCodec.configure(format, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);
@@ -147,6 +166,10 @@ public class VideoEncoder {
             muxerStarted = false;
             framesSubmitted = 0;
             framesWritten = 0;
+            packetsSkipped = 0;
+            maxEnqueuedPts = Long.MIN_VALUE;
+            writtenNanos.clear();
+            pendingPackets.clear();
             segmentStartNanos = -1;
 
             if (withAudio)
@@ -233,6 +256,11 @@ public class VideoEncoder {
             Log.e(TAG, "Could not drain the video encoder.", e);
         }
         stopAudioTrack();
+        //Only now - after both tracks delivered their remaining packets - flush the shared
+        //queue so the muxer receives every sample in globally increasing presentation order.
+        synchronized (muxerLock) {
+            flushPendingPackets(true);
+        }
 
         synchronized (muxerLock) {
             try {
@@ -295,12 +323,18 @@ public class VideoEncoder {
             } catch (IllegalStateException e) {
                 break;
             }
-            if (buffer != null && info.size > 0) {
+            if (buffer != null && info.size > 0 && (info.flags & MediaCodec.BUFFER_FLAG_CODEC_CONFIG) == 0) {
+                //Copy the packet out of the codec buffer and queue it. Encoders with internal
+                //lookahead emit packets out of presentation order even when they accept the
+                //baseline-profile hint, and on some devices the muxer silently drops samples
+                //whose presentation time falls behind the other track - so both tracks share
+                //one priority queue and go out in globally increasing presentation order.
+                byte[] copy = new byte[info.size];
+                buffer.position(info.offset);
+                buffer.limit(info.offset + info.size);
+                buffer.get(copy);
                 synchronized (muxerLock) {
-                    if (muxerStarted && (info.flags & MediaCodec.BUFFER_FLAG_CODEC_CONFIG) == 0) {
-                        muxer.writeSampleData(videoTrackIndex, buffer, info);
-                        framesWritten++;
-                    }
+                    enqueuePacket(TRACK_VIDEO, info.presentationTimeUs, info.flags, copy);
                 }
             }
             try {
@@ -308,8 +342,88 @@ public class VideoEncoder {
             } catch (IllegalStateException e) {
                 break;
             }
-            if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0)
+            if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
+                synchronized (muxerLock) {
+                    flushPendingPackets(true);
+                }
                 break;
+            }
+        }
+    }
+
+    //Caller holds muxerLock. Buffers a packet and releases the queue's head once the newest
+    //packet seen is REORDER_US ahead of it - packets older than that cannot be overtaken any
+    //more because each track emits its own timestamps monotonically.
+    private void enqueuePacket(int track, long ptsUs, int flags, byte[] data) {
+        pendingPackets.add(new PendingPacket(track, ptsUs, flags, data));
+        maxEnqueuedPts = Math.max(maxEnqueuedPts, ptsUs);
+        while (!pendingPackets.isEmpty() && pendingPackets.peek().ptsUs <= maxEnqueuedPts - REORDER_US)
+            writePendingPacket(pendingPackets.poll());
+    }
+
+    //Caller holds muxerLock. With all=true the whole queue drains sorted - used at segment end.
+    //Until the muxer has started (both tracks announced), packets stay queued - the audio
+    //codec's format change can take about a second and dropping its packets would cut off the
+    //segment's beginning, as seen on vivo where the first ~30 video frames went missing.
+    private void flushPendingPackets(boolean all) {
+        if (!muxerStarted)
+            return;
+        while (!pendingPackets.isEmpty() && (all || pendingPackets.peek().ptsUs <= maxEnqueuedPts - REORDER_US))
+            writePendingPacket(pendingPackets.poll());
+    }
+
+    //Caller holds muxerLock.
+    private void writePendingPacket(PendingPacket p) {
+        int trackIndex = p.track == TRACK_VIDEO ? videoTrackIndex : audioTrackIndex;
+        if (trackIndex < 0)
+            return; //Track not announced yet - should not happen, packet arrived before format
+        MediaCodec.BufferInfo info = new MediaCodec.BufferInfo();
+        info.set(0, p.data.length, p.ptsUs, p.flags);
+        try {
+            muxer.writeSampleData(trackIndex, ByteBuffer.wrap(p.data), info);
+            if (p.track == TRACK_VIDEO) {
+                framesWritten++;
+                //The packet's PTS is the submitted frame's monotonic stamp minus the segment
+                //offset - hand the absolute timestamp to the caller so the `t` buffer only lists
+                //frames that actually made it into the MP4 (row N == video frame N even on
+                //devices whose encoder drops inputs).
+                writtenNanos.add(p.ptsUs * 1000 + segmentStartNanos);
+            }
+        } catch (Exception e) {
+            //A rejected packet must not kill the drain - count it so video.json reports it.
+            if (p.track == TRACK_VIDEO)
+                packetsSkipped++;
+            Log.w(TAG, "muxer rejected a packet: " + e.getMessage());
+        }
+    }
+
+    private static final int TRACK_VIDEO = 0;
+    private static final int TRACK_AUDIO = 1;
+
+    //GL thread. Pops the monotonic timestamps of the video frames written since the last call.
+    //Encoders drop input frames silently (surface input), so this list - not the submission
+    //count - is what corresponds to the MP4's frame index.
+    public void pollWrittenNanos(java.util.List<Long> out) {
+        out.addAll(writtenNanos);
+        writtenNanos.clear();
+    }
+
+    private static class PendingPacket implements Comparable<PendingPacket> {
+        final int track;
+        final long ptsUs;
+        final int flags;
+        final byte[] data;
+
+        PendingPacket(int track, long ptsUs, int flags, byte[] data) {
+            this.track = track;
+            this.ptsUs = ptsUs;
+            this.flags = flags;
+            this.data = data;
+        }
+
+        @Override
+        public int compareTo(PendingPacket other) {
+            return Long.compare(ptsUs, other.ptsUs);
         }
     }
 
@@ -320,6 +434,8 @@ public class VideoEncoder {
             try {
                 muxer.start();
                 muxerStarted = true;
+                //Packets queued while the muxer waited for all track formats can go out now.
+                flushPendingPackets(false);
             } catch (Exception e) {
                 Log.e(TAG, "Could not start the muxer.", e);
             }
@@ -419,10 +535,13 @@ public class VideoEncoder {
             } catch (IllegalStateException e) {
                 break;
             }
-            if (buffer != null && info.size > 0) {
+            if (buffer != null && info.size > 0 && (info.flags & MediaCodec.BUFFER_FLAG_CODEC_CONFIG) == 0) {
+                byte[] copy = new byte[info.size];
+                buffer.position(info.offset);
+                buffer.limit(info.offset + info.size);
+                buffer.get(copy);
                 synchronized (muxerLock) {
-                    if (muxerStarted && (info.flags & MediaCodec.BUFFER_FLAG_CODEC_CONFIG) == 0)
-                        muxer.writeSampleData(audioTrackIndex, buffer, info);
+                    enqueuePacket(TRACK_AUDIO, info.presentationTimeUs, info.flags, copy);
                 }
             }
             try {

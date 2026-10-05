@@ -86,6 +86,10 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
     VideoInput videoInput = null;
     VideoEncoder videoEncoder = null;
     volatile boolean videoActive = false;
+    private final java.util.List<Long> videoWrittenNanos = new java.util.ArrayList<>();
+    //Every written frame's monotonic stamp of the CURRENT segment - handed to VideoInput at
+    //segment end so video.json can list each MP4 frame's experiment time.
+    private final java.util.List<Long> videoSegmentNanos = new java.util.ArrayList<>();
 
     public AnalyzingOpenGLRenderer(CameraInput cameraInput, Lock lock, StateFlow<CameraSettingState> cameraSettingValueState, ExposureStatisticsListener exposureStatisticsListener) {
         this.cameraSettingValueState = cameraSettingValueState;
@@ -412,15 +416,26 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
                             if (!videoEncoder.beginSegment(videoInput.beginSegmentFile(), camWidth, camHeight, (int) Math.max(1, Math.round(videoInput.fps)))) {
                                 videoInput.error = "Could not start video encoding on this device.";
                                 videoActive = false;
+                            } else {
+                                videoSegmentNanos.clear();
                             }
                         }
                         if (videoEncoder.isRecording() && videoEncoder.encodeFrame(camMatrix, reportedTime + timeAdjustment)) {
-                            dataLock.lock();
-                            try {
-                                if (videoInput.dataT != null)
-                                    videoInput.dataT.append(t);
-                            } finally {
-                                dataLock.unlock();
+                            //Append the experiment time only for frames the muxer actually took.
+                            //Encoders may drop input frames when busy, so row N in the buffer must
+                            //equal video frame N in the MP4 - not the Nth submitted frame.
+                            videoWrittenNanos.clear();
+                            videoEncoder.pollWrittenNanos(videoWrittenNanos);
+                            if (!videoWrittenNanos.isEmpty()) {
+                                videoSegmentNanos.addAll(videoWrittenNanos);
+                                dataLock.lock();
+                                try {
+                                    if (videoInput.dataT != null)
+                                        for (long nano : videoWrittenNanos)
+                                            videoInput.dataT.append(videoInput.experimentTimeAt(nano));
+                                } finally {
+                                    dataLock.unlock();
+                                }
                             }
                         }
                     }
@@ -516,7 +531,23 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
             videoActive = active;
             if (!active && videoEncoder != null) {
                 videoEncoder.endSegment();
-                videoInput.endSegmentFile(videoEncoder.getFramesWritten(), videoEncoder.getFramesSubmitted());
+                //Frames flushed at segment end still need their `t` rows - without this the last
+                //REORDER_WINDOW frames of every segment would lack a buffer entry.
+                videoWrittenNanos.clear();
+                videoEncoder.pollWrittenNanos(videoWrittenNanos);
+                if (!videoWrittenNanos.isEmpty()) {
+                    videoSegmentNanos.addAll(videoWrittenNanos);
+                    dataLock.lock();
+                    try {
+                        if (videoInput.dataT != null)
+                            for (long nano : videoWrittenNanos)
+                                videoInput.dataT.append(videoInput.experimentTimeAt(nano));
+                    } finally {
+                        dataLock.unlock();
+                    }
+                }
+                videoInput.endSegmentFile(videoEncoder.getFramesWritten(), videoEncoder.getFramesSubmitted(), videoEncoder.getPacketsSkipped(), videoSegmentNanos);
+                videoSegmentNanos.clear();
             }
         });
     }
@@ -527,7 +558,11 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
             videoActive = false;
             if (videoEncoder != null) {
                 videoEncoder.endSegment();
-                videoInput.endSegmentFile(videoEncoder.getFramesWritten(), videoEncoder.getFramesSubmitted());
+                videoWrittenNanos.clear();
+                videoEncoder.pollWrittenNanos(videoWrittenNanos);
+                videoSegmentNanos.addAll(videoWrittenNanos);
+                videoInput.endSegmentFile(videoEncoder.getFramesWritten(), videoEncoder.getFramesSubmitted(), videoEncoder.getPacketsSkipped(), videoSegmentNanos);
+                videoSegmentNanos.clear();
             }
         });
     }

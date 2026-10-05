@@ -30,7 +30,7 @@ import de.rwth_aachen.phyphox.camera.VideoInput;
 //MP4 per segment, empty segments must not ship, and video.json must carry the per-segment
 //experiment-time ranges that offline alignment tooling reads.
 @RunWith(RobolectricTestRunner.class)
-@Config(manifest = Config.NONE, sdk = 34) //Robolectric's max supported SDK (36) is below the app's targetSdk (37)
+@Config(sdk = 35) //Robolectric's max supported SDK (36) is below the app's targetSdk (37)
 public class VideoInputTest {
 
     private File baseDir;
@@ -51,7 +51,7 @@ public class VideoInputTest {
         FileOutputStream out = new FileOutputStream(f);
         out.write(new byte[]{1, 2, 3, 4});
         out.close();
-        video.endSegmentFile(frames, frames);
+        video.endSegmentFile(frames, frames, 0, java.util.Collections.emptyList());
         return f;
     }
 

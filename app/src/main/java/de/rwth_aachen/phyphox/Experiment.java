@@ -803,6 +803,16 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
                 startView = savedInstanceState.getInt(STATE_CURRENT_VIEW);
             }
 
+            //A <video> input rides the camera pipeline: attach its config to an existing
+            //<camera> input or create a video-mode CameraInput that only feeds the recorder
+            //(no analyzers, continuous auto-exposure). This must happen before the views are
+            //built - a <camera-gui> element dereferences cameraInput when its fragment starts.
+            if (experiment.videoInput != null && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (experiment.cameraInput == null)
+                    experiment.cameraInput = CameraInput.forVideo(experiment.dataLock, experiment.experimentTimeReference);
+                experiment.cameraInput.setVideoInput(experiment.videoInput);
+            }
+
             setupTabLayout();
             tabLayout.getTabAt(startView).select();
 
@@ -2051,6 +2061,9 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
         //A clear wipes the run's data, so the sync audio belonging to it goes too
         if (experiment.syncTrack != null)
             experiment.syncTrack.discard();
+        //Same for recorded video segments
+        if (experiment.videoInput != null)
+            experiment.videoInput.discard();
         experiment.newData = true;
         experiment.newUserInput = true;
         if (remote != null && serverEnabled)

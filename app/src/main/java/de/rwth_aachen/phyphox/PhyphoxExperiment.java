@@ -56,6 +56,7 @@ import de.rwth_aachen.phyphox.Bluetooth.Bluetooth;
 import de.rwth_aachen.phyphox.Bluetooth.BluetoothInput;
 import de.rwth_aachen.phyphox.Bluetooth.BluetoothOutput;
 import de.rwth_aachen.phyphox.camera.CameraInput;
+import de.rwth_aachen.phyphox.camera.VideoInput;
 import de.rwth_aachen.phyphox.camera.depth.DepthInput;
 import de.rwth_aachen.phyphox.NetworkConnection.NetworkConnection;
 
@@ -170,6 +171,11 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
     public boolean syncRecording = false;
     transient public SyncAudioTrack syncTrack = null;
     public String syncTrackError = null; //Init/enable failure to surface to the user
+
+    //Optional <video> input: records MP4 segments of the camera stream while measuring. It rides
+    //the cameraInput's single camera session (created for it if the experiment declares video
+    //without camera) - see camera/VideoInput and camera/analyzer/VideoEncoder.
+    public VideoInput videoInput = null;
 
     //Parameters for flash light
     public FlashlightOutput flashlightOutput = null;

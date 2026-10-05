@@ -31,6 +31,7 @@ import java.util.concurrent.locks.Lock;
 import de.rwth_aachen.phyphox.DataBuffer;
 import de.rwth_aachen.phyphox.ExperimentTimeReference;
 import de.rwth_aachen.phyphox.camera.CameraInput;
+import de.rwth_aachen.phyphox.camera.VideoInput;
 import de.rwth_aachen.phyphox.camera.model.CameraSettingState;
 import de.rwth_aachen.phyphox.camera.ui.CameraPreviewScreen;
 import kotlinx.coroutines.flow.StateFlow;
@@ -79,6 +80,13 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
     Boolean isFeaturePhotometry;
     Boolean isFeatureSpectroscopy;
 
+    //Optional video-recording branch (<video> input): frames are rendered into an encoder surface
+    //in addition to analysis and preview. videoActive carries the "should be recording" intent so
+    //the encoder can be created lazily on the first frame that actually reaches the GL thread.
+    VideoInput videoInput = null;
+    VideoEncoder videoEncoder = null;
+    volatile boolean videoActive = false;
+
     public AnalyzingOpenGLRenderer(CameraInput cameraInput, Lock lock, StateFlow<CameraSettingState> cameraSettingValueState, ExposureStatisticsListener exposureStatisticsListener) {
         this.cameraSettingValueState = cameraSettingValueState;
         this.experimentTimeReference = cameraInput.experimentTimeReference;
@@ -91,6 +99,7 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
 
         isFeaturePhotometry = cameraInput.isFeaturePhotometry();
         isFeatureSpectroscopy = cameraInput.isFeatureSpectroscopy();
+        this.videoInput = cameraInput.getVideoInput();
 
         this.dataLock = lock;
 
@@ -148,7 +157,31 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
 
         EGLConfig[] configs = new EGLConfig[1];
         int[] numConfig = new int[1];
-        EGL14.eglChooseConfig(eglDisplay, configAttr, 0, configs, 0, 1, numConfig, 0);
+
+        //The video branch renders into a MediaCodec input surface, which EGL only accepts when the
+        //config was chosen with EGL_RECORDABLE_ANDROID and window-surface support. Try that first;
+        //if the driver has no such config we fall back to the plain one and the encoder surfaces
+        //its own error instead of taking the whole camera down with it.
+        if (videoInput != null) {
+            int[] recordableAttr = {
+                    EGL14.EGL_COLOR_BUFFER_TYPE, EGL14.EGL_RGB_BUFFER,
+                    EGL14.EGL_LEVEL, 0,
+                    EGL14.EGL_RENDERABLE_TYPE, EGL14.EGL_OPENGL_ES2_BIT,
+                    EGL14.EGL_SURFACE_TYPE, EGL14.EGL_PBUFFER_BIT | EGL14.EGL_WINDOW_BIT,
+                    0x3142 /*EGL_RECORDABLE_ANDROID*/, 1,
+                    EGL14.EGL_LUMINANCE_SIZE, 0,
+                    EGL14.EGL_RED_SIZE, 8,
+                    EGL14.EGL_GREEN_SIZE, 8,
+                    EGL14.EGL_BLUE_SIZE, 8,
+                    EGL14.EGL_ALPHA_SIZE, 8,
+                    EGL14.EGL_BUFFER_SIZE, 32,
+                    EGL14.EGL_NONE
+            };
+            EGL14.eglChooseConfig(eglDisplay, recordableAttr, 0, configs, 0, 1, numConfig, 0);
+        }
+
+        if (numConfig[0] == 0)
+            EGL14.eglChooseConfig(eglDisplay, configAttr, 0, configs, 0, 1, numConfig, 0);
         if (numConfig[0] == 0) {
             throw new RuntimeException("Could not create OpenGL context: No configuration found.");
         }
@@ -367,6 +400,31 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
                         lastPreviewFrame = System.currentTimeMillis();
                     }
 
+                    //Video branch (<video> input): render the very frame we just pulled into the
+                    //encoder surface, stamped with the same camera timestamp the analyzers use,
+                    //and pair it with a `t` sample so the frame count in the MP4 and in the
+                    //buffer stay 1:1. The encoder survives a pause - a resume starts its next
+                    //segment instead of a new object.
+                    if (measuring && videoActive && videoInput != null) {
+                        if (videoEncoder == null)
+                            videoEncoder = new VideoEncoder(eglDisplay, eglConfig, eglContext, eglCameraTexture, videoInput.withAudio);
+                        if (!videoEncoder.isRecording()) {
+                            if (!videoEncoder.beginSegment(videoInput.beginSegmentFile(), camWidth, camHeight, (int) Math.max(1, Math.round(videoInput.fps)))) {
+                                videoInput.error = "Could not start video encoding on this device.";
+                                videoActive = false;
+                            }
+                        }
+                        if (videoEncoder.isRecording() && videoEncoder.encodeFrame(camMatrix, reportedTime + timeAdjustment)) {
+                            dataLock.lock();
+                            try {
+                                if (videoInput.dataT != null)
+                                    videoInput.dataT.append(t);
+                            } finally {
+                                dataLock.unlock();
+                            }
+                        }
+                    }
+
                     if (!running)
                         return;
                     if (dataNeedsToBeWrittenToBuffers && measuring) {
@@ -450,8 +508,28 @@ public class AnalyzingOpenGLRenderer implements Preview.SurfaceProvider, Surface
         draw();
     }
 
+    //Video lifecycle, driven by CameraInput.start()/stop() which follow the experiment's
+    //startAllIO/stopAllIO. Every state change is queued on the GL executor so a quick
+    //pause->resume keeps its ordering (end of old segment strictly before start of the next).
+    public void setVideoActive(boolean active) {
+        executor.execute(() -> {
+            videoActive = active;
+            if (!active && videoEncoder != null) {
+                videoEncoder.endSegment();
+                videoInput.endSegmentFile(videoEncoder.getFramesWritten(), videoEncoder.getFramesSubmitted());
+            }
+        });
+    }
+
     public void shutdown() {
         running = false;
+        executor.execute(() -> {
+            videoActive = false;
+            if (videoEncoder != null) {
+                videoEncoder.endSegment();
+                videoInput.endSegmentFile(videoEncoder.getFramesWritten(), videoEncoder.getFramesSubmitted());
+            }
+        });
     }
 
 }

@@ -59,6 +59,7 @@ import de.rwth_aachen.phyphox.Bluetooth.ConversionsInput;
 import de.rwth_aachen.phyphox.Bluetooth.ConversionsOutput;
 import de.rwth_aachen.phyphox.camera.helper.CameraHelper;
 import de.rwth_aachen.phyphox.camera.CameraInput;
+import de.rwth_aachen.phyphox.camera.VideoInput;
 import de.rwth_aachen.phyphox.camera.depth.DepthInput;
 import de.rwth_aachen.phyphox.helper.Helper;
 import de.rwth_aachen.phyphox.helper.RGB;
@@ -2620,6 +2621,53 @@ public abstract class PhyphoxFile {
                             lockedSetting.isEmpty() ? null : lockedSetting,
                             aeStrategy,
                             aeFramerateTarget);
+
+                    break;
+
+                }
+                case "video": {
+                    //A video input: records the camera stream into MP4 segments while the
+                    //experiment measures. Frames carry real per-frame timestamps - the same
+                    //camera-clock-to-experiment-time mapping the <camera> analyzers use - both in
+                    //the MP4 presentation times and in the `t` output buffer, so the video lines
+                    //up with the sensor data and can also serve as a sync carrier across devices.
+                    if (!parent.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+                        throw new phyphoxFileException("This device doesn't have the camera.");
+                    }
+
+                    //Check for camera permission
+                    if (ContextCompat.checkSelfPermission(parent, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(parent, new String[]{Manifest.permission.CAMERA}, 0);
+                        throw new phyphoxFileException("Need permission to access the camera."); //We will throw an error here, but when the user grants the permission, the activity will be restarted from the permission callback
+                    }
+
+                    int resolutionHeight = getIntAttribute("resolution", 720);
+                    if (resolutionHeight < 240 || resolutionHeight > 2160)
+                        throw new phyphoxFileException("Video resolution must be between 240 and 2160 pixels.", xpp.getLineNumber());
+
+                    double fps = getDoubleAttribute("fps", 30.0);
+                    boolean audio = getBooleanAttribute("audio", false);
+
+                    if (audio && ContextCompat.checkSelfPermission(parent, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(parent, new String[]{Manifest.permission.RECORD_AUDIO}, 0);
+                        throw new phyphoxFileException("Need permission to record audio for the video."); //Same flow as the camera permission: granted -> activity restarts
+                    }
+
+                    //Allowed output configuration: the frame timestamps are the only data this
+                    //input produces - the picture itself goes to the MP4 file.
+                    ioBlockParser.ioMapping[] outputMapping = {
+                            new ioBlockParser.ioMapping() {{name = "t"; asRequired = true; minCount = 0; maxCount = 1; valueAllowed = false;}},
+                    };
+                    Vector<DataOutput> outputs = new Vector<>();
+                    (new ioBlockParser(xpp, experiment, parent, null, outputs, null, outputMapping, "component")).process(); //Load inputs and outputs
+
+                    experiment.videoInput = new VideoInput(
+                            resolutionHeight,
+                            fps,
+                            audio,
+                            outputs.size() > 0 && outputs.get(0) != null ? outputs.get(0).buffer : null,
+                            experiment.experimentTimeReference,
+                            parent.getFilesDir());
 
                     break;
 

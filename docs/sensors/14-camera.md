@@ -31,6 +31,8 @@
 
 上游原样。传感器页不列相机。
 
+**`<video>` 视频输入（已接入）**：实验可声明 `<video resolution="480|720|1080" fps="30" audio="true|false">`，测量期间把相机流录成 MP4 段（暂停切段，`video_<i>.mp4`）。实现复用相机 GL 管线：`AnalyzingOpenGLRenderer.draw()` 每帧多渲染一路到 `MediaCodec` 输入面（H.264 + `MediaMuxer`），`eglPresentationTimeANDROID` 用相机帧时间戳写 MP4 播放时间——视频文件自带逐帧时间。`t` 输出把每帧实验时间写进 buffer（与 MP4 帧数严格 1:1），`video.json` 记分辨率/实测帧数/段起止实验时间/事件表/机型。可选 AAC 音轨（`audio="true"`）内嵌同一 MP4——声画双同步载体。`<camera>` 与 `<video>` 共存时共享同一相机会话，分析路径配置优先。预览复用 `<camera-gui>` 视图元素（放则持续取景，不放则纯后台录）。导出 ZIP 含 `video/` 目录。仅限 video-only 实验时预览走连续 AE + 作者设定分辨率；与 `<camera>` 共存时沿用分析配置。
+
 ## 6. 候选规则（草案）
 
 先记录各机 Camera2 能力级，再决定哪些光度实验要降级提示。不把预览亮度换算成 lux。
@@ -38,4 +40,7 @@
 ## 7. 待测机型与问题
 
 - [ ] 曝光锁定是否可用
+- [ ] `<video>` 录制在国产机上的 SurfaceTexture 时间戳时基（`timeAdjustment` 修偏是否触发）
+- [ ] 编码器吞吐：720p30 下 `framesSubmitted` vs MP4 实际帧数（丢帧）
+- [ ] 长时间录制的发热/存储与 ZIP 导出体积
 - [ ] 光谱实验在主摄上的可用性

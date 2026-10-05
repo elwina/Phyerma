@@ -77,6 +77,11 @@ class CameraInput : Serializable, AnalyzingOpenGLRenderer.ExposureStatisticsList
 
     var lifecycleOwner: LifecycleOwner? = null
 
+    //When the experiment declares a <video> input, its config lives here and the renderer records
+    //the camera stream into MP4 segments during measurement. A <camera> and a <video> input share
+    //this one CameraInput (and its single camera session).
+    var videoInput: VideoInput? = null
+
     @Transient var analyzingOpenGLRenderer: AnalyzingOpenGLRenderer? = null
 
     //Focus distance in meters as set by the "focus_distance" option of the locked attribute.
@@ -90,6 +95,27 @@ class CameraInput : Serializable, AnalyzingOpenGLRenderer.ExposureStatisticsList
 
     @SuppressLint("UnsafeOptInUsageError")
     fun setUpPreviewUseCase(cameraSelector: CameraSelector): Preview.Builder? {
+        //Video mode: the analysis-driven tuning (AE off, fixed frame duration, max fps range) does
+        //not apply - recording wants continuous auto-exposure and the resolution/fps the author
+        //asked for. Everything else in the pipeline (surface, timestamps, renderer) is identical.
+        //When a real <camera> input exists alongside, its analysis settings win - the video simply
+        //records whatever the analyzer needs. Only a video-only CameraInput takes this branch.
+        if (videoInput != null && cameraFeature == PhyphoxCameraFeature.MotionAnalysis) videoInput?.let { vi ->
+            val height = vi.resolutionHeight
+            val width = when {
+                height <= 480 -> 854
+                height <= 720 -> 1280
+                else -> 1920
+            }
+            val resolutionSelector = ResolutionSelector.Builder()
+                .setResolutionStrategy(ResolutionStrategy(android.util.Size(width, height), ResolutionStrategy.FALLBACK_RULE_CLOSEST_HIGHER_THEN_LOWER))
+                .build()
+            val previewBuilder = Preview.Builder()
+                .setResolutionSelector(resolutionSelector)
+            if (vi.fps > 0)
+                previewBuilder.setTargetFrameRate(android.util.Range(vi.fps.toInt(), vi.fps.toInt()))
+            return previewBuilder
+        }
         lifecycleOwner?.let { lifecycleOwner ->
             cameraProvider?.unbindAll()
             val camera = cameraProvider?.bindToLifecycle(lifecycleOwner, cameraSelector) ?: return null
@@ -539,14 +565,37 @@ class CameraInput : Serializable, AnalyzingOpenGLRenderer.ExposureStatisticsList
 
     }
 
+    companion object {
+        //A <video>-only experiment still needs a camera session; this creates a CameraInput with
+        //no analyzer outputs and continuous auto-exposure (MotionAnalysis skips the photometry
+        //pipelines). The actual recording happens in the renderer's VideoEncoder branch.
+        @JvmStatic
+        fun forVideo(lock: Lock, experimentTimeReference: ExperimentTimeReference): CameraInput {
+            return CameraInput(
+                    0f, 1f, 0f, 1f,
+                    Vector(),
+                    lock,
+                    experimentTimeReference,
+                    PhyphoxCameraFeature.MotionAnalysis,
+                    true,
+                    null,
+                    AEStrategy.mean,
+                    0.0)
+        }
+    }
+
     fun start() {
         measuring = true
         analyzingOpenGLRenderer?.measuring = true
+        if (videoInput != null)
+            analyzingOpenGLRenderer?.setVideoActive(true)
     }
 
     fun stop() {
         measuring = false
         analyzingOpenGLRenderer?.measuring = false
+        if (videoInput != null)
+            analyzingOpenGLRenderer?.setVideoActive(false)
     }
 
     fun setDefaultCameraSettingValueIfAvailable(setting: String?): CameraSettingState {

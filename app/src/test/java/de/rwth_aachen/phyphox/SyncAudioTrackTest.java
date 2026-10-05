@@ -26,7 +26,7 @@ import java.util.zip.ZipOutputStream;
 //be a canonical PCM16 mono RIFF so any audio tool opens it, and sync.json must carry the
 //monotonic anchors that map file frames onto experiment time.
 @RunWith(RobolectricTestRunner.class)
-@Config(manifest = Config.NONE)
+@Config(manifest = Config.NONE, sdk = 34) //Robolectric's max supported SDK (36) is below the app's targetSdk (37)
 public class SyncAudioTrackTest {
 
     private File baseDir;

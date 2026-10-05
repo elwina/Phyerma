@@ -268,6 +268,12 @@ public class DataExport implements Serializable {
                         //monotonic-clock anchors that map each sample onto experiment time.
                         if (experiment.syncTrack != null && experiment.syncTrack.hasData())
                             experiment.syncTrack.writeToZip(zstream, BuildConfig.VERSION_NAME);
+
+                        //Recorded <video> segments ship as video/video_<i>.mp4 plus a video.json
+                        //sidecar. The MP4s can be large; the zip is streamed, so nothing extra is
+                        //held in memory beyond the copy buffer.
+                        if (experiment.videoInput != null && experiment.videoInput.hasData())
+                            experiment.videoInput.writeToZip(zstream, BuildConfig.VERSION_NAME);
                     }
                 } catch (Exception e) {
                     //This could be done better. Any error during CSV/ZIP compiling ends up here

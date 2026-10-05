@@ -22,6 +22,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -164,6 +165,12 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
     boolean appendAudioInput = false; //Append audio input on start of analysis cycle instead of replacing old data
     boolean forceAudioRecordingCompatibilityFormat = false; //Some Xiaomi device do not properly work with ENCODING_PCM_FLOAT if the Google Assistent voice trigger is enabled. This forces the use of the good old 16bit int format
 
+    //Optional acoustic-sync audio track (see SyncAudioTrack). Off until the user enables it from
+    //the experiment menu; the choice is persisted app-wide by the activity.
+    public boolean syncRecording = false;
+    transient public SyncAudioTrack syncTrack = null;
+    public String syncTrackError = null; //Init/enable failure to surface to the user
+
     //Parameters for flash light
     public FlashlightOutput flashlightOutput = null;
     //Network connections
@@ -281,6 +288,15 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
                     bytesRead = audioRecord.read(buffer, 0, readBufferSize, AudioRecord.READ_NON_BLOCKING);
                 else
                     bytesRead = audioRecord.read(oldBuffer, 0, readBufferSize);
+                //The sync track taps the stream at the read site: every consumed frame passes
+                //here exactly once, including the first read that the experiment deliberately
+                //does not append, and regardless of per-cycle buffer clearing.
+                if (syncTrack != null) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !forceAudioRecordingCompatibilityFormat)
+                        syncTrack.tap(buffer, bytesRead);
+                    else
+                        syncTrack.tap(oldBuffer, bytesRead);
+                }
                 if (lastAnalysis != 0) { //The first recording data does not make sense, but we had to read it to clear the recording buffer...
                     dataLock.lock();
                     try {
@@ -464,6 +480,9 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
         //Recording
         if (audioRecord != null && audioRecord.getState() == AudioRecord.STATE_INITIALIZED)
             audioRecord.stop();
+        //Sync track: end the current segment while the paused experiment time still stands
+        if (syncTrack != null)
+            syncTrack.endSegment();
         //Playback
         if (audioOutput != null) {
             audioOutput.stop();
@@ -571,6 +590,11 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
         if (audioRecord != null && audioRecord.getState() == AudioRecord.STATE_INITIALIZED)
             audioRecord.startRecording();
 
+        //Sync track: open a new recording segment for this start. The flag decides, not the
+        //track's presence: a disabled track keeps its recorded segments for export.
+        if (syncRecording && syncTrack != null)
+            syncTrack.beginSegment();
+
         //We will not start audio output here as it will be triggered by the analysis modules.
     }
 
@@ -586,6 +610,11 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
 
         //Create audioTrack instance
         if (micBufferSize > 0) {
+            //When the sync track taps this stream, its throughput is bound to the analysis loop.
+            //Give the loop at least a second of HAL-side buffering so a heavy analysis cycle
+            //cannot silently overrun the capture before the next read.
+            if (syncRecording && micBufferSize < micRate)
+                micBufferSize = micRate;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !forceAudioRecordingCompatibilityFormat) {
                 audioRecord = new AudioRecord(MediaRecorder.AudioSource.DEFAULT, micRate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_FLOAT, micBufferSize * 2);
                 if (audioRecord.getState() != AudioRecord.STATE_INITIALIZED) {
@@ -608,6 +637,22 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
             }
         }
 
+        //Wire up the sync audio track now that the experiment's audio situation is known: a
+        //fresh AudioRecord means the stream is shared, otherwise the track captures on its own.
+        //A track without syncRecording (disabled but still holding a session for export) gets
+        //the shared reference refreshed but is not re-initialized.
+        if (syncTrack != null) {
+            if (audioRecord != null)
+                syncTrack.attachShared(audioRecord);
+            else if (syncRecording) {
+                try {
+                    syncTrack.initOwn();
+                } catch (SyncAudioTrack.SyncAudioTrackException e) {
+                    syncTrackError = e.getMessage();
+                }
+            }
+        }
+
         //Reconnect sensors
         for (SensorInput si : inputSensors) {
             si.attachSensorManager(sensorManager);
@@ -617,6 +662,43 @@ public class PhyphoxExperiment implements Serializable, ExperimentTimeReference.
             gpsIn.attachLocationManager(locationManager);
         }
 
+    }
+
+    //Turn the optional sync audio track on. The track object is created here; the capture stream
+    //is wired immediately for experiments without an <audio> input, and deferred to init() (which
+    //creates that record) for experiments that have one. Returns false if the hardware refused.
+    public boolean enableSync(Context ctx) {
+        if (syncTrack == null)
+            syncTrack = new SyncAudioTrack(experimentTimeReference, new File(ctx.getFilesDir(), "sync"));
+        syncRecording = true;
+        syncTrackError = null;
+
+        if (audioRecord != null)
+            syncTrack.attachShared(audioRecord);
+        else if (micBufferSize == 0) {
+            //micBufferSize > 0 means the experiment declared <audio>: init() attaches the record
+            //once it exists. Only a genuinely audio-less experiment needs our own capture.
+            try {
+                syncTrack.initOwn();
+            } catch (SyncAudioTrack.SyncAudioTrackException e) {
+                syncTrackError = e.getMessage();
+                syncRecording = false;
+                return false;
+            }
+        }
+
+        //Enabling while a measurement is already running starts recording immediately.
+        ExperimentTimeReference.TimeMapping last = experimentTimeReference.getLastMapping();
+        if (last != null && last.event == ExperimentTimeReference.TimeMappingEvent.START && syncTrack.isUsable())
+            syncTrack.beginSegment();
+        return true;
+    }
+
+    //Turn the sync audio track off. Segments recorded so far stay around for export.
+    public void disableSync() {
+        syncRecording = false;
+        if (syncTrack != null)
+            syncTrack.pauseCapture();
     }
 
     public void writeStateFileAsync(String customTitle, OutputStream os, Experiment.WriteStateFileCallback writeStateFileCallback){

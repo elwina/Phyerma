@@ -207,6 +207,7 @@
     <string name="remoteColorMapWarning">远程端口中的颜色图只是一个近似值。与app内置图不同，目前它无法处理非等距数据或x、y轴上的对数缩放。因此，不同时间间隔的数据可能会出现在错误的位置上。</string>
     <string name="calibrated_magnetometer">使用已校准的磁力计</string>
     <string name="force_gnss">仅使用卫星定位</string>
+    <string name="sync_audio_track">记录声纹同步音频</string>
     <string name="fontSize">字体大小</string>
     <string name="open_zip_title">打开一组实验</string>
     <string name="open_zip_dialog_instructions">这个资源包含多个实验。你可以选择一个打开它并可选择将其存入你的收藏中，或者使用下面的按钮一次性将它们全部保存至你的收藏中。</string>

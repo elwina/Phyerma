@@ -262,6 +262,12 @@ public class DataExport implements Serializable {
                         }
                         zstream.write(data.toString().getBytes()); //Write to zip-file
                         zstream.closeEntry();
+
+                        //The acoustic-sync track (if the user opted in) ships next to the data:
+                        //sync/audio_<i>.wav per recording segment plus sync/sync.json with the
+                        //monotonic-clock anchors that map each sample onto experiment time.
+                        if (experiment.syncTrack != null && experiment.syncTrack.hasData())
+                            experiment.syncTrack.writeToZip(zstream, BuildConfig.VERSION_NAME);
                     }
                 } catch (Exception e) {
                     //This could be done better. Any error during CSV/ZIP compiling ends up here

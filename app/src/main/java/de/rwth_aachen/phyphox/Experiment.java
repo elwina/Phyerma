@@ -151,6 +151,7 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
     private static final String STATE_SENSOR_WARNING_DISMISSED = "sensor_warning_dismissed";
     private static final String STATE_PHOTOSENSITIVITY_DISMISSED = "photosensitivity_warning_dismissed";
     private static final String PREF_PHOTOSENSITIVITY_DISMISSED = "photosensitivity_dismissed_pref";
+    private static final String PREF_SYNC_AUDIO = "sync_audio_enabled"; //App-wide opt-in for the acoustic-sync recording track
 
     //This handler creates the "main loop" as it is repeatedly called using postDelayed
     //Not a real loop to keep some resources available
@@ -227,6 +228,7 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
 
     static final int REQUEST_LOCAL_NETWORK_SCAN  = 2;
     public static final int REQUEST_LOCAL_NETWORK_CONNECTIONS = 4; //local network permission for the experiment's network connections (3 is the Bluetooth scan code)
+    static final int REQUEST_RECORD_AUDIO_SYNC = 5; //microphone permission for the sync audio track
     private boolean localNetworkPermissionAskedForConnections = false;
 
     OnBackPressedCallback backCallback = null; //Intercepts the back action when leaving needs confirmation or an element is in exclusive mode
@@ -381,6 +383,9 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
 
         stopMeasurement(); //Stop the measurement
 
+        if (experiment != null && experiment.syncTrack != null)
+            experiment.syncTrack.pauseCapture(); //Release the mic; recorded segments stay exportable
+
         if (experiment != null && experiment.loaded) {
             for (NetworkConnection networkConnection : experiment.networkConnections) {
                 networkConnection.disconnect();
@@ -490,6 +495,17 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
             if (grantResults.length == 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED)
                 Toast.makeText(this, getString(R.string.localNetworkDeniedHint), Toast.LENGTH_LONG).show();
             connectNetworkConnections();
+            return;
+        }
+
+        if (requestCode == REQUEST_RECORD_AUDIO_SYNC) {
+            //The sync-audio toggle saved its preference before asking: on grant, recreate reloads
+            //the experiment and the pref path in setupTabLayout turns the track on; on denial the
+            //preference goes back off so the menu does not lie about what happens next run.
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                this.recreate();
+            else
+                getSharedPreferences(PREFS_NAME, 0).edit().putBoolean(PREF_SYNC_AUDIO, false).apply();
             return;
         }
 
@@ -660,6 +676,13 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
 
         if (adapter.getCount() < 2)
             tabLayout.setVisibility(View.GONE);
+
+        //Restore the app-wide sync-audio choice before init() wires the capture stream. The
+        //track object survives a recreate with the experiment, so enableSync only re-attaches.
+        if (getSharedPreferences(PREFS_NAME, 0).getBoolean(PREF_SYNC_AUDIO, false)) {
+            if (!experiment.enableSync(this) && experiment.syncTrackError != null)
+                Toast.makeText(this, experiment.syncTrackError, Toast.LENGTH_LONG).show();
+        }
 
         try {
             experiment.init(sensorManager, (LocationManager)this.getSystemService(Context.LOCATION_SERVICE));
@@ -1207,6 +1230,7 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
         MenuItem saveLocally = menu.findItem(R.id.action_saveLocally);
         MenuItem calibratedMagnetometer = menu.findItem(R.id.action_calibrated_magnetometer);
         MenuItem forceGNSSItem = menu.findItem(R.id.action_force_gnss);
+        MenuItem syncAudio = menu.findItem(R.id.action_sync_audio);
 
         Iterator<PhyphoxExperiment.Link> it = experiment.getHighlightedLinks().iterator();
         for (int i = 1; i <= 5; i++) {
@@ -1286,6 +1310,10 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
         }
         forceGNSSItem.setVisible(gps);
         forceGNSSItem.setChecked(forceGNSS);
+
+        //The sync-audio toggle is offered for every experiment - that is the point of the
+        //feature - and mirrors what the experiment is actually doing, not just the preference.
+        syncAudio.setChecked(experiment.syncRecording);
 
         //If the timedRun is active, we have to set the value of the countdown
         if (timedRun) {
@@ -1493,6 +1521,29 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
             if (experiment.gpsIn != null) {
                 experiment.gpsIn.forceGNSS= !item.isChecked();
             }
+        }
+
+        //Sync audio toggle: record an acoustic-sync track alongside the experiment. For
+        //experiments with their own <audio> input the permission was already handled at load
+        //time and the track taps that stream; for the rest we need RECORD_AUDIO here first.
+        if (id == R.id.action_sync_audio) {
+            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+            if (experiment.syncRecording) {
+                experiment.disableSync();
+                settings.edit().putBoolean(PREF_SYNC_AUDIO, false).apply();
+            } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+                //Save the intent first: the granted callback recreates the activity and the
+                //preference path in setupTabLayout switches the track on.
+                settings.edit().putBoolean(PREF_SYNC_AUDIO, true).apply();
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_SYNC);
+            } else if (experiment.enableSync(this)) {
+                settings.edit().putBoolean(PREF_SYNC_AUDIO, true).apply();
+            } else {
+                if (experiment.syncTrackError != null)
+                    Toast.makeText(this, experiment.syncTrackError, Toast.LENGTH_LONG).show();
+            }
+            invalidateOptionsMenu();
+            return true;
         }
 
         //The remote server button. Show a warning with IP information and start the server if confirmed.
@@ -1996,6 +2047,10 @@ public class Experiment extends AppCompatActivity implements View.OnClickListene
         }
 
         experiment.experimentTimeReference.reset();
+
+        //A clear wipes the run's data, so the sync audio belonging to it goes too
+        if (experiment.syncTrack != null)
+            experiment.syncTrack.discard();
         experiment.newData = true;
         experiment.newUserInput = true;
         if (remote != null && serverEnabled)

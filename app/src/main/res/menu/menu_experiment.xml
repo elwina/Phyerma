@@ -32,6 +32,8 @@
     <item android:id="@+id/action_remoteServer" android:title="@string/remoteServer"
         android:orderInCategory="100" app:showAsAction="never" android:checkable="true" />
 
+    <item android:id="@+id/action_sync_audio" android:title="@string/sync_audio_track"
+        android:orderInCategory="145" app:showAsAction="never" android:checkable="true" />
     <item android:id="@+id/action_calibrated_magnetometer" android:title="@string/calibrated_magnetometer"
         android:orderInCategory="150" app:showAsAction="never" android:checkable="true" />
     <item android:id="@+id/action_force_gnss" android:title="@string/force_gnss"

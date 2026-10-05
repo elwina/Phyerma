@@ -270,6 +270,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
     <string name="sensorNotAvailableWarningMoreInfoURL">https://github.com/elwina/Phyerma</string>
     <string name="calibrated_magnetometer">Use calibrated magnetometer</string>
     <string name="force_gnss">Satellite location only</string>
+    <string name="sync_audio_track">Record acoustic sync audio</string>
     <!-- Bluetooth  -->
     <string name="bluetooth">Bluetooth Low Energy</string>
     <string name="bt_android_version">Bluetooth Low Energy is not supported on this device.</string>
